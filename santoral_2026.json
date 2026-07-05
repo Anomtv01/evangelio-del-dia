@@ -1,0 +1,5684 @@
+{
+  "2025-11-29": [
+    {
+      "nombre": "First Sunday of Advent Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2025-11-30": [
+    {
+      "nombre": "First Sunday of Advent",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-01": [
+    {
+      "nombre": "Monday of the 1st Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-02": [
+    {
+      "nombre": "Tuesday of the 1st Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-03": [
+    {
+      "nombre": "Saint Francis Xavier, Priest",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2025-12-04": [
+    {
+      "nombre": "Thursday of the 1st Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Saint John Damascene, Priest and Doctor of the Church",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2025-12-05": [
+    {
+      "nombre": "Friday of the 1st Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-06": [
+    {
+      "nombre": "Saturday of the 1st Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Saint Nicholas, Bishop",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Second Sunday of Advent Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-07": [
+    {
+      "nombre": "Second Sunday of Advent",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "The Immaculate Conception of the Blessed Virgin Mary Vigil Mass",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2025-12-08": [
+    {
+      "nombre": "The Immaculate Conception of the Blessed Virgin Mary",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2025-12-09": [
+    {
+      "nombre": "Tuesday of the 2nd Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Saint Juan Diego Cuauhtlatoatzin",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2025-12-10": [
+    {
+      "nombre": "Wednesday of the 2nd Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Blessed Virgin Mary of Loreto",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2025-12-11": [
+    {
+      "nombre": "Thursday of the 2nd Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Saint Damasus I, Pope",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2025-12-12": [
+    {
+      "nombre": "Friday of the 2nd Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Our Lady of Guadalupe",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2025-12-13": [
+    {
+      "nombre": "Saint Lucy of Syracuse, Virgin and Martyr",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    },
+    {
+      "nombre": "Third Sunday of Advent (Gaudete) Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "rose",
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-14": [
+    {
+      "nombre": "Third Sunday of Advent (Gaudete)",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "rose",
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-15": [
+    {
+      "nombre": "Monday of the 3rd Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-16": [
+    {
+      "nombre": "Tuesday of the 3rd Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-17": [
+    {
+      "nombre": "Wednesday of the 3rd Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-18": [
+    {
+      "nombre": "Thursday of the 3rd Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-19": [
+    {
+      "nombre": "Friday of the 3rd Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-20": [
+    {
+      "nombre": "Saturday of the 3rd Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Fourth Sunday of Advent Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-21": [
+    {
+      "nombre": "Fourth Sunday of Advent",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-22": [
+    {
+      "nombre": "Monday of the 4th Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2025-12-23": [
+    {
+      "nombre": "Tuesday of the 4th Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Saint John of Kanty, Priest",
+      "grado": 1,
+      "grado_texto": "commemoration",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2025-12-24": [
+    {
+      "nombre": "Wednesday of the 4th Week of Advent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Christmas Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2025-12-25": [
+    {
+      "nombre": "Christmas",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2025-12-26": [
+    {
+      "nombre": "Saint Stephen, The First Martyr",
+      "grado": 4,
+      "grado_texto": "FEAST",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2025-12-27": [
+    {
+      "nombre": "Saint John, Apostle and Evangelist",
+      "grado": 4,
+      "grado_texto": "FEAST",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Holy Family of Jesus, Mary and Joseph Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2025-12-28": [
+    {
+      "nombre": "Holy Family of Jesus, Mary and Joseph",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2025-12-29": [
+    {
+      "nombre": "5th Day of the Octave of Christmas",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Thomas Becket, Bishop and Martyr",
+      "grado": 1,
+      "grado_texto": "commemoration",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2025-12-30": [
+    {
+      "nombre": "6th Day of the Octave of Christmas",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2025-12-31": [
+    {
+      "nombre": "7th Day of the Octave of Christmas",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Sylvester I, Pope",
+      "grado": 1,
+      "grado_texto": "commemoration",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Mary, Mother of God Vigil Mass",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-01": [
+    {
+      "nombre": "Mary, Mother of God",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-02": [
+    {
+      "nombre": "Saints Basil the Great and Gregory Nazianzen, Bishops and Doctors of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-03": [
+    {
+      "nombre": "Saturday - Christmas Weekday",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "The Most Holy Name of Jesus",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "2nd Sunday after Christmas Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-04": [
+    {
+      "nombre": "2nd Sunday after Christmas",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-05": [
+    {
+      "nombre": "Monday - Christmas Weekday",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Epiphany Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-06": [
+    {
+      "nombre": "Epiphany",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-07": [
+    {
+      "nombre": "Wednesday - Christmas Weekday",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Raymond of Penyafort, Priest",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-08": [
+    {
+      "nombre": "Thursday - Christmas Weekday",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-09": [
+    {
+      "nombre": "Friday - Christmas Weekday",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-10": [
+    {
+      "nombre": "Saturday - Christmas Weekday",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Baptism of the Lord Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-11": [
+    {
+      "nombre": "Baptism of the Lord",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-12": [
+    {
+      "nombre": "Monday of the 1st Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-01-13": [
+    {
+      "nombre": "Tuesday of the 1st Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Hilary, Bishop and Doctor of the Church",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-14": [
+    {
+      "nombre": "Wednesday of the 1st Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-01-15": [
+    {
+      "nombre": "Thursday of the 1st Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-01-16": [
+    {
+      "nombre": "Friday of the 1st Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-01-17": [
+    {
+      "nombre": "Saint Anthony, Abbot",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "2nd Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-01-18": [
+    {
+      "nombre": "2nd Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-01-19": [
+    {
+      "nombre": "Monday of the 2nd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-01-20": [
+    {
+      "nombre": "Tuesday of the 2nd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Fabian, Pope and Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    },
+    {
+      "nombre": "Saint Sebastian, Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-01-21": [
+    {
+      "nombre": "Saint Agnes, Virgin and Martyr",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-01-22": [
+    {
+      "nombre": "Thursday of the 2nd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Vincent, Deacon and Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-01-23": [
+    {
+      "nombre": "Friday of the 2nd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-01-24": [
+    {
+      "nombre": "Saint Francis de Sales, Bishop and Doctor of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "3rd Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-01-25": [
+    {
+      "nombre": "3rd Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-01-26": [
+    {
+      "nombre": "Saints Timothy and Titus, Bishops",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-27": [
+    {
+      "nombre": "Tuesday of the 3rd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Angela Merici, Virgin",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-28": [
+    {
+      "nombre": "Saint Thomas Aquinas, Priest and Doctor of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-01-29": [
+    {
+      "nombre": "Thursday of the 3rd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-01-30": [
+    {
+      "nombre": "Friday of the 3rd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-01-31": [
+    {
+      "nombre": "Saint John Bosco, Priest",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "4th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-02-01": [
+    {
+      "nombre": "4th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-02-02": [
+    {
+      "nombre": "Presentation of the Lord",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-02-03": [
+    {
+      "nombre": "Tuesday of the 4th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Blase, Bishop and Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    },
+    {
+      "nombre": "Saint Ansgar, Bishop",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-02-04": [
+    {
+      "nombre": "Wednesday of the 4th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-02-05": [
+    {
+      "nombre": "Saint Agatha, Virgin and Martyr",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-02-06": [
+    {
+      "nombre": "Saint Paul Miki and Companions, Martyrs",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-02-07": [
+    {
+      "nombre": "Saturday of the 4th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "5th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-02-08": [
+    {
+      "nombre": "5th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-02-09": [
+    {
+      "nombre": "Monday of the 5th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-02-10": [
+    {
+      "nombre": "Saint Scholastica, Virgin",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-02-11": [
+    {
+      "nombre": "Wednesday of the 5th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Our Lady of Lourdes",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-02-12": [
+    {
+      "nombre": "Thursday of the 5th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-02-13": [
+    {
+      "nombre": "Friday of the 5th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-02-14": [
+    {
+      "nombre": "Saints Cyril, Monk, and Methodius, Bishop",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "6th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-02-15": [
+    {
+      "nombre": "6th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-02-16": [
+    {
+      "nombre": "Monday of the 6th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-02-17": [
+    {
+      "nombre": "Tuesday of the 6th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "The Seven Holy Founders of the Servite Order",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-02-18": [
+    {
+      "nombre": "Ash Wednesday",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-02-19": [
+    {
+      "nombre": "Thursday after Ash Wednesday",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-02-20": [
+    {
+      "nombre": "Friday after Ash Wednesday",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-02-21": [
+    {
+      "nombre": "Saturday after Ash Wednesday",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Saint Peter Damian, Bishop and Doctor of the Church",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "First Sunday of Lent Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-02-22": [
+    {
+      "nombre": "First Sunday of Lent",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-02-23": [
+    {
+      "nombre": "Monday of the 1st Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Saint Polycarp, Bishop and Martyr",
+      "grado": 1,
+      "grado_texto": "commemoration",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-02-24": [
+    {
+      "nombre": "Tuesday of the 1st Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-02-25": [
+    {
+      "nombre": "Wednesday of the 1st Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-02-26": [
+    {
+      "nombre": "Thursday of the 1st Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-02-27": [
+    {
+      "nombre": "Friday of the 1st Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Saint Gregory of Narek, Abbot and Doctor of the Church",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-02-28": [
+    {
+      "nombre": "Saturday of the 1st Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Second Sunday of Lent Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-01": [
+    {
+      "nombre": "Second Sunday of Lent",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-02": [
+    {
+      "nombre": "Monday of the 2nd Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-03": [
+    {
+      "nombre": "Tuesday of the 2nd Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-04": [
+    {
+      "nombre": "Wednesday of the 2nd Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Saint Casimir",
+      "grado": 1,
+      "grado_texto": "commemoration",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-03-05": [
+    {
+      "nombre": "Thursday of the 2nd Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-06": [
+    {
+      "nombre": "Friday of the 2nd Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-07": [
+    {
+      "nombre": "Saturday of the 2nd Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Saints Perpetua and Felicity, Martyrs",
+      "grado": 1,
+      "grado_texto": "commemoration",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    },
+    {
+      "nombre": "Third Sunday of Lent Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-08": [
+    {
+      "nombre": "Third Sunday of Lent",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-09": [
+    {
+      "nombre": "Monday of the 3rd Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Saint Frances of Rome, Religious",
+      "grado": 1,
+      "grado_texto": "commemoration",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-03-10": [
+    {
+      "nombre": "Tuesday of the 3rd Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-11": [
+    {
+      "nombre": "Wednesday of the 3rd Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-12": [
+    {
+      "nombre": "Thursday of the 3rd Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-13": [
+    {
+      "nombre": "Friday of the 3rd Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-14": [
+    {
+      "nombre": "Saturday of the 3rd Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Fourth Sunday of Lent Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "rose",
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-15": [
+    {
+      "nombre": "Fourth Sunday of Lent",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "rose",
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-16": [
+    {
+      "nombre": "Monday of the 4th Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-17": [
+    {
+      "nombre": "Tuesday of the 4th Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Saint Patrick, Bishop",
+      "grado": 1,
+      "grado_texto": "commemoration",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-03-18": [
+    {
+      "nombre": "Wednesday of the 4th Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Saint Cyril of Jerusalem, Bishop and Doctor of the Church",
+      "grado": 1,
+      "grado_texto": "commemoration",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Joseph Husband of the Blessed Virgin Mary Vigil Mass",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-03-19": [
+    {
+      "nombre": "Saint Joseph Husband of the Blessed Virgin Mary",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-03-20": [
+    {
+      "nombre": "Friday of the 4th Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-21": [
+    {
+      "nombre": "Saturday of the 4th Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Fifth Sunday of Lent Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-22": [
+    {
+      "nombre": "Fifth Sunday of Lent",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-23": [
+    {
+      "nombre": "Monday of the 5th Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Saint Turibius of Mogrovejo, Bishop",
+      "grado": 1,
+      "grado_texto": "commemoration",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-03-24": [
+    {
+      "nombre": "Tuesday of the 5th Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Annunciation of the Lord Vigil Mass",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-03-25": [
+    {
+      "nombre": "Annunciation of the Lord",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-03-26": [
+    {
+      "nombre": "Thursday of the 5th Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-27": [
+    {
+      "nombre": "Friday of the 5th Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-28": [
+    {
+      "nombre": "Saturday of the 5th Week of Lent",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    },
+    {
+      "nombre": "Palm Sunday Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-03-29": [
+    {
+      "nombre": "Palm Sunday",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-03-30": [
+    {
+      "nombre": "Monday of Holy Week",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-03-31": [
+    {
+      "nombre": "Tuesday of Holy Week",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-04-01": [
+    {
+      "nombre": "Wednesday of Holy Week",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-04-02": [
+    {
+      "nombre": "Holy Thursday",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-03": [
+    {
+      "nombre": "Good Friday",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-04-04": [
+    {
+      "nombre": "Easter Vigil",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-05": [
+    {
+      "nombre": "Easter Sunday",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-06": [
+    {
+      "nombre": "Monday of the Octave of Easter",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-07": [
+    {
+      "nombre": "Tuesday of the Octave of Easter",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-08": [
+    {
+      "nombre": "Wednesday of the Octave of Easter",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-09": [
+    {
+      "nombre": "Thursday of the Octave of Easter",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-10": [
+    {
+      "nombre": "Friday of the Octave of Easter",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-11": [
+    {
+      "nombre": "Saturday of the Octave of Easter",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Second Sunday of Easter or Divine Mercy Sunday Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-12": [
+    {
+      "nombre": "Second Sunday of Easter or Divine Mercy Sunday",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-13": [
+    {
+      "nombre": "Monday of the 2nd Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Martin I, Pope and Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-04-14": [
+    {
+      "nombre": "Tuesday of the 2nd Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-15": [
+    {
+      "nombre": "Wednesday of the 2nd Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-16": [
+    {
+      "nombre": "Thursday of the 2nd Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-17": [
+    {
+      "nombre": "Friday of the 2nd Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-18": [
+    {
+      "nombre": "Saturday of the 2nd Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Third Sunday of Easter Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-19": [
+    {
+      "nombre": "Third Sunday of Easter",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-20": [
+    {
+      "nombre": "Monday of the 3rd Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-21": [
+    {
+      "nombre": "Tuesday of the 3rd Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Anselm, Bishop and Doctor of the Church",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-22": [
+    {
+      "nombre": "Wednesday of the 3rd Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-23": [
+    {
+      "nombre": "Thursday of the 3rd Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint George, Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    },
+    {
+      "nombre": "Saint Adalbert, Bishop and Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-04-24": [
+    {
+      "nombre": "Friday of the 3rd Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Fidelis of Sigmaringen, Priest and Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-04-25": [
+    {
+      "nombre": "Saint Mark the Evangelist",
+      "grado": 4,
+      "grado_texto": "FEAST",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    },
+    {
+      "nombre": "Fourth Sunday of Easter Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-26": [
+    {
+      "nombre": "Fourth Sunday of Easter",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-27": [
+    {
+      "nombre": "Monday of the 4th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-28": [
+    {
+      "nombre": "Tuesday of the 4th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Peter Chanel, Priest and Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    },
+    {
+      "nombre": "Saint Louis Grignion de Montfort, Priest",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-29": [
+    {
+      "nombre": "Saint Catherine of Siena, Virgin and Doctor of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-04-30": [
+    {
+      "nombre": "Thursday of the 4th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Pius V, Pope",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-01": [
+    {
+      "nombre": "Friday of the 4th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Joseph the Worker",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-02": [
+    {
+      "nombre": "Saint Athanasius, Bishop and Doctor of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Fifth Sunday of Easter Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-03": [
+    {
+      "nombre": "Fifth Sunday of Easter",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-04": [
+    {
+      "nombre": "Monday of the 5th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-05": [
+    {
+      "nombre": "Tuesday of the 5th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-06": [
+    {
+      "nombre": "Wednesday of the 5th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-07": [
+    {
+      "nombre": "Thursday of the 5th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-08": [
+    {
+      "nombre": "Friday of the 5th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-09": [
+    {
+      "nombre": "Saturday of the 5th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Sixth Sunday of Easter Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-10": [
+    {
+      "nombre": "Sixth Sunday of Easter",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-11": [
+    {
+      "nombre": "Monday of the 6th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-12": [
+    {
+      "nombre": "Tuesday of the 6th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saints Nereus and Achilleus, Martyrs",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    },
+    {
+      "nombre": "Saint Pancras, Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-05-13": [
+    {
+      "nombre": "Wednesday of the 6th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Our Lady of Fatima",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Ascension Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-14": [
+    {
+      "nombre": "Ascension",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-15": [
+    {
+      "nombre": "Friday of the 6th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-16": [
+    {
+      "nombre": "Saturday of the 6th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Seventh Sunday of Easter Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-17": [
+    {
+      "nombre": "Seventh Sunday of Easter",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-18": [
+    {
+      "nombre": "Monday of the 7th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint John I, Pope and Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-05-19": [
+    {
+      "nombre": "Tuesday of the 7th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-20": [
+    {
+      "nombre": "Wednesday of the 7th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Bernardine of Siena, Priest",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-21": [
+    {
+      "nombre": "Thursday of the 7th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Christopher Magallanes, Priest, and Companions, Martyrs",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-05-22": [
+    {
+      "nombre": "Friday of the 7th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Rita of Cascia, Religious",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-23": [
+    {
+      "nombre": "Saturday of the 7th Week of Easter",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Pentecost Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-05-24": [
+    {
+      "nombre": "Pentecost",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-05-25": [
+    {
+      "nombre": "Blessed Virgin Mary, Mother of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-26": [
+    {
+      "nombre": "Saint Philip Neri, Priest",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-27": [
+    {
+      "nombre": "Wednesday of the 8th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Augustine of Canterbury, Bishop",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-28": [
+    {
+      "nombre": "Thursday of the 8th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-05-29": [
+    {
+      "nombre": "Friday of the 8th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Paul VI, Pope",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-30": [
+    {
+      "nombre": "Saturday of the 8th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Holy Trinity Sunday Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-05-31": [
+    {
+      "nombre": "Holy Trinity Sunday",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-06-01": [
+    {
+      "nombre": "Saint Justin Martyr",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-06-02": [
+    {
+      "nombre": "Tuesday of the 9th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saints Marcellinus and Peter, Martyrs",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-06-03": [
+    {
+      "nombre": "Saint Charles Lwanga and Companions, Martyrs",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    },
+    {
+      "nombre": "Corpus Christi Vigil Mass",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-06-04": [
+    {
+      "nombre": "Corpus Christi",
+      "grado": 7,
+      "grado_texto": "celebration with precedence over solemnities",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-06-05": [
+    {
+      "nombre": "Saint Boniface, Bishop and Martyr",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-06-06": [
+    {
+      "nombre": "Saturday of the 9th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Norbert, Bishop",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "10th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-07": [
+    {
+      "nombre": "10th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-08": [
+    {
+      "nombre": "Monday of the 10th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-09": [
+    {
+      "nombre": "Tuesday of the 10th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Ephrem, Deacon and Doctor of the Church",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-06-10": [
+    {
+      "nombre": "Wednesday of the 10th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-11": [
+    {
+      "nombre": "Saint Barnabas the Apostle",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    },
+    {
+      "nombre": "Most Sacred Heart of Jesus Vigil Mass",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "mobile",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-06-12": [
+    {
+      "nombre": "Most Sacred Heart of Jesus",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "mobile",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-06-13": [
+    {
+      "nombre": "The Immaculate Heart of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Anthony of Padua, Priest and Doctor of the Church",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "11th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-14": [
+    {
+      "nombre": "11th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-15": [
+    {
+      "nombre": "Monday of the 11th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-16": [
+    {
+      "nombre": "Tuesday of the 11th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-17": [
+    {
+      "nombre": "Wednesday of the 11th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-18": [
+    {
+      "nombre": "Thursday of the 11th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-19": [
+    {
+      "nombre": "Friday of the 11th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Romuald, Abbot",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-06-20": [
+    {
+      "nombre": "Saturday of the 11th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "12th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-21": [
+    {
+      "nombre": "12th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-22": [
+    {
+      "nombre": "Monday of the 12th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Paulinus of Nola, Bishop",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saints John Fisher, Bishop, and Thomas More, Martyrs",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-06-23": [
+    {
+      "nombre": "Tuesday of the 12th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "The Nativity of Saint John the Baptist Vigil Mass",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-06-24": [
+    {
+      "nombre": "The Nativity of Saint John the Baptist",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-06-25": [
+    {
+      "nombre": "Thursday of the 12th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-26": [
+    {
+      "nombre": "Friday of the 12th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-27": [
+    {
+      "nombre": "Saturday of the 12th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Cyril of Alexandria, Bishop and Doctor of the Church",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "13th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-06-28": [
+    {
+      "nombre": "13th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saints Peter and Paul, Apostles Vigil Mass",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-06-29": [
+    {
+      "nombre": "Saints Peter and Paul, Apostles",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-06-30": [
+    {
+      "nombre": "Tuesday of the 13th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "The First Martyrs of the Holy Roman Church",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-07-01": [
+    {
+      "nombre": "Wednesday of the 13th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-02": [
+    {
+      "nombre": "Thursday of the 13th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-03": [
+    {
+      "nombre": "Saint Thomas the Apostle",
+      "grado": 4,
+      "grado_texto": "FEAST",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-07-04": [
+    {
+      "nombre": "Saturday of the 13th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Elizabeth of Portugal",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "14th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-05": [
+    {
+      "nombre": "14th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-06": [
+    {
+      "nombre": "Monday of the 14th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Maria Goretti, Virgin and Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-07-07": [
+    {
+      "nombre": "Tuesday of the 14th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-08": [
+    {
+      "nombre": "Wednesday of the 14th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-09": [
+    {
+      "nombre": "Thursday of the 14th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Augustine Zhao Rong, Priest, and Companions, Martyrs",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-07-10": [
+    {
+      "nombre": "Friday of the 14th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-11": [
+    {
+      "nombre": "Saint Benedict, Abbot",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "15th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-12": [
+    {
+      "nombre": "15th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-13": [
+    {
+      "nombre": "Monday of the 15th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Henry",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-07-14": [
+    {
+      "nombre": "Tuesday of the 15th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Camillus de Lellis, Priest",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-07-15": [
+    {
+      "nombre": "Saint Bonaventure, Bishop and Doctor of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-07-16": [
+    {
+      "nombre": "Thursday of the 15th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Our Lady of Mount Carmel",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-07-17": [
+    {
+      "nombre": "Friday of the 15th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-18": [
+    {
+      "nombre": "Saturday of the 15th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "16th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-19": [
+    {
+      "nombre": "16th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-20": [
+    {
+      "nombre": "Monday of the 16th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Apollinaris, Bishop and Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-07-21": [
+    {
+      "nombre": "Tuesday of the 16th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Lawrence of Brindisi, Priest and Doctor of the Church",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-07-22": [
+    {
+      "nombre": "Saint Mary Magdalene",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-07-23": [
+    {
+      "nombre": "Thursday of the 16th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Bridget, Religious",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-07-24": [
+    {
+      "nombre": "Friday of the 16th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Sharbel Makhluf, Hermit",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-07-25": [
+    {
+      "nombre": "Saint James, Apostle",
+      "grado": 4,
+      "grado_texto": "FEAST",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    },
+    {
+      "nombre": "17th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-26": [
+    {
+      "nombre": "17th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-27": [
+    {
+      "nombre": "Monday of the 17th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-28": [
+    {
+      "nombre": "Tuesday of the 17th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-07-29": [
+    {
+      "nombre": "Saint Martha",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-07-30": [
+    {
+      "nombre": "Thursday of the 17th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Peter Chrysologus, Bishop and Doctor of the Church",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-07-31": [
+    {
+      "nombre": "Saint Ignatius of Loyola, Priest",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-01": [
+    {
+      "nombre": "Saint Alphonsus Mary Liguori, Bishop and Doctor of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "18th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-08-02": [
+    {
+      "nombre": "18th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-08-03": [
+    {
+      "nombre": "Monday of the 18th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-08-04": [
+    {
+      "nombre": "Saint John Mary Vianney, Priest",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-05": [
+    {
+      "nombre": "Wednesday of the 18th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "The Dedication of the Basilica of Saint Mary Major",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-06": [
+    {
+      "nombre": "The Transfiguration of the Lord",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-07": [
+    {
+      "nombre": "Friday of the 18th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Sixtus II, Pope, and Companions, Martyrs",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    },
+    {
+      "nombre": "Saint Cajetan, Priest",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-08": [
+    {
+      "nombre": "Saint Dominic, Priest",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "19th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-08-09": [
+    {
+      "nombre": "19th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-08-10": [
+    {
+      "nombre": "Saint Lawrence, Deacon and Martyr",
+      "grado": 4,
+      "grado_texto": "FEAST",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-08-11": [
+    {
+      "nombre": "Saint Clare, Virgin",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-12": [
+    {
+      "nombre": "Wednesday of the 19th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Jane Frances de Chantal, Religious",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-13": [
+    {
+      "nombre": "Thursday of the 19th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saints Pontian, Pope, and Hippolytus, Priest, Martyrs",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-08-14": [
+    {
+      "nombre": "Saint Maximilian Mary Kolbe, Priest and Martyr",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    },
+    {
+      "nombre": "The Assumption of the Blessed Virgin Mary Vigil Mass",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-15": [
+    {
+      "nombre": "The Assumption of the Blessed Virgin Mary",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-16": [
+    {
+      "nombre": "20th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-08-17": [
+    {
+      "nombre": "Monday of the 20th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-08-18": [
+    {
+      "nombre": "Tuesday of the 20th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-08-19": [
+    {
+      "nombre": "Wednesday of the 20th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint John Eudes, Priest",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-20": [
+    {
+      "nombre": "Saint Bernard, Abbot and Doctor of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-21": [
+    {
+      "nombre": "Saint Pius X, Pope",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-22": [
+    {
+      "nombre": "The Queenship of the Blessed Virgin Mary",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "21st Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-08-23": [
+    {
+      "nombre": "21st Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-08-24": [
+    {
+      "nombre": "Saint Bartholomew, Apostle",
+      "grado": 4,
+      "grado_texto": "FEAST",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-08-25": [
+    {
+      "nombre": "Tuesday of the 21st Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Louis",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Joseph Calasanz, Priest",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-26": [
+    {
+      "nombre": "Wednesday of the 21st Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-08-27": [
+    {
+      "nombre": "Saint Monica",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-28": [
+    {
+      "nombre": "Saint Augustine, Bishop and Doctor of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-08-29": [
+    {
+      "nombre": "The Beheading of Saint John the Baptist, Martyr",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    },
+    {
+      "nombre": "22nd Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-08-30": [
+    {
+      "nombre": "22nd Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-08-31": [
+    {
+      "nombre": "Monday of the 22nd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-01": [
+    {
+      "nombre": "Tuesday of the 22nd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-02": [
+    {
+      "nombre": "Wednesday of the 22nd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-03": [
+    {
+      "nombre": "Saint Gregory the Great, Pope and Doctor of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-09-04": [
+    {
+      "nombre": "Friday of the 22nd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-05": [
+    {
+      "nombre": "Saturday of the 22nd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Teresa of Calcutta, Virgin",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "23rd Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-06": [
+    {
+      "nombre": "23rd Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-07": [
+    {
+      "nombre": "Monday of the 23rd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-08": [
+    {
+      "nombre": "The Nativity of the Blessed Virgin Mary",
+      "grado": 4,
+      "grado_texto": "FEAST",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-09-09": [
+    {
+      "nombre": "Wednesday of the 23rd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Peter Claver, Priest",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-09-10": [
+    {
+      "nombre": "Thursday of the 23rd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-11": [
+    {
+      "nombre": "Friday of the 23rd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-12": [
+    {
+      "nombre": "Saturday of the 23rd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "The Holy Name of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "24th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-13": [
+    {
+      "nombre": "24th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-14": [
+    {
+      "nombre": "Exaltation of the Holy Cross",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-09-15": [
+    {
+      "nombre": "Our Lady of Sorrows",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-09-16": [
+    {
+      "nombre": "Saints Cornelius, Pope, and Cyprian, Bishop, Martyrs",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-09-17": [
+    {
+      "nombre": "Thursday of the 24th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Robert Bellarmine, Bishop and Doctor of the Church",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Hildegard of Bingen, Virgin and Doctor of the Church",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-09-18": [
+    {
+      "nombre": "Friday of the 24th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-19": [
+    {
+      "nombre": "Saturday of the 24th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Januarius, Bishop and Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "25th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-20": [
+    {
+      "nombre": "25th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-21": [
+    {
+      "nombre": "Saint Matthew, Apostle and Evangelist",
+      "grado": 4,
+      "grado_texto": "FEAST",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-09-22": [
+    {
+      "nombre": "Tuesday of the 25th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-23": [
+    {
+      "nombre": "Saint Pius of Pietrelcina, Priest",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-09-24": [
+    {
+      "nombre": "Thursday of the 25th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-25": [
+    {
+      "nombre": "Friday of the 25th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-26": [
+    {
+      "nombre": "Saturday of the 25th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saints Cosmas and Damian, Martyrs",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "26th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-27": [
+    {
+      "nombre": "26th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-09-28": [
+    {
+      "nombre": "Monday of the 26th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Wenceslaus, Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    },
+    {
+      "nombre": "Saint Lawrence Ruiz and Companions, Martyrs",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-09-29": [
+    {
+      "nombre": "Saints Michael, Gabriel and Raphael, Archangels",
+      "grado": 4,
+      "grado_texto": "FEAST",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-09-30": [
+    {
+      "nombre": "Saint Jerome, Priest and Doctor of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-10-01": [
+    {
+      "nombre": "Saint Thérèse of the Child Jesus, Virgin and Doctor of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-10-02": [
+    {
+      "nombre": "The Holy Guardian Angels",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-10-03": [
+    {
+      "nombre": "Saturday of the 26th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "27th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-04": [
+    {
+      "nombre": "27th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-05": [
+    {
+      "nombre": "Monday of the 27th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Faustina Kowalska",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-10-06": [
+    {
+      "nombre": "Tuesday of the 27th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Bruno, Priest",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-10-07": [
+    {
+      "nombre": "Our Lady of the Rosary",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-10-08": [
+    {
+      "nombre": "Thursday of the 27th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-09": [
+    {
+      "nombre": "Friday of the 27th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Denis, Bishop, and Companions, Martyrs",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    },
+    {
+      "nombre": "Saint John Leonardi, Priest",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-10-10": [
+    {
+      "nombre": "Saturday of the 27th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "28th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-11": [
+    {
+      "nombre": "28th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-12": [
+    {
+      "nombre": "Monday of the 28th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-13": [
+    {
+      "nombre": "Tuesday of the 28th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-14": [
+    {
+      "nombre": "Wednesday of the 28th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Callistus I, Pope and Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-10-15": [
+    {
+      "nombre": "Saint Teresa of Jesus, Virgin and Doctor of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-10-16": [
+    {
+      "nombre": "Friday of the 28th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Hedwig, Religious",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Margaret Mary Alacoque, Virgin",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-10-17": [
+    {
+      "nombre": "Saint Ignatius of Antioch, Bishop and Martyr",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    },
+    {
+      "nombre": "29th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-18": [
+    {
+      "nombre": "29th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-19": [
+    {
+      "nombre": "Monday of the 29th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    },
+    {
+      "nombre": "Saint Paul of the Cross, Priest",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-10-20": [
+    {
+      "nombre": "Tuesday of the 29th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-21": [
+    {
+      "nombre": "Wednesday of the 29th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-22": [
+    {
+      "nombre": "Thursday of the 29th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint John Paul II, Pope",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-10-23": [
+    {
+      "nombre": "Friday of the 29th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint John of Capestrano, Priest",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-10-24": [
+    {
+      "nombre": "Saturday of the 29th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Anthony Mary Claret, Bishop",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "30th Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-25": [
+    {
+      "nombre": "30th Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-26": [
+    {
+      "nombre": "Monday of the 30th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-27": [
+    {
+      "nombre": "Tuesday of the 30th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-28": [
+    {
+      "nombre": "Saints Simon and Jude, Apostles",
+      "grado": 4,
+      "grado_texto": "FEAST",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-10-29": [
+    {
+      "nombre": "Thursday of the 30th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-30": [
+    {
+      "nombre": "Friday of the 30th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-10-31": [
+    {
+      "nombre": "Saturday of the 30th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "All Saints Vigil Mass",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-11-01": [
+    {
+      "nombre": "All Saints",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-11-02": [
+    {
+      "nombre": "The Commemoration of all the Faithful Departed (All Souls' Day)",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "fixed",
+      "color": [
+        "purple"
+      ]
+    }
+  ],
+  "2026-11-03": [
+    {
+      "nombre": "Tuesday of the 31st Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Martin de Porres, Religious",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-11-04": [
+    {
+      "nombre": "Saint Charles Borromeo, Bishop",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-11-05": [
+    {
+      "nombre": "Thursday of the 31st Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-11-06": [
+    {
+      "nombre": "Friday of the 31st Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-11-07": [
+    {
+      "nombre": "Saturday of the 31st Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "32nd Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-11-08": [
+    {
+      "nombre": "32nd Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-11-09": [
+    {
+      "nombre": "The Dedication of the Lateran Basilica",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-11-10": [
+    {
+      "nombre": "Saint Leo the Great, Pope and Doctor of the Church",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-11-11": [
+    {
+      "nombre": "Saint Martin of Tours, Bishop",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-11-12": [
+    {
+      "nombre": "Saint Josaphat, Bishop and Martyr",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-11-13": [
+    {
+      "nombre": "Friday of the 32nd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-11-14": [
+    {
+      "nombre": "Saturday of the 32nd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "33rd Sunday of Ordinary Time Vigil Mass",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-11-15": [
+    {
+      "nombre": "33rd Sunday of Ordinary Time",
+      "grado": 5,
+      "grado_texto": "FEAST OF THE LORD",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-11-16": [
+    {
+      "nombre": "Monday of the 33rd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Margaret of Scotland",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Saint Gertrude the Great, Virgin",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-11-17": [
+    {
+      "nombre": "Saint Elizabeth of Hungary, Religious",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-11-18": [
+    {
+      "nombre": "Wednesday of the 33rd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "The Dedication of the Basilicas of Saints Peter and Paul, Apostles",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-11-19": [
+    {
+      "nombre": "Thursday of the 33rd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-11-20": [
+    {
+      "nombre": "Friday of the 33rd Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-11-21": [
+    {
+      "nombre": "The Presentation of the Blessed Virgin Mary",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    },
+    {
+      "nombre": "Christ the King Vigil Mass",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-11-22": [
+    {
+      "nombre": "Christ the King",
+      "grado": 6,
+      "grado_texto": "SOLEMNITY",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-11-23": [
+    {
+      "nombre": "Monday of the 34th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Clement I, Pope and Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    },
+    {
+      "nombre": "Saint Columban, Religious",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white"
+      ]
+    }
+  ],
+  "2026-11-24": [
+    {
+      "nombre": "Saint Andrew Dũng-Lạc, Priest, and Companions, Martyrs",
+      "grado": 3,
+      "grado_texto": "Memorial",
+      "tipo": "fixed",
+      "color": [
+        "red"
+      ]
+    }
+  ],
+  "2026-11-25": [
+    {
+      "nombre": "Wednesday of the 34th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saint Catherine of Alexandria, Virgin and Martyr",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "fixed",
+      "color": [
+        "white",
+        "red"
+      ]
+    }
+  ],
+  "2026-11-26": [
+    {
+      "nombre": "Thursday of the 34th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-11-27": [
+    {
+      "nombre": "Friday of the 34th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    }
+  ],
+  "2026-11-28": [
+    {
+      "nombre": "Saturday of the 34th Week of Ordinary Time",
+      "grado": 0,
+      "grado_texto": "weekday",
+      "tipo": "mobile",
+      "color": [
+        "green"
+      ]
+    },
+    {
+      "nombre": "Saturday Memorial of the Blessed Virgin Mary",
+      "grado": 2,
+      "grado_texto": "optional memorial",
+      "tipo": "mobile",
+      "color": [
+        "white"
+      ]
+    }
+  ]
+}
