@@ -37,6 +37,13 @@ jobs:
           ${{ secrets.GOOGLE_TOKEN }}
           EOF_TOKEN
 
+      - name: Verificar que las credenciales sean JSON valido (sin mostrar el contenido)
+        run: |
+          echo "Tamaño de client_secret.json: $(wc -c < client_secret.json) bytes"
+          echo "Tamaño de token.json: $(wc -c < token.json) bytes"
+          python3 -c "import json; json.load(open('client_secret.json')); print('client_secret.json: JSON valido')" || echo "client_secret.json: JSON INVALIDO"
+          python3 -c "import json; json.load(open('token.json')); print('token.json: JSON valido')" || echo "token.json: JSON INVALIDO"
+
       - name: Generar y subir el Evangelio del dia
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
