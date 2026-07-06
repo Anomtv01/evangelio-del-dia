@@ -28,6 +28,23 @@ import sys
 import os
 from datetime import date
 
+try:
+    from zoneinfo import ZoneInfo
+    _ZONA_NY = ZoneInfo("America/New_York")
+except Exception:
+    _ZONA_NY = None
+
+
+def fecha_hoy_ny():
+    """Fecha de 'hoy' según la hora de Nueva York, no la del servidor
+    (importante porque GitHub Actions corre en UTC, y sin esto el
+    workflow podía generar el Evangelio del día equivocado según a
+    qué hora UTC cayera la ejecución)."""
+    if _ZONA_NY is not None:
+        from datetime import datetime
+        return datetime.now(_ZONA_NY).date()
+    return date.today()
+
 from citas import parsear_cita, CitaNoReconocida
 from libros import normalizar_libro, nombre_espanol
 from traducir_fiesta import traducir_fiesta
@@ -109,7 +126,7 @@ def extraer_texto_evangelio(biblia_idx, cita_texto):
 
 
 def main():
-    fecha_str = sys.argv[1] if len(sys.argv) > 1 else date.today().isoformat()
+    fecha_str = sys.argv[1] if len(sys.argv) > 1 else fecha_hoy_ny().isoformat()
 
     citas = cargar_json(CITAS_PATH)
     fiestas = cargar_json(FIESTAS_PATH)
