@@ -30,8 +30,12 @@ jobs:
 
       - name: Reconstruir las credenciales de Google (desde los Secrets)
         run: |
-          echo "${{ secrets.GOOGLE_CLIENT_SECRET }}" > client_secret.json
-          echo "${{ secrets.GOOGLE_TOKEN }}" > token.json
+          cat > client_secret.json << 'EOF_CLIENT_SECRET'
+          ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          EOF_CLIENT_SECRET
+          cat > token.json << 'EOF_TOKEN'
+          ${{ secrets.GOOGLE_TOKEN }}
+          EOF_TOKEN
 
       - name: Generar y subir el Evangelio del dia
         env:
