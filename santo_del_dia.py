@@ -99,7 +99,11 @@ def generar_contenido_santo(nombre_es):
     client = anthropic.Anthropic(api_key=api_key)
     mensaje = client.messages.create(
         model=MODELO,
-        max_tokens=800,
+        # Subido de 800 a 2000: el modelo puede generar un bloque de
+        # "pensamiento" (thinking) antes de la respuesta real, que
+        # consume parte de este límite -- si quedaba muy justo, el JSON
+        # se cortaba a la mitad (error "Unterminated string").
+        max_tokens=2000,
         system=SYSTEM_PROMPT,
         messages=[
             {"role": "user", "content": f"Santo/fiesta: {nombre_es}"}
@@ -107,10 +111,14 @@ def generar_contenido_santo(nombre_es):
     )
     texto = extraer_texto(mensaje)
     texto = texto.replace("```json", "").replace("```", "").strip()
-    # strict=False: tolera saltos de línea reales (no escapados como \n)
-    # dentro de los valores del JSON, que a veces el modelo devuelve así
-    # en textos largos como la biografía.
-    return json.loads(texto, strict=False)
+    try:
+        # strict=False: tolera saltos de línea reales (no escapados como
+        # \n) dentro de los valores del JSON.
+        return json.loads(texto, strict=False)
+    except json.JSONDecodeError as e:
+        print(f"[DEBUG] No se pudo parsear el JSON de Claude ({e}). "
+              f"Texto recibido (primeros 800 caracteres):\n{texto[:800]}")
+        raise
 
 
 def main():
