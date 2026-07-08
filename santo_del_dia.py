@@ -107,7 +107,10 @@ def generar_contenido_santo(nombre_es):
     )
     texto = extraer_texto(mensaje)
     texto = texto.replace("```json", "").replace("```", "").strip()
-    return json.loads(texto)
+    # strict=False: tolera saltos de línea reales (no escapados como \n)
+    # dentro de los valores del JSON, que a veces el modelo devuelve así
+    # en textos largos como la biografía.
+    return json.loads(texto, strict=False)
 
 
 def main():
