@@ -1,0 +1,390 @@
+{
+  "Bernardine of Siena": {
+    "foto": "Bernardine of Siena.jpg",
+    "nombre_es": "San Bernardino de Siena"
+  },
+  "Francis Xavier": {
+    "foto": "Francis Xavier.jpg",
+    "nombre_es": "San Francisco Javier"
+  },
+  "Ignatius of Loyola": {
+    "foto": "Ignatius of Loyola.jpg",
+    "nombre_es": "San Ignacio de Loyola"
+  },
+  "san-aaron": {
+    "foto": "san-aaron.jpg",
+    "nombre_es": "San Aarón"
+  },
+  "san-agapito-martir": {
+    "foto": "san-agapito-martir.jpg",
+    "nombre_es": "San Agapito mártir"
+  },
+  "san-aidan-de-lindisfarne": {
+    "foto": "san-aidan-de-lindisfarne.jpg",
+    "nombre_es": "San Aidan de Lindisfarne"
+  },
+  "san-albano": {
+    "foto": "san-albano.jpg",
+    "nombre_es": "San Albano"
+  },
+  "san-alfonso-maria-de-ligorio": {
+    "foto": "san-alfonso-maria-de-ligorio.jpg",
+    "nombre_es": "San Alfonso María de Ligorio"
+  },
+  "san-amon-de-nitria": {
+    "foto": "san-amon-de-nitria.jpg",
+    "nombre_es": "San Amón de Nitria"
+  },
+  "san-andres-dung-lac": {
+    "foto": "san-andres-dung-lac.jpg",
+    "nombre_es": "San Andrés Dung-Lac"
+  },
+  "san-andres-kim-taegon": {
+    "foto": "san-andres-kim-taegon.jpg",
+    "nombre_es": "San Andrés Kim Taegon"
+  },
+  "san-aniceto": {
+    "foto": "san-aniceto.jpg",
+    "nombre_es": "San Aniceto"
+  },
+  "san-ansgar": {
+    "foto": "san-ansgar.jpg",
+    "nombre_es": "San Ansgar"
+  },
+  "san-antonino-de-florencia": {
+    "foto": "san-antonino-de-florencia.jpg",
+    "nombre_es": "San Antonino de Florencia"
+  },
+  "san-antonio-maria-gianelli": {
+    "foto": "san-antonio-maria-gianelli.jpg",
+    "nombre_es": "San Antonio María Gianelli"
+  },
+  "san-aquilino": {
+    "foto": "san-aquilino.jpg",
+    "nombre_es": "San Aquilino"
+  },
+  "san-arnold-janssen": {
+    "foto": "san-arnold-janssen.jpg",
+    "nombre_es": "San Arnold Janssen"
+  },
+  "san-avito": {
+    "foto": "san-avito.jpg",
+    "nombre_es": "San Avito"
+  },
+  "san-barsanufio-de-gaza": {
+    "foto": "san-barsanufio-de-gaza.jpg",
+    "nombre_es": "San Barsanufio de Gaza"
+  },
+  "san-benedicto-de-nursia": {
+    "foto": "san-benedicto-de-nursia.jpg",
+    "nombre_es": "San Benedicto de Nursia"
+  },
+  "san-bernardo-de-menthon": {
+    "foto": "san-bernardo-de-menthon.jpg",
+    "nombre_es": "San Bernardo de Menthon"
+  },
+  "san-bonfilio": {
+    "foto": "san-bonfilio.jpg",
+    "nombre_es": "San Bonfilio"
+  },
+  "san-carlo-acutis": {
+    "foto": "san-carlo-acutis.jpg",
+    "nombre_es": "San Carlo Acutis"
+  },
+  "san-cirilo-de-alejandria": {
+    "foto": "san-cirilo-de-alejandria.jpg",
+    "nombre_es": "San Cirilo de Alejandría"
+  },
+  "san-david": {
+    "foto": "san-david.jpg",
+    "nombre_es": "San David"
+  },
+  "san-emerico": {
+    "foto": "san-emerico.jpg",
+    "nombre_es": "San Emerico"
+  },
+  "san-eutiquio-y-companeros": {
+    "foto": "san-eutiquio-y-companeros.jpg",
+    "nombre_es": "San Eutiquio y compañeros"
+  },
+  "san-felipe-benizi": {
+    "foto": "san-felipe-benizi.jpg",
+    "nombre_es": "San Felipe Benizi"
+  },
+  "san-francisco-de-sales": {
+    "foto": "san-francisco-de-sales.jpg",
+    "nombre_es": "San Francisco de Sales"
+  },
+  "san-german-de-auxerre": {
+    "foto": "san-german-de-auxerre.jpg",
+    "nombre_es": "San Germán de Auxerre"
+  },
+  "san-isidro-labrador": {
+    "foto": "san-isidro-labrador.jpg",
+    "nombre_es": "San Isidro Labrador"
+  },
+  "san-jeronimo-emiliani": {
+    "foto": "san-jeronimo-emiliani.jpg",
+    "nombre_es": "San Jerónimo Emiliani"
+  },
+  "san-jorge": {
+    "foto": "san-jorge.jpg",
+    "nombre_es": "San Jorge"
+  },
+  "san-josemaria-escriva": {
+    "foto": "san-josemaria-escriva.jpg",
+    "nombre_es": "San Josemaría Escrivá"
+  },
+  "san-juan-de-kanty": {
+    "foto": "san-juan-de-kanty.jpg",
+    "nombre_es": "San Juan de Kanty"
+  },
+  "san-juan-de-licopolis": {
+    "foto": "san-juan-de-licopolis.jpg",
+    "nombre_es": "San Juan de Licópolis"
+  },
+  "san-juan-gabriel-perboyre": {
+    "foto": "san-juan-gabriel-perboyre.jpg",
+    "nombre_es": "San Juan Gabriel Perboyre"
+  },
+  "san-juan-grande": {
+    "foto": "san-juan-grande.jpg",
+    "nombre_es": "San Juan Grande"
+  },
+  "san-juan-macias": {
+    "foto": "san-juan-macias.jpg",
+    "nombre_es": "San Juan Macías"
+  },
+  "san-juan-maria-vianney": {
+    "foto": "san-juan-maria-vianney.jpg",
+    "nombre_es": "San Juan María Vianney"
+  },
+  "san-juan-pablo-ii": {
+    "foto": "san-juan-pablo-ii.jpg",
+    "nombre_es": "San Juan Pablo II"
+  },
+  "san-judas-tadeo": {
+    "foto": "san-judas-tadeo.jpg",
+    "nombre_es": "San Judas Tadeo"
+  },
+  "san-julio-i": {
+    "foto": "san-julio-i.jpg",
+    "nombre_es": "San Julio I"
+  },
+  "san-kilian": {
+    "foto": "san-kilian.jpg",
+    "nombre_es": "San Kilian"
+  },
+  "san-marciano": {
+    "foto": "san-marciano.jpg",
+    "nombre_es": "San Marciano"
+  },
+  "san-marcos-evangelista": {
+    "foto": "san-marcos-evangelista.jpg",
+    "nombre_es": "San Marcos Evangelista"
+  },
+  "san-martin-i": {
+    "foto": "san-martin-i.jpg",
+    "nombre_es": "San Martín I"
+  },
+  "san-medardo": {
+    "foto": "san-medardo.jpg",
+    "nombre_es": "San Medardo"
+  },
+  "san-nicolas-de-flue": {
+    "foto": "san-nicolas-de-flue.jpg",
+    "nombre_es": "San Nicolás de Flüe"
+  },
+  "san-osmundo": {
+    "foto": "san-osmundo.jpg",
+    "nombre_es": "San Osmundo"
+  },
+  "san-oton-de-bamberg": {
+    "foto": "san-oton-de-bamberg.jpg",
+    "nombre_es": "San Otón de Bamberg"
+  },
+  "san-ovidio": {
+    "foto": "san-ovidio.jpg",
+    "nombre_es": "San Ovidio"
+  },
+  "san-pablo-miki": {
+    "foto": "san-pablo-miki.jpg",
+    "nombre_es": "San Pablo Miki"
+  },
+  "san-pancracio": {
+    "foto": "san-pancracio.jpg",
+    "nombre_es": "San Pancracio"
+  },
+  "san-pantaleon": {
+    "foto": "san-pantaleon.jpg",
+    "nombre_es": "San Pantaleón"
+  },
+  "san-patricio": {
+    "foto": "san-patricio.jpg",
+    "nombre_es": "San Patricio"
+  },
+  "san-paulino-de-york": {
+    "foto": "san-paulino-de-york.jpg",
+    "nombre_es": "San Paulino de York"
+  },
+  "san-pedro-crisologo": {
+    "foto": "san-pedro-crisologo.jpg",
+    "nombre_es": "San Pedro Crisólogo"
+  },
+  "san-pedro-damiano": {
+    "foto": "san-pedro-damiano.jpg",
+    "nombre_es": "San Pedro Damiano"
+  },
+  "san-plutarco-y-companeros": {
+    "foto": "san-plutarco-y-companeros.jpg",
+    "nombre_es": "San Plutarco y compañeros"
+  },
+  "san-procopio": {
+    "foto": "san-procopio.jpg",
+    "nombre_es": "San Procopio"
+  },
+  "san-santiago-el-mayor": {
+    "foto": "san-santiago-el-mayor.jpg",
+    "nombre_es": "San Santiago el Mayor"
+  },
+  "san-segismundo": {
+    "foto": "san-segismundo.jpg",
+    "nombre_es": "San Segismundo"
+  },
+  "san-serafin-de-montegranaro": {
+    "foto": "san-serafin-de-montegranaro.jpg",
+    "nombre_es": "San Serafín de Montegranaro"
+  },
+  "san-simon-stock": {
+    "foto": "san-simon-stock.jpg",
+    "nombre_es": "San Simón Stock"
+  },
+  "san-teobaldo": {
+    "foto": "san-teobaldo.jpg",
+    "nombre_es": "San Teobaldo"
+  },
+  "san-teodoro": {
+    "foto": "san-teodoro.jpg",
+    "nombre_es": "San Teodoro"
+  },
+  "san-teofano": {
+    "foto": "san-teofano.jpg",
+    "nombre_es": "San Teófano"
+  },
+  "san-venceslao": {
+    "foto": "san-venceslao.jpg",
+    "nombre_es": "San Venceslao"
+  },
+  "san-vigilio": {
+    "foto": "san-vigilio.jpg",
+    "nombre_es": "San Vigilio"
+  },
+  "santa-catalina-de-siena": {
+    "foto": "santa-catalina-de-siena.jpg",
+    "nombre_es": "Santa Catalina de Siena"
+  },
+  "santa-clotilde": {
+    "foto": "santa-clotilde.jpg",
+    "nombre_es": "Santa Clotilde"
+  },
+  "santa-escolastica": {
+    "foto": "santa-escolastica.jpg",
+    "nombre_es": "Santa Escolástica"
+  },
+  "santa-isabel-de-hungria": {
+    "foto": "santa-isabel-de-hungria.jpg",
+    "nombre_es": "Santa Isabel de Hungría"
+  },
+  "santa-juana-de-arco": {
+    "foto": "santa-juana-de-arco.jpg",
+    "nombre_es": "Santa Juana de Arco"
+  },
+  "santa-justa-y-santa-rufina": {
+    "foto": "santa-justa-y-santa-rufina.jpg",
+    "nombre_es": "Santa Justa y Santa Rufina"
+  },
+  "santa-maravillas-de-jesus": {
+    "foto": "santa-maravillas-de-jesus.jpg",
+    "nombre_es": "Santa Maravillas de Jesús"
+  },
+  "santa-marcelina": {
+    "foto": "santa-marcelina.jpg",
+    "nombre_es": "Santa Marcelina"
+  },
+  "santa-margarita-de-escocia": {
+    "foto": "santa-margarita-de-escocia.jpg",
+    "nombre_es": "Santa Margarita de Escocia"
+  },
+  "santa-maria-francisca-de-las-cinco-llagas": {
+    "foto": "santa-maria-francisca-de-las-cinco-llagas.jpg",
+    "nombre_es": "Santa María Francisca de las Cinco Llagas"
+  },
+  "santa-maria-la-mayor": {
+    "foto": "santa-maria-la-mayor.jpg",
+    "nombre_es": "Santa María la Mayor"
+  },
+  "santa-maria-la-real-de-pamplona": {
+    "foto": "santa-maria-la-real-de-pamplona.jpg",
+    "nombre_es": "Santa María la Real de Pamplona"
+  },
+  "santa-maria-mazzarello": {
+    "foto": "santa-maria-mazzarello.jpg",
+    "nombre_es": "Santa María Mazzarello"
+  },
+  "santa-prudencia": {
+    "foto": "santa-prudencia.jpg",
+    "nombre_es": "Santa Prudencia"
+  },
+  "santa-radegunda": {
+    "foto": "santa-radegunda.jpg",
+    "nombre_es": "Santa Radegunda"
+  },
+  "santa-salome": {
+    "foto": "santa-salome.jpg",
+    "nombre_es": "Santa Salomé"
+  },
+  "santa-sinforosa-e-hijos": {
+    "foto": "santa-sinforosa-e-hijos.jpg",
+    "nombre_es": "Santa Sinforosa e hijos"
+  },
+  "santa-teresa-de-calcuta": {
+    "foto": "santa-teresa-de-calcuta.jpg",
+    "nombre_es": "Santa Teresa de Calcuta"
+  },
+  "santa-teresa-de-la-cruz": {
+    "foto": "santa-teresa-de-la-cruz.jpg",
+    "nombre_es": "Santa Teresa de la Cruz"
+  },
+  "santa-zita": {
+    "foto": "santa-zita.jpg",
+    "nombre_es": "Santa Zita"
+  },
+  "santo-caliz-de-valencia": {
+    "foto": "santo-caliz-de-valencia.jpg",
+    "nombre_es": "Santo Cáliz de Valencia"
+  },
+  "santo-rosario": {
+    "foto": "santo-rosario.jpg",
+    "nombre_es": "Santo Rosario"
+  },
+  "santo-rostro-de-lucca": {
+    "foto": "santo-rostro-de-lucca.jpg",
+    "nombre_es": "Santo Rostro de Lucca"
+  },
+  "santo-sepulcro": {
+    "foto": "santo-sepulcro.jpg",
+    "nombre_es": "Santo Sepulcro"
+  },
+  "santo-sudario-de-oviedo": {
+    "foto": "santo-sudario-de-oviedo.jpg",
+    "nombre_es": "Santo sudario de Oviedo"
+  },
+  "santos-emeterio-y-celedonio": {
+    "foto": "santos-emeterio-y-celedonio.jpg",
+    "nombre_es": "Santos Emeterio y Celedonio"
+  },
+  "santos-y-beatos-contemporaneos": {
+    "foto": "santos-y-beatos-contemporaneos.jpg",
+    "nombre_es": "Santos y beatos contemporáneos"
+  }
+}
