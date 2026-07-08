@@ -11,6 +11,826 @@
     "foto": "Ignatius of Loyola.jpg",
     "nombre_es": "San Ignacio de Loyola"
   },
+  "San Adalberto": {
+    "foto": "san_adalberto.png",
+    "nombre_es": "San Adalberto",
+    "origen": "ilustracion_ia"
+  },
+  "San Adalberto de Magdeburgo": {
+    "foto": "san_adalberto_de_magdeburgo.png",
+    "nombre_es": "San Adalberto de Magdeburgo",
+    "origen": "ilustracion_ia"
+  },
+  "San Agustín": {
+    "foto": "san_agustin.png",
+    "nombre_es": "San Agustín",
+    "origen": "ilustracion_ia"
+  },
+  "San Agustín Zhao Rong": {
+    "foto": "san_agustin_zhao_rong.png",
+    "nombre_es": "San Agustín Zhao Rong",
+    "origen": "ilustracion_ia"
+  },
+  "San Agustín Zhao Rong y compañeros": {
+    "foto": "san_agustin_zhao_rong_y_companeros.png",
+    "nombre_es": "San Agustín Zhao Rong y compañeros",
+    "origen": "ilustracion_ia"
+  },
+  "San Agustín de Canterbury": {
+    "foto": "san_agustin_de_canterbury.png",
+    "nombre_es": "San Agustín de Canterbury",
+    "origen": "ilustracion_ia"
+  },
+  "San Agustín de Cantorbery": {
+    "foto": "san_agustin_de_cantorbery.png",
+    "nombre_es": "San Agustín de Cantorbery",
+    "origen": "ilustracion_ia"
+  },
+  "San Agustín de Hipona": {
+    "foto": "san_agustin_de_hipona.png",
+    "nombre_es": "San Agustín de Hipona",
+    "origen": "ilustracion_ia"
+  },
+  "San Alberto Magno": {
+    "foto": "san_alberto_magno.png",
+    "nombre_es": "San Alberto Magno",
+    "origen": "ilustracion_ia"
+  },
+  "San Alberto de Trapani": {
+    "foto": "san_alberto_de_trapani.png",
+    "nombre_es": "San Alberto de Trapani",
+    "origen": "ilustracion_ia"
+  },
+  "San Albino de Angers": {
+    "foto": "san_albino_de_angers.png",
+    "nombre_es": "San Albino de Angers",
+    "origen": "ilustracion_ia"
+  },
+  "San Alfege": {
+    "foto": "san_alfege.png",
+    "nombre_es": "San Alfege",
+    "origen": "ilustracion_ia"
+  },
+  "San Alfonso Rodríguez": {
+    "foto": "san_alfonso_rodriguez.png",
+    "nombre_es": "San Alfonso Rodríguez",
+    "origen": "ilustracion_ia"
+  },
+  "San Ambrosio": {
+    "foto": "san_ambrosio.png",
+    "nombre_es": "San Ambrosio",
+    "origen": "ilustracion_ia"
+  },
+  "San Ambrosio de Milán": {
+    "foto": "san_ambrosio_de_milan.png",
+    "nombre_es": "San Ambrosio de Milán",
+    "origen": "ilustracion_ia"
+  },
+  "San Anastasio": {
+    "foto": "san_anastasio.png",
+    "nombre_es": "San Anastasio",
+    "origen": "ilustracion_ia"
+  },
+  "San Andrés": {
+    "foto": "san_andres.png",
+    "nombre_es": "San Andrés",
+    "origen": "ilustracion_ia"
+  },
+  "San Andrés Apóstol": {
+    "foto": "san_andres_apostol.png",
+    "nombre_es": "San Andrés Apóstol",
+    "origen": "ilustracion_ia"
+  },
+  "San Andrés Bobola": {
+    "foto": "san_andres_bobola.png",
+    "nombre_es": "San Andrés Bobola",
+    "origen": "ilustracion_ia"
+  },
+  "San Andrés Corsini": {
+    "foto": "san_andres_corsini.png",
+    "nombre_es": "San Andrés Corsini",
+    "origen": "ilustracion_ia"
+  },
+  "San Andrés Dũng Lạc y compañeros": {
+    "foto": "san_andres_d_ng_l_c_y_companeros.png",
+    "nombre_es": "San Andrés Dũng Lạc y compañeros",
+    "origen": "ilustracion_ia"
+  },
+  "San Andrés Kim Taegon y compañeros": {
+    "foto": "san_andres_kim_taegon_y_companeros.png",
+    "nombre_es": "San Andrés Kim Taegon y compañeros",
+    "origen": "ilustracion_ia"
+  },
+  "San Anselmo": {
+    "foto": "san_anselmo.png",
+    "nombre_es": "San Anselmo",
+    "origen": "ilustracion_ia"
+  },
+  "San Anselmo de Canterbury": {
+    "foto": "san_anselmo_de_canterbury.png",
+    "nombre_es": "San Anselmo de Canterbury",
+    "origen": "ilustracion_ia"
+  },
+  "San Anselmo de Lucca": {
+    "foto": "san_anselmo_de_lucca.png",
+    "nombre_es": "San Anselmo de Lucca",
+    "origen": "ilustracion_ia"
+  },
+  "San Antonio": {
+    "foto": "san_antonio.png",
+    "nombre_es": "San Antonio",
+    "origen": "ilustracion_ia"
+  },
+  "San Antonio Abad": {
+    "foto": "san_antonio_abad.png",
+    "nombre_es": "San Antonio Abad",
+    "origen": "ilustracion_ia"
+  },
+  "San Antonio María Claret": {
+    "foto": "san_antonio_maria_claret.png",
+    "nombre_es": "San Antonio María Claret",
+    "origen": "ilustracion_ia"
+  },
+  "San Antonio María Zaccaría": {
+    "foto": "san_antonio_maria_zaccaria.png",
+    "nombre_es": "San Antonio María Zaccaría",
+    "origen": "ilustracion_ia"
+  },
+  "San Antonio de Padua": {
+    "foto": "san_antonio_de_padua.png",
+    "nombre_es": "San Antonio de Padua",
+    "origen": "ilustracion_ia"
+  },
+  "San Antonio de Sant Ana Galvao": {
+    "foto": "san_antonio_de_sant_ana_galvao.png",
+    "nombre_es": "San Antonio de Sant Ana Galvao",
+    "origen": "ilustracion_ia"
+  },
+  "San Antón": {
+    "foto": "san_anton.png",
+    "nombre_es": "San Antón",
+    "origen": "ilustracion_ia"
+  },
+  "San Apolinar": {
+    "foto": "san_apolinar.png",
+    "nombre_es": "San Apolinar",
+    "origen": "ilustracion_ia"
+  },
+  "San Apolinar de Pavía": {
+    "foto": "san_apolinar_de_pavia.png",
+    "nombre_es": "San Apolinar de Pavía",
+    "origen": "ilustracion_ia"
+  },
+  "San Apolinaris": {
+    "foto": "san_apolinaris.png",
+    "nombre_es": "San Apolinaris",
+    "origen": "ilustracion_ia"
+  },
+  "San Apolonio": {
+    "foto": "san_apolonio.png",
+    "nombre_es": "San Apolonio",
+    "origen": "ilustracion_ia"
+  },
+  "San Aquileo": {
+    "foto": "san_aquileo.png",
+    "nombre_es": "San Aquileo",
+    "origen": "ilustracion_ia"
+  },
+  "San Aquiles": {
+    "foto": "san_aquiles.png",
+    "nombre_es": "San Aquiles",
+    "origen": "ilustracion_ia"
+  },
+  "San Aquilino de Milán": {
+    "foto": "san_aquilino_de_milan.png",
+    "nombre_es": "San Aquilino de Milán",
+    "origen": "ilustracion_ia"
+  },
+  "San Arcadio": {
+    "foto": "san_arcadio.png",
+    "nombre_es": "San Arcadio",
+    "origen": "ilustracion_ia"
+  },
+  "San Arsenio": {
+    "foto": "san_arsenio.png",
+    "nombre_es": "San Arsenio",
+    "origen": "ilustracion_ia"
+  },
+  "San Arístides (mártir)": {
+    "foto": "san_aristides_martir.png",
+    "nombre_es": "San Arístides (mártir)",
+    "origen": "ilustracion_ia"
+  },
+  "San Atanasio": {
+    "foto": "san_atanasio.png",
+    "nombre_es": "San Atanasio",
+    "origen": "ilustracion_ia"
+  },
+  "San Atanasio de Alejandría": {
+    "foto": "san_atanasio_de_alejandria.png",
+    "nombre_es": "San Atanasio de Alejandría",
+    "origen": "ilustracion_ia"
+  },
+  "San Augusto (mártir)": {
+    "foto": "san_augusto_martir.png",
+    "nombre_es": "San Augusto (mártir)",
+    "origen": "ilustracion_ia"
+  },
+  "San Augusto Chapdelaine": {
+    "foto": "san_augusto_chapdelaine.png",
+    "nombre_es": "San Augusto Chapdelaine",
+    "origen": "ilustracion_ia"
+  },
+  "San Aurelio": {
+    "foto": "san_aurelio.png",
+    "nombre_es": "San Aurelio",
+    "origen": "ilustracion_ia"
+  },
+  "San Avertano": {
+    "foto": "san_avertano.png",
+    "nombre_es": "San Avertano",
+    "origen": "ilustracion_ia"
+  },
+  "San Basilio Magno": {
+    "foto": "san_basilio_magno.png",
+    "nombre_es": "San Basilio Magno",
+    "origen": "ilustracion_ia"
+  },
+  "San Basilio de Cesarea": {
+    "foto": "san_basilio_de_cesarea.png",
+    "nombre_es": "San Basilio de Cesarea",
+    "origen": "ilustracion_ia"
+  },
+  "San Beda el Venerable": {
+    "foto": "san_beda_el_venerable.png",
+    "nombre_es": "San Beda el Venerable",
+    "origen": "ilustracion_ia"
+  },
+  "San Benito": {
+    "foto": "san_benito.png",
+    "nombre_es": "San Benito",
+    "origen": "ilustracion_ia"
+  },
+  "San Benito Biscop": {
+    "foto": "san_benito_biscop.png",
+    "nombre_es": "San Benito Biscop",
+    "origen": "ilustracion_ia"
+  },
+  "San Benito de Nursia": {
+    "foto": "san_benito_de_nursia.png",
+    "nombre_es": "San Benito de Nursia",
+    "origen": "ilustracion_ia"
+  },
+  "San Bernabé": {
+    "foto": "san_bernabe.png",
+    "nombre_es": "San Bernabé",
+    "origen": "ilustracion_ia"
+  },
+  "San Bernardino Realino": {
+    "foto": "san_bernardino_realino.png",
+    "nombre_es": "San Bernardino Realino",
+    "origen": "ilustracion_ia"
+  },
+  "San Bernardo": {
+    "foto": "san_bernardo.png",
+    "nombre_es": "San Bernardo",
+    "origen": "ilustracion_ia"
+  },
+  "San Bernardo de Clairvaux": {
+    "foto": "san_bernardo_de_clairvaux.png",
+    "nombre_es": "San Bernardo de Clairvaux",
+    "origen": "ilustracion_ia"
+  },
+  "San Bernardo de Claraval": {
+    "foto": "san_bernardo_de_claraval.png",
+    "nombre_es": "San Bernardo de Claraval",
+    "origen": "ilustracion_ia"
+  },
+  "San Blaise (Blas)": {
+    "foto": "san_blaise_blas.png",
+    "nombre_es": "San Blaise (Blas)",
+    "origen": "ilustracion_ia"
+  },
+  "San Blas": {
+    "foto": "san_blas.png",
+    "nombre_es": "San Blas",
+    "origen": "ilustracion_ia"
+  },
+  "San Bonifacio": {
+    "foto": "san_bonifacio.png",
+    "nombre_es": "San Bonifacio",
+    "origen": "ilustracion_ia"
+  },
+  "San Bruno": {
+    "foto": "san_bruno.png",
+    "nombre_es": "San Bruno",
+    "origen": "ilustracion_ia"
+  },
+  "San Bruno de Colonia": {
+    "foto": "san_bruno_de_colonia.png",
+    "nombre_es": "San Bruno de Colonia",
+    "origen": "ilustracion_ia"
+  },
+  "San Buenaventura": {
+    "foto": "san_buenaventura.png",
+    "nombre_es": "San Buenaventura",
+    "origen": "ilustracion_ia"
+  },
+  "San Calixto I": {
+    "foto": "san_calixto_i.png",
+    "nombre_es": "San Calixto I",
+    "origen": "ilustracion_ia"
+  },
+  "San Camilo de Lelis": {
+    "foto": "san_camilo_de_lelis.png",
+    "nombre_es": "San Camilo de Lelis",
+    "origen": "ilustracion_ia"
+  },
+  "San Carlos Borromeo": {
+    "foto": "san_carlos_borromeo.png",
+    "nombre_es": "San Carlos Borromeo",
+    "origen": "ilustracion_ia"
+  },
+  "San Carlos Luanga": {
+    "foto": "san_carlos_luanga.png",
+    "nombre_es": "San Carlos Luanga",
+    "origen": "ilustracion_ia"
+  },
+  "San Carlos Lwanga": {
+    "foto": "san_carlos_lwanga.png",
+    "nombre_es": "San Carlos Lwanga",
+    "origen": "ilustracion_ia"
+  },
+  "San Carlos Lwanga y compañeros": {
+    "foto": "san_carlos_lwanga_y_companeros.png",
+    "nombre_es": "San Carlos Lwanga y compañeros",
+    "origen": "ilustracion_ia"
+  },
+  "San Casimiro": {
+    "foto": "san_casimiro.png",
+    "nombre_es": "San Casimiro",
+    "origen": "ilustracion_ia"
+  },
+  "San Cayetano": {
+    "foto": "san_cayetano.png",
+    "nombre_es": "San Cayetano",
+    "origen": "ilustracion_ia"
+  },
+  "San Celestino V": {
+    "foto": "san_celestino_v.png",
+    "nombre_es": "San Celestino V",
+    "origen": "ilustracion_ia"
+  },
+  "San Cipriano": {
+    "foto": "san_cipriano.png",
+    "nombre_es": "San Cipriano",
+    "origen": "ilustracion_ia"
+  },
+  "San Cirilo": {
+    "foto": "san_cirilo.png",
+    "nombre_es": "San Cirilo",
+    "origen": "ilustracion_ia"
+  },
+  "San Cirilo de Heliópolis": {
+    "foto": "san_cirilo_de_heliopolis.png",
+    "nombre_es": "San Cirilo de Heliópolis",
+    "origen": "ilustracion_ia"
+  },
+  "San Cirilo de Jerusalén": {
+    "foto": "san_cirilo_de_jerusalen.png",
+    "nombre_es": "San Cirilo de Jerusalén",
+    "origen": "ilustracion_ia"
+  },
+  "San Claudio de La Colombière": {
+    "foto": "san_claudio_de_la_colombi_re.png",
+    "nombre_es": "San Claudio de La Colombière",
+    "origen": "ilustracion_ia"
+  },
+  "San Clemente I": {
+    "foto": "san_clemente_i.png",
+    "nombre_es": "San Clemente I",
+    "origen": "ilustracion_ia"
+  },
+  "San Clemente María Hofbauer": {
+    "foto": "san_clemente_maria_hofbauer.png",
+    "nombre_es": "San Clemente María Hofbauer",
+    "origen": "ilustracion_ia"
+  },
+  "San Cleofás": {
+    "foto": "san_cleofas.png",
+    "nombre_es": "San Cleofás",
+    "origen": "ilustracion_ia"
+  },
+  "San Columbano": {
+    "foto": "san_columbano.png",
+    "nombre_es": "San Columbano",
+    "origen": "ilustracion_ia"
+  },
+  "San Cornelio": {
+    "foto": "san_cornelio.png",
+    "nombre_es": "San Cornelio",
+    "origen": "ilustracion_ia"
+  },
+  "San Cosme": {
+    "foto": "san_cosme.png",
+    "nombre_es": "San Cosme",
+    "origen": "ilustracion_ia"
+  },
+  "San Cosme y San Damián": {
+    "foto": "san_cosme_y_san_damian.png",
+    "nombre_es": "San Cosme y San Damián",
+    "origen": "ilustracion_ia"
+  },
+  "San Crispín y San Crispiniano": {
+    "foto": "san_crispin_y_san_crispiniano.png",
+    "nombre_es": "San Crispín y San Crispiniano",
+    "origen": "ilustracion_ia"
+  },
+  "San Cristóbal": {
+    "foto": "san_cristobal.png",
+    "nombre_es": "San Cristóbal",
+    "origen": "ilustracion_ia"
+  },
+  "San Cristóbal Magallanes": {
+    "foto": "san_cristobal_magallanes.png",
+    "nombre_es": "San Cristóbal Magallanes",
+    "origen": "ilustracion_ia"
+  },
+  "San Cristóbal Magallanes y compañeros": {
+    "foto": "san_cristobal_magallanes_y_companeros.png",
+    "nombre_es": "San Cristóbal Magallanes y compañeros",
+    "origen": "ilustracion_ia"
+  },
+  "San Deodato": {
+    "foto": "san_deodato.png",
+    "nombre_es": "San Deodato",
+    "origen": "ilustracion_ia"
+  },
+  "San Desiderio": {
+    "foto": "san_desiderio.png",
+    "nombre_es": "San Desiderio",
+    "origen": "ilustracion_ia"
+  },
+  "San Diego de Alcalá": {
+    "foto": "san_diego_de_alcala.png",
+    "nombre_es": "San Diego de Alcalá",
+    "origen": "ilustracion_ia"
+  },
+  "San Dionisio": {
+    "foto": "san_dionisio.png",
+    "nombre_es": "San Dionisio",
+    "origen": "ilustracion_ia"
+  },
+  "San Dionisio Areopagita": {
+    "foto": "san_dionisio_areopagita.png",
+    "nombre_es": "San Dionisio Areopagita",
+    "origen": "ilustracion_ia"
+  },
+  "San Dionisio y compañeros": {
+    "foto": "san_dionisio_y_companeros.png",
+    "nombre_es": "San Dionisio y compañeros",
+    "origen": "ilustracion_ia"
+  },
+  "San Domingo de Guzmán": {
+    "foto": "san_domingo_de_guzman.png",
+    "nombre_es": "San Domingo de Guzmán",
+    "origen": "ilustracion_ia"
+  },
+  "San Doroteo de Gaza": {
+    "foto": "san_doroteo_de_gaza.png",
+    "nombre_es": "San Doroteo de Gaza",
+    "origen": "ilustracion_ia"
+  },
+  "San Dámaso I": {
+    "foto": "san_damaso_i.png",
+    "nombre_es": "San Dámaso I",
+    "origen": "ilustracion_ia"
+  },
+  "San Edmundo Campion": {
+    "foto": "san_edmundo_campion.png",
+    "nombre_es": "San Edmundo Campion",
+    "origen": "ilustracion_ia"
+  },
+  "San Edmundo rey mártir": {
+    "foto": "san_edmundo_rey_martir.png",
+    "nombre_es": "San Edmundo rey mártir",
+    "origen": "ilustracion_ia"
+  },
+  "San Eduardo": {
+    "foto": "san_eduardo.png",
+    "nombre_es": "San Eduardo",
+    "origen": "ilustracion_ia"
+  },
+  "San Efrén": {
+    "foto": "san_efren.png",
+    "nombre_es": "San Efrén",
+    "origen": "ilustracion_ia"
+  },
+  "San Efrén de Nísibe": {
+    "foto": "san_efren_de_nisibe.png",
+    "nombre_es": "San Efrén de Nísibe",
+    "origen": "ilustracion_ia"
+  },
+  "San Efrén de Siria": {
+    "foto": "san_efren_de_siria.png",
+    "nombre_es": "San Efrén de Siria",
+    "origen": "ilustracion_ia"
+  },
+  "San Egidio (San Giles)": {
+    "foto": "san_egidio_san_giles.png",
+    "nombre_es": "San Egidio (San Giles)",
+    "origen": "ilustracion_ia"
+  },
+  "San Eligio": {
+    "foto": "san_eligio.png",
+    "nombre_es": "San Eligio",
+    "origen": "ilustracion_ia"
+  },
+  "San Eliseo": {
+    "foto": "san_eliseo.png",
+    "nombre_es": "San Eliseo",
+    "origen": "ilustracion_ia"
+  },
+  "San Eloy": {
+    "foto": "san_eloy.png",
+    "nombre_es": "San Eloy",
+    "origen": "ilustracion_ia"
+  },
+  "San Elías": {
+    "foto": "san_elias.png",
+    "nombre_es": "San Elías",
+    "origen": "ilustracion_ia"
+  },
+  "San Enrique": {
+    "foto": "san_enrique.png",
+    "nombre_es": "San Enrique",
+    "origen": "ilustracion_ia"
+  },
+  "San Enrique Walpole": {
+    "foto": "san_enrique_walpole.png",
+    "nombre_es": "San Enrique Walpole",
+    "origen": "ilustracion_ia"
+  },
+  "San Erasmo": {
+    "foto": "san_erasmo.png",
+    "nombre_es": "San Erasmo",
+    "origen": "ilustracion_ia"
+  },
+  "San Estanislao": {
+    "foto": "san_estanislao.png",
+    "nombre_es": "San Estanislao",
+    "origen": "ilustracion_ia"
+  },
+  "San Esteban": {
+    "foto": "san_esteban.png",
+    "nombre_es": "San Esteban",
+    "origen": "ilustracion_ia"
+  },
+  "San Esteban de Hungría": {
+    "foto": "san_esteban_de_hungria.png",
+    "nombre_es": "San Esteban de Hungría",
+    "origen": "ilustracion_ia"
+  },
+  "San Eugenio de Mazenod": {
+    "foto": "san_eugenio_de_mazenod.png",
+    "nombre_es": "San Eugenio de Mazenod",
+    "origen": "ilustracion_ia"
+  },
+  "San Eulogio": {
+    "foto": "san_eulogio.png",
+    "nombre_es": "San Eulogio",
+    "origen": "ilustracion_ia"
+  },
+  "San Euplusio": {
+    "foto": "san_euplusio.png",
+    "nombre_es": "San Euplusio",
+    "origen": "ilustracion_ia"
+  },
+  "San Eusebio de Cesarea": {
+    "foto": "san_eusebio_de_cesarea.png",
+    "nombre_es": "San Eusebio de Cesarea",
+    "origen": "ilustracion_ia"
+  },
+  "San Eusebio de Vercelli": {
+    "foto": "san_eusebio_de_vercelli.png",
+    "nombre_es": "San Eusebio de Vercelli",
+    "origen": "ilustracion_ia"
+  },
+  "San Evagrio de Kellia": {
+    "foto": "san_evagrio_de_kellia.png",
+    "nombre_es": "San Evagrio de Kellia",
+    "origen": "ilustracion_ia"
+  },
+  "San Fabio": {
+    "foto": "san_fabio.png",
+    "nombre_es": "San Fabio",
+    "origen": "ilustracion_ia"
+  },
+  "San Fabián": {
+    "foto": "san_fabian.png",
+    "nombre_es": "San Fabián",
+    "origen": "ilustracion_ia"
+  },
+  "San Facundo": {
+    "foto": "san_facundo.png",
+    "nombre_es": "San Facundo",
+    "origen": "ilustracion_ia"
+  },
+  "San Fausto": {
+    "foto": "san_fausto.png",
+    "nombre_es": "San Fausto",
+    "origen": "ilustracion_ia"
+  },
+  "San Felipe": {
+    "foto": "san_felipe.png",
+    "nombre_es": "San Felipe",
+    "origen": "ilustracion_ia"
+  },
+  "San Felipe Neri": {
+    "foto": "san_felipe_neri.png",
+    "nombre_es": "San Felipe Neri",
+    "origen": "ilustracion_ia"
+  },
+  "San Fermín de Amiens": {
+    "foto": "san_fermin_de_amiens.png",
+    "nombre_es": "San Fermín de Amiens",
+    "origen": "ilustracion_ia"
+  },
+  "San Fernando": {
+    "foto": "san_fernando.png",
+    "nombre_es": "San Fernando",
+    "origen": "ilustracion_ia"
+  },
+  "San Fernando III el Santo": {
+    "foto": "san_fernando_iii_el_santo.png",
+    "nombre_es": "San Fernando III el Santo",
+    "origen": "ilustracion_ia"
+  },
+  "San Fidel de Sigmaringa": {
+    "foto": "san_fidel_de_sigmaringa.png",
+    "nombre_es": "San Fidel de Sigmaringa",
+    "origen": "ilustracion_ia"
+  },
+  "San Fidelis de Sigmaringen": {
+    "foto": "san_fidelis_de_sigmaringen.png",
+    "nombre_es": "San Fidelis de Sigmaringen",
+    "origen": "ilustracion_ia"
+  },
+  "San Filastro": {
+    "foto": "san_filastro.png",
+    "nombre_es": "San Filastro",
+    "origen": "ilustracion_ia"
+  },
+  "San Filoteo Sinaíta": {
+    "foto": "san_filoteo_sinaita.png",
+    "nombre_es": "San Filoteo Sinaíta",
+    "origen": "ilustracion_ia"
+  },
+  "San Flaviano": {
+    "foto": "san_flaviano.png",
+    "nombre_es": "San Flaviano",
+    "origen": "ilustracion_ia"
+  },
+  "San Francisco": {
+    "foto": "san_francisco.png",
+    "nombre_es": "San Francisco",
+    "origen": "ilustracion_ia"
+  },
+  "San Francisco Antonio Fasani": {
+    "foto": "san_francisco_antonio_fasani.png",
+    "nombre_es": "San Francisco Antonio Fasani",
+    "origen": "ilustracion_ia"
+  },
+  "San Francisco Caracciolo": {
+    "foto": "san_francisco_caracciolo.png",
+    "nombre_es": "San Francisco Caracciolo",
+    "origen": "ilustracion_ia"
+  },
+  "San Francisco Coll": {
+    "foto": "san_francisco_coll.png",
+    "nombre_es": "San Francisco Coll",
+    "origen": "ilustracion_ia"
+  },
+  "San Francisco Solano": {
+    "foto": "san_francisco_solano.png",
+    "nombre_es": "San Francisco Solano",
+    "origen": "ilustracion_ia"
+  },
+  "San Francisco de Asís": {
+    "foto": "san_francisco_de_asis.png",
+    "nombre_es": "San Francisco de Asís",
+    "origen": "ilustracion_ia"
+  },
+  "San Francisco de Borja": {
+    "foto": "san_francisco_de_borja.png",
+    "nombre_es": "San Francisco de Borja",
+    "origen": "ilustracion_ia"
+  },
+  "San Francisco de Jerónimo": {
+    "foto": "san_francisco_de_jeronimo.png",
+    "nombre_es": "San Francisco de Jerónimo",
+    "origen": "ilustracion_ia"
+  },
+  "San Francisco de Paula": {
+    "foto": "san_francisco_de_paula.png",
+    "nombre_es": "San Francisco de Paula",
+    "origen": "ilustracion_ia"
+  },
+  "San Fructuoso": {
+    "foto": "san_fructuoso.png",
+    "nombre_es": "San Fructuoso",
+    "origen": "ilustracion_ia"
+  },
+  "San Félix": {
+    "foto": "san_felix.png",
+    "nombre_es": "San Félix",
+    "origen": "ilustracion_ia"
+  },
+  "San Félix de Cantalicio": {
+    "foto": "san_felix_de_cantalicio.png",
+    "nombre_es": "San Félix de Cantalicio",
+    "origen": "ilustracion_ia"
+  },
+  "San Félix de Nola": {
+    "foto": "san_felix_de_nola.png",
+    "nombre_es": "San Félix de Nola",
+    "origen": "ilustracion_ia"
+  },
+  "San Gabriel (arcángel)": {
+    "foto": "san_gabriel_arcangel.png",
+    "nombre_es": "San Gabriel (arcángel)",
+    "origen": "ilustracion_ia"
+  },
+  "San Galo": {
+    "foto": "san_galo.png",
+    "nombre_es": "San Galo",
+    "origen": "ilustracion_ia"
+  },
+  "San Gerardo Majella": {
+    "foto": "san_gerardo_majella.png",
+    "nombre_es": "San Gerardo Majella",
+    "origen": "ilustracion_ia"
+  },
+  "San Gerardo Mayela": {
+    "foto": "san_gerardo_mayela.png",
+    "nombre_es": "San Gerardo Mayela",
+    "origen": "ilustracion_ia"
+  },
+  "San Gerardo de Caposele": {
+    "foto": "san_gerardo_de_caposele.png",
+    "nombre_es": "San Gerardo de Caposele",
+    "origen": "ilustracion_ia"
+  },
+  "San Gervasio": {
+    "foto": "san_gervasio.png",
+    "nombre_es": "San Gervasio",
+    "origen": "ilustracion_ia"
+  },
+  "San Getulio y compañeros": {
+    "foto": "san_getulio_y_companeros.png",
+    "nombre_es": "San Getulio y compañeros",
+    "origen": "ilustracion_ia"
+  },
+  "San Gontrán": {
+    "foto": "san_gontran.png",
+    "nombre_es": "San Gontrán",
+    "origen": "ilustracion_ia"
+  },
+  "San Gregorio": {
+    "foto": "san_gregorio.png",
+    "nombre_es": "San Gregorio",
+    "origen": "ilustracion_ia"
+  },
+  "San Gregorio Barbarigo": {
+    "foto": "san_gregorio_barbarigo.png",
+    "nombre_es": "San Gregorio Barbarigo",
+    "origen": "ilustracion_ia"
+  },
+  "San Gregorio I Magno": {
+    "foto": "san_gregorio_i_magno.png",
+    "nombre_es": "San Gregorio I Magno",
+    "origen": "ilustracion_ia"
+  },
+  "San Gregorio Magno": {
+    "foto": "san_gregorio_magno.png",
+    "nombre_es": "San Gregorio Magno",
+    "origen": "ilustracion_ia"
+  },
+  "San Gregorio Nacianceno": {
+    "foto": "san_gregorio_nacianceno.png",
+    "nombre_es": "San Gregorio Nacianceno",
+    "origen": "ilustracion_ia"
+  },
+  "San Gregorio VII": {
+    "foto": "san_gregorio_vii.png",
+    "nombre_es": "San Gregorio VII",
+    "origen": "ilustracion_ia"
+  },
+  "San Gregorio de Nacianzo": {
+    "foto": "san_gregorio_de_nacianzo.png",
+    "nombre_es": "San Gregorio de Nacianzo",
+    "origen": "ilustracion_ia"
+  },
   "san-aaron": {
     "foto": "san-aaron.jpg",
     "nombre_es": "San Aarón"
