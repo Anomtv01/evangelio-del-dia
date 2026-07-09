@@ -5,7 +5,7 @@ on:
     # 15:00 UTC = 11:00 AM hora de Nueva York en horario de verano (EDT).
     # Distinto horario que el Evangelio (10 UTC) para no competir por
     # recursos ni saturar las mismas APIs al mismo tiempo.
-    - cron: "0 15 * * *"
+    - cron: "0 9 * * *"
   workflow_dispatch:
     # Permite correrlo a mano desde la pestaña "Actions" de GitHub, con un
     # boton, para probar sin esperar al horario programado.
