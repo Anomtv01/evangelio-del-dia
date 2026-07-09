@@ -4,7 +4,7 @@ on:
   schedule:
     # 10:00 UTC = 6:00 AM hora de Nueva York en horario de verano (EDT).
     # Si querés otro horario, cambiá estos dos números (hora minuto, en UTC).
-    - cron: "0 10 * * *"
+    - cron: "0 4 * * *"
   workflow_dispatch:
     # Esto permite tambien correrlo a mano desde la pestaña "Actions" de
     # GitHub, con un boton, para probar sin esperar al horario programado.
