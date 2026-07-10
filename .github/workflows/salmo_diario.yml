@@ -5,7 +5,7 @@ on:
     # 14:00 UTC. Distinto horario que el Evangelio (04:00) y el Santo (09:00)
     # para repartir el contenido durante el día y no saturar las mismas APIs
     # al mismo tiempo. (Recordá que GitHub puede retrasar las tareas cron.)
-    - cron: "0 12 * * *"
+    - cron: "0 10 * * *"
   workflow_dispatch:
 
 jobs:
