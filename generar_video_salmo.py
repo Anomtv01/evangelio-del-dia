@@ -16,7 +16,8 @@ from santo_utils import crear_thumbnail, generar_audio, crear_video
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(BASE_DIR, "output_salmo")
-CARPETA_ILUSTRACIONES = os.path.join(BASE_DIR, "assets", "ilustraciones_salmos")
+# Las ilustraciones de salmos están directamente en assets/ (salmo_N.png).
+CARPETA_ILUSTRACIONES = os.path.join(BASE_DIR, "assets")
 # Respaldo por si un salmo no tuviera ilustración generada aún:
 CARPETA_FOTOS_SALMOS = os.path.join(BASE_DIR, "fotos_salmos")
 
