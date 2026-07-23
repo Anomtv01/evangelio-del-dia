@@ -1,29 +1,34 @@
 # -*- coding: utf-8 -*-
 """
-Versión adaptada de las funciones de santo.py para la automatización
-diaria: misma lógica de paletas/thumbnail/video, con dos cambios:
+santo_utils.py — Viva la Fe Catolica TV
+========================================
+CAMBIOS FRENTE A LA VERSION ANTERIOR (los tres que costaban dinero):
 
-1. crear_thumbnail() puede recibir la ruta de la foto explícita (en vez
-   de buscarla siempre por el nombre en español, que no coincide con
-   los archivos descargados de Wikimedia, nombrados en inglés).
-2. generar_audio() rota la voz de ElevenLabs por día (igual que
-   generar_narracion.py del Evangelio), en vez de una voz fija.
+1. VOZ: edge-tts (GRATIS, ilimitado) en vez de ElevenLabs.
+   Soporta guion por SEGMENTOS con voces alternadas (narrador + santo),
+   que es lo que sostiene la retencion en videos largos.
+
+2. FORMATO: el video ahora es HORIZONTAL 1920x1080 (antes 1080x1920
+   vertical, que YouTube clasificaba como Short y pagaba ~$0.08 RPM).
+   La miniatura para YouTube sale en 1280x720.
+   Se conserva crear_thumbnail_vertical() por si quieres seguir haciendo
+   Shorts como embudo hacia los videos largos.
+
+3. MOVIMIENTO: efecto Ken Burns opcional (zoom lentisimo) para que una
+   imagen fija no mate la retencion en 11 minutos.
+
+Las 34 paletas, la busqueda de fotos y el estilo grafico se conservan.
 """
 
 import os
 import re
 import subprocess
 
-from elevenlabs.client import ElevenLabs
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
-from voces import voz_del_dia
+# --- Voz gratuita (reemplaza a ElevenLabs) ---
+from voces_edge import generar_voz, generar_dialogo, VOCES
 
-# Mismas 34 paletas de color que ya usa santo.py (copiadas acá para que
-# este módulo sea autocontenido: no importamos santo.py directamente
-# porque ese script ejecuta un procesamiento al final del archivo y
-# depende de un config.py local con la API key de ElevenLabs, que no
-# existe en el entorno de GitHub Actions).
 PALETAS = {
     "rojo_verde":        {"acento": (220, 40, 20),  "caja": (10, 65, 30),   "borde": (255, 70, 40)},
     "azul_naranja":      {"acento": (30, 100, 220),  "caja": (100, 45, 0),   "borde": (255, 140, 20)},
@@ -65,6 +70,8 @@ PALETAS = {
 }
 LISTA_COLORES = list(PALETAS.keys())
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 
 def obtener_color(nombre):
     index = sum(ord(c) for c in nombre) % len(LISTA_COLORES)
@@ -72,16 +79,9 @@ def obtener_color(nombre):
 
 
 def buscar_foto(santo, carpetas_fotos=None):
-    """Busca en la(s) carpeta(s) de fotos. Por defecto revisa primero la
-    carpeta 'fotos/' dentro del proyecto (la que subimos a GitHub, así
-    funciona igual en GitHub Actions), y como respaldo la ruta de
-    Windows C:\\VivaLaFe\\fotos (para cuando corras algo en tu compu)."""
+    """Busca la foto en fotos/ del repo y, como respaldo, C:\\VivaLaFe\\fotos."""
     if carpetas_fotos is None:
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        carpetas_fotos = [
-            os.path.join(base_dir, "fotos"),
-            "C:\\VivaLaFe\\fotos",
-        ]
+        carpetas_fotos = [os.path.join(BASE_DIR, "fotos"), "C:\\VivaLaFe\\fotos"]
     elif isinstance(carpetas_fotos, str):
         carpetas_fotos = [carpetas_fotos]
 
@@ -91,199 +91,453 @@ def buscar_foto(santo, carpetas_fotos=None):
             continue
         for archivo in os.listdir(carpeta):
             if archivo.lower().endswith((".jpg", ".jpeg", ".png")):
-                nombre_archivo = os.path.splitext(archivo)[0].lower()
-                nombre_archivo = nombre_archivo.replace("_", " ").replace("-", " ")
-                if nombre_buscar in nombre_archivo or nombre_archivo in nombre_buscar:
+                base = os.path.splitext(archivo)[0].lower()
+                base = base.replace("_", " ").replace("-", " ")
+                if nombre_buscar in base or base in nombre_buscar:
                     return os.path.join(carpeta, archivo)
     return None
 
 
-def fondo_generico(W, H, paleta):
-    """Portada de respaldo elaborada, para cuando no se encuentra foto
-    del santo: degradado oscuro + resplandor dorado/de la paleta del día
-    + una cruz sencilla, en vez de un color plano."""
-    color_acento = paleta["acento"]
-    color_borde = paleta["borde"]
+def _fuentes(escala=1.0):
+    """
+    Carga fuentes con cadena de respaldo:
+      1) Windows (tu PC)   2) fonts/Lora del repo   3) fuentes del sistema Linux
+    Sin el paso 3, en GitHub Actions caia a load_default() (tamano 10) y la
+    miniatura salia SIN TEXTO LEGIBLE, en silencio.
+    """
+    fdir = os.path.join(BASE_DIR, "fonts")
+    bold = [
+        "C:\\Windows\\Fonts\\arialbd.ttf",
+        os.path.join(fdir, "Lora-Bold.ttf"),
+        "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+    ]
+    reg = [
+        "C:\\Windows\\Fonts\\arial.ttf",
+        os.path.join(fdir, "Lora-Regular.ttf"),
+        "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+    ]
 
+    def _t(rutas, tam):
+        for r in rutas:
+            try:
+                return ImageFont.truetype(r, int(tam * escala))
+            except Exception:                                    # noqa: BLE001
+                continue
+        print("[AVISO] No se encontro ninguna fuente TrueType: "
+              "la miniatura saldra con texto MUY pequeno. "
+              "Sube fonts/Lora-Bold.ttf y fonts/Lora-Regular.ttf al repo.")
+        return ImageFont.load_default()
+
+    return {
+        "san": _t(bold, 75), "n1": _t(bold, 150), "n2": _t(bold, 120),
+        "sub": _t(reg, 48), "gancho": _t(bold, 52),
+    }
+
+
+def fondo_generico(W, H, paleta):
+    """Fondo de respaldo: degradado + resplandor + cruz."""
+    ac, bo = paleta["acento"], paleta["borde"]
     top = (8, 8, 14)
-    bottom = tuple(max(0, c // 6) for c in color_acento)  # tinte sutil de la paleta
+    bottom = tuple(max(0, c // 6) for c in ac)
 
     img = Image.new("RGB", (W, H), top)
-    draw_grad = ImageDraw.Draw(img)
+    d = ImageDraw.Draw(img)
     for y in range(H):
         t = y / H
-        r = int(top[0] + (bottom[0] - top[0]) * t)
-        g = int(top[1] + (bottom[1] - top[1]) * t)
-        b = int(top[2] + (bottom[2] - top[2]) * t)
-        draw_grad.line([(0, y), (W, y)], fill=(r, g, b))
+        d.line([(0, y), (W, y)], fill=(
+            int(top[0] + (bottom[0] - top[0]) * t),
+            int(top[1] + (bottom[1] - top[1]) * t),
+            int(top[2] + (bottom[2] - top[2]) * t)))
 
-    # Resplandor radial suave, centrado un poco arriba del medio
-    overlay = Image.new("L", (W, H), 0)
-    odraw = ImageDraw.Draw(overlay)
-    cx, cy, radio = W // 2, int(H * 0.38), int(W * 0.9)
+    ov = Image.new("L", (W, H), 0)
+    od = ImageDraw.Draw(ov)
+    cx, cy, radio = W // 2, int(H * 0.38), int(max(W, H) * 0.55)
     for i in range(radio, 0, -6):
-        alpha = int(90 * (1 - i / radio) ** 2)
-        odraw.ellipse([cx - i, cy - i, cx + i, cy + i], fill=alpha)
-    overlay = overlay.filter(ImageFilter.GaussianBlur(40))
-    glow_layer = Image.new("RGB", (W, H), color_acento)
-    img = Image.composite(glow_layer, img, overlay)
+        od.ellipse([cx - i, cy - i, cx + i, cy + i],
+                   fill=int(90 * (1 - i / radio) ** 2))
+    ov = ov.filter(ImageFilter.GaussianBlur(40))
+    img = Image.composite(Image.new("RGB", (W, H), ac), img, ov)
 
-    # Cruz simple centrada en la zona del resplandor
-    draw = ImageDraw.Draw(img)
-    tam = int(W * 0.22)
-    grosor = max(10, tam // 10)
-    draw.rectangle(
-        [cx - grosor // 2, cy - tam // 2, cx + grosor // 2, cy + tam // 2],
-        fill=color_borde,
-    )
-    y_h = cy - tam // 6
-    draw.rectangle(
-        [cx - tam // 3, y_h - grosor // 2, cx + tam // 3, y_h + grosor // 2],
-        fill=color_borde,
-    )
+    dr = ImageDraw.Draw(img)
+    tam = int(min(W, H) * 0.22)
+    gr = max(10, tam // 10)
+    dr.rectangle([cx - gr // 2, cy - tam // 2, cx + gr // 2, cy + tam // 2], fill=bo)
+    yh = cy - tam // 6
+    dr.rectangle([cx - tam // 3, yh - gr // 2, cx + tam // 3, yh + gr // 2], fill=bo)
+    return img
+
+
+def _encuadrar(foto, W, H):
+    """
+    Encaja la foto en WxH. Si la proporcion no coincide (tipico: foto
+    vertical del santo en marco horizontal), rellena con la misma imagen
+    desenfocada de fondo -- se ve profesional y no deforma al santo.
+    """
+    ratio_dst = W / H
+    ratio_src = foto.width / foto.height
+
+    if abs(ratio_src - ratio_dst) < 0.12:
+        r = max(W / foto.width, H / foto.height)
+        im = foto.resize((int(foto.width * r), int(foto.height * r)), Image.LANCZOS)
+        l = (im.width - W) // 2
+        t = (im.height - H) // 2
+        return im.crop((l, t, l + W, t + H))
+
+    # Fondo desenfocado que llena el marco
+    r = max(W / foto.width, H / foto.height)
+    fondo = foto.resize((int(foto.width * r), int(foto.height * r)), Image.LANCZOS)
+    l = (fondo.width - W) // 2
+    t = (fondo.height - H) // 2
+    fondo = fondo.crop((l, t, l + W, t + H)).filter(ImageFilter.GaussianBlur(45))
+    fondo = Image.eval(fondo, lambda p: int(p * 0.55))
+
+    # Foto completa centrada encima
+    r2 = min(W / foto.width, H / foto.height) * 0.94
+    front = foto.resize((int(foto.width * r2), int(foto.height * r2)), Image.LANCZOS)
+    fondo.paste(front, ((W - front.width) // 2, (H - front.height) // 2))
+    return fondo
+
+
+def _componer_dividido(santo, W, H, subtitulo, gancho, foto_path, paleta):
+    """
+    Diseno para 16:9: foto del santo a la DERECHA (a sangre, altura completa)
+    y bloque de texto a la IZQUIERDA sobre fondo oscuro.
+    Aprovecha el ancho en vez de dejar franjas borrosas a los lados, y el
+    texto no compite con la cara del santo.
+    """
+    ancho_foto = int(W * 0.46)
+    escala = H / 1080.0
+
+    # --- Fondo oscuro con tinte de la paleta ---
+    ac = paleta["acento"]
+    img = Image.new("RGB", (W, H), (10, 9, 12))
+    d0 = ImageDraw.Draw(img)
+    for y in range(H):
+        t = y / H
+        d0.line([(0, y), (W, y)], fill=(
+            int(14 + ac[0] * 0.07 * (1 - t)),
+            int(12 + ac[1] * 0.07 * (1 - t)),
+            int(16 + ac[2] * 0.07 * (1 - t))))
+
+    # --- Foto a la derecha, encuadrada en el ROSTRO ---
+    if foto_path and os.path.exists(foto_path):
+        foto = Image.open(foto_path).convert("RGB")
+
+        # Las fotos de santos suelen ser de cuerpo entero: si se recorta sin
+        # mas, la cara queda diminuta. Cuando la imagen es muy alargada
+        # (vertical), nos quedamos con su parte SUPERIOR, donde esta el
+        # rostro, y ampliamos esa zona.
+        prop = foto.height / foto.width
+        if prop > 1.5:
+            alto_util = int(foto.height * 0.46)      # tercio-medio superior
+            foto = foto.crop((0, 0, foto.width, alto_util))
+        elif prop > 1.15:
+            alto_util = int(foto.height * 0.68)
+            foto = foto.crop((0, 0, foto.width, alto_util))
+
+        r = max(ancho_foto / foto.width, H / foto.height)
+        f2 = foto.resize((max(1, int(foto.width * r)), max(1, int(foto.height * r))),
+                         Image.LANCZOS)
+        l = (f2.width - ancho_foto) // 2
+        t = max(0, int((f2.height - H) * 0.18))      # deja aire sobre la cabeza
+        f2 = f2.crop((l, t, l + ancho_foto, t + H))
+        img.paste(f2, (W - ancho_foto, 0))
+
+        # Degradado que funde el borde izquierdo de la foto con el fondo
+        fund = int(W * 0.13)
+        mask = Image.new("L", (fund, H), 0)
+        md = ImageDraw.Draw(mask)
+        for x in range(fund):
+            md.line([(x, 0), (x, H)], fill=int(255 * (1 - x / fund)))
+        oscuro = Image.new("RGB", (fund, H), (12, 10, 14))
+        region = (W - ancho_foto, 0, W - ancho_foto + fund, H)
+        base = img.crop(region)
+        img.paste(Image.composite(oscuro, base, mask), region)
+    else:
+        img.paste(fondo_generico(ancho_foto, H, paleta), (W - ancho_foto, 0))
+
+    d = ImageDraw.Draw(img)
+
+    # --- Barra de acento vertical a la izquierda ---
+    bx = int(52 * escala)
+    d.rectangle([bx, int(H * 0.16), bx + int(9 * escala), int(H * 0.84)],
+                fill=paleta["acento"])
+
+    # --- Textos, alineados a la izquierda ---
+    f = _fuentes(escala * 0.95)
+    x = bx + int(38 * escala)
+    ancho_txt = W - ancho_foto - x - int(40 * escala)
+
+    partes = santo.split()
+    prefijo, resto = "", santo
+    if partes and partes[0].lower() in ("san", "santa", "santo", "santos"):
+        prefijo, resto = partes[0].upper(), " ".join(partes[1:])
+
+    lineas_nom = _ajustar(resto.upper(), f["n1"], ancho_txt, d)
+    lineas_g = [l.strip() for l in gancho.split("\n") if l.strip()] if gancho else []
+    lineas_g = [ln for l in lineas_g for ln in _ajustar(l, f["gancho"], ancho_txt, d)]
+
+    h_pref = int(82 * escala) if prefijo else 0
+    h_nom = int(122 * escala)
+    h_sub = int(62 * escala) if subtitulo else 0
+    h_lg = int(56 * escala)
+    h_caja = (len(lineas_g) * h_lg + int(40 * escala)) if lineas_g else 0
+
+    total = h_pref + len(lineas_nom) * h_nom + h_sub + (int(26 * escala) + h_caja
+                                                       if lineas_g else 0)
+    y = max(int(H * 0.11), (H - total) // 2)
+
+    if prefijo:
+        d.text((x, y), prefijo, font=f["san"], fill=(240, 240, 240), anchor="la")
+        y += h_pref
+
+    for i, ln in enumerate(lineas_nom):
+        col = paleta["acento"] if i == 0 else (255, 255, 255)
+        d.text((x, y), ln, font=f["n1"], fill=col, anchor="la")
+        y += h_nom
+
+    if subtitulo:
+        d.text((x, y + int(6 * escala)), subtitulo, font=f["sub"],
+               fill=(198, 198, 198), anchor="la")
+        y += h_sub
+
+    if lineas_g:
+        y += int(26 * escala)
+        d.rectangle([x - int(16 * escala), y,
+                     x + ancho_txt + int(10 * escala), y + h_caja],
+                    fill=paleta["caja"], outline=paleta["borde"],
+                    width=max(2, int(3 * escala)))
+        for i, ln in enumerate(lineas_g):
+            d.text((x, y + int(20 * escala) + i * h_lg), ln,
+                   font=f["gancho"], fill=(255, 232, 205), anchor="la")
+
+    # --- Esquinas decorativas ---
+    m, c = int(24 * escala), int(46 * escala)
+    lw = max(2, int(4 * escala))
+    cb = paleta["borde"]
+    for (px_, py_, dx, dy) in ((m, m, 1, 1), (W - m, m, -1, 1),
+                               (m, H - m, 1, -1), (W - m, H - m, -1, -1)):
+        d.line([(px_, py_), (px_ + c * dx, py_)], fill=cb, width=lw)
+        d.line([(px_, py_), (px_, py_ + c * dy)], fill=cb, width=lw)
 
     return img
 
 
-def crear_thumbnail(santo, carpeta, subtitulo="", gancho="", foto_path=None):
-    W, H = 1080, 1920
-    color = obtener_color(santo)
-    paleta = PALETAS[color]
+def _ajustar(texto, fuente, ancho_max, draw):
+    """Parte el texto en lineas que quepan en ancho_max."""
+    palabras = texto.split()
+    if not palabras:
+        return []
+    lineas, actual = [], palabras[0]
+    for p in palabras[1:]:
+        prueba = actual + " " + p
+        if draw.textlength(prueba, font=fuente) <= ancho_max:
+            actual = prueba
+        else:
+            lineas.append(actual)
+            actual = p
+    lineas.append(actual)
+    return lineas
 
-    ruta_foto = foto_path or buscar_foto(santo)
-    if ruta_foto and os.path.exists(ruta_foto):
-        foto = Image.open(ruta_foto).convert("RGB")
-        ratio_w = W / foto.width
-        ratio_h = H / foto.height
-        ratio = max(ratio_w, ratio_h)
-        nuevo_w = int(foto.width * ratio)
-        nuevo_h = int(foto.height * ratio)
-        foto = foto.resize((nuevo_w, nuevo_h), Image.LANCZOS)
-        left = (nuevo_w - W) // 2
-        top = (nuevo_h - H) // 2
-        foto = foto.crop((left, top, left + W, top + H))
-        img = foto.copy()
+
+def _componer(santo, W, H, subtitulo, gancho, foto_path, paleta, escala):
+    """Dibuja el arte (foto + degradado + esquinas + textos)."""
+    if foto_path and os.path.exists(foto_path):
+        img = _encuadrar(Image.open(foto_path).convert("RGB"), W, H)
     else:
         img = fondo_generico(W, H, paleta)
 
-    overlay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    overlay_draw = ImageDraw.Draw(overlay)
-    for i in range(900):
-        alpha = int(230 * (i / 900))
-        overlay_draw.rectangle([0, H - 900 + i, W, H - 900 + i + 1], fill=(0, 0, 0, alpha))
-    img = img.convert("RGBA")
-    img = Image.alpha_composite(img, overlay)
-    img = img.convert("RGB")
-    draw = ImageDraw.Draw(img)
+    alto_grad = int(H * 0.47)
+    ov = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    od = ImageDraw.Draw(ov)
+    for i in range(alto_grad):
+        od.rectangle([0, H - alto_grad + i, W, H - alto_grad + i + 1],
+                     fill=(0, 0, 0, int(230 * (i / alto_grad))))
+    img = Image.alpha_composite(img.convert("RGBA"), ov).convert("RGB")
+    d = ImageDraw.Draw(img)
 
-    corner = 50
-    lw = 4
+    m = int(25 * escala)
+    c = int(50 * escala)
+    lw = max(2, int(4 * escala))
     cb = paleta["borde"]
-    draw.line([(25, 25), (25 + corner, 25)], fill=cb, width=lw)
-    draw.line([(25, 25), (25, 25 + corner)], fill=cb, width=lw)
-    draw.line([(W - 25, 25), (W - 25 - corner, 25)], fill=cb, width=lw)
-    draw.line([(W - 25, 25), (W - 25, 25 + corner)], fill=cb, width=lw)
-    draw.line([(25, H - 25), (25 + corner, H - 25)], fill=cb, width=lw)
-    draw.line([(25, H - 25), (25, H - 25 - corner)], fill=cb, width=lw)
-    draw.line([(W - 25, H - 25), (W - 25 - corner, H - 25)], fill=cb, width=lw)
-    draw.line([(W - 25, H - 25), (W - 25, H - 25 - corner)], fill=cb, width=lw)
+    for (x, y, dx, dy) in ((m, m, 1, 1), (W - m, m, -1, 1),
+                           (m, H - m, 1, -1), (W - m, H - m, -1, -1)):
+        d.line([(x, y), (x + c * dx, y)], fill=cb, width=lw)
+        d.line([(x, y), (x, y + c * dy)], fill=cb, width=lw)
 
-    try:
-        font_san = ImageFont.truetype("C:\\Windows\\Fonts\\arialbd.ttf", 75)
-        font_nombre1 = ImageFont.truetype("C:\\Windows\\Fonts\\arialbd.ttf", 150)
-        font_nombre2 = ImageFont.truetype("C:\\Windows\\Fonts\\arialbd.ttf", 120)
-        font_subtitulo = ImageFont.truetype("C:\\Windows\\Fonts\\arial.ttf", 48)
-        font_gancho = ImageFont.truetype("C:\\Windows\\Fonts\\arialbd.ttf", 52)
-    except Exception:
-        # En GitHub Actions (Linux) no existen las fuentes de Windows;
-        # usamos Lora, que ya viene incluida en el repo.
-        fonts_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts")
-        try:
-            font_san = ImageFont.truetype(os.path.join(fonts_dir, "Lora-Bold.ttf"), 75)
-            font_nombre1 = ImageFont.truetype(os.path.join(fonts_dir, "Lora-Bold.ttf"), 150)
-            font_nombre2 = ImageFont.truetype(os.path.join(fonts_dir, "Lora-Bold.ttf"), 120)
-            font_subtitulo = ImageFont.truetype(os.path.join(fonts_dir, "Lora-Regular.ttf"), 48)
-            font_gancho = ImageFont.truetype(os.path.join(fonts_dir, "Lora-Bold.ttf"), 52)
-        except Exception:
-            font_san = ImageFont.load_default()
-            font_nombre1 = font_san
-            font_nombre2 = font_san
-            font_subtitulo = font_san
-            font_gancho = font_san
-
+    f = _fuentes(escala)
     cx = W // 2
-    y = H - 780
 
-    palabras = santo.split()
-    prefijo = ""
-    nombre_resto = santo
-    if palabras[0].lower() in ["san", "santa", "santo"]:
-        prefijo = palabras[0].upper()
-        nombre_resto = " ".join(palabras[1:])
+    # --- Layout calculado DESDE ABAJO para que nunca se desborde ---
+    partes = santo.split()
+    prefijo, resto = "", santo
+    if partes and partes[0].lower() in ("san", "santa", "santo", "santos"):
+        prefijo, resto = partes[0].upper(), " ".join(partes[1:])
+    pr = resto.upper().split()
+
+    h_pref = int(95 * escala) if prefijo else 0
+    h_n1 = int(155 * escala)
+    h_n2 = int(130 * escala) if len(pr) >= 2 else 0
+    h_sub = int(70 * escala) if subtitulo else 0
+
+    lineas_g = [l.strip() for l in gancho.split("\n") if l.strip()] if gancho else []
+    h_linea = int(65 * escala)
+    h_caja = (len(lineas_g) * h_linea + int(45 * escala)) if lineas_g else 0
+    h_gap = int(22 * escala) if lineas_g else 0
+
+    margen = int(38 * escala)
+    total = h_pref + h_n1 + h_n2 + h_sub + h_gap + h_caja
+    y = H - margen - total
+    y = max(y, int(H * 0.30))            # nunca invadir el tercio superior
 
     if prefijo:
-        draw.text((cx, y), prefijo, font=font_san, fill=(255, 255, 255), anchor="mm")
-        y += 95
+        d.text((cx, y + h_pref // 2), prefijo, font=f["san"],
+               fill=(255, 255, 255), anchor="mm")
+        y += h_pref
 
-    partes = nombre_resto.upper().split()
-    if len(partes) >= 2:
-        draw.text((cx, y), partes[0], font=font_nombre1, fill=paleta["acento"], anchor="mm")
-        y += 155
-        draw.text((cx, y), " ".join(partes[1:]), font=font_nombre2, fill=(255, 255, 255), anchor="mm")
-        y += 130
+    if len(pr) >= 2:
+        d.text((cx, y + h_n1 // 2), pr[0], font=f["n1"],
+               fill=paleta["acento"], anchor="mm")
+        y += h_n1
+        d.text((cx, y + h_n2 // 2), " ".join(pr[1:]), font=f["n2"],
+               fill=(255, 255, 255), anchor="mm")
+        y += h_n2
     else:
-        draw.text((cx, y), nombre_resto.upper(), font=font_nombre1, fill=paleta["acento"], anchor="mm")
-        y += 160
+        d.text((cx, y + h_n1 // 2), resto.upper(), font=f["n1"],
+               fill=paleta["acento"], anchor="mm")
+        y += h_n1
 
     if subtitulo:
-        draw.text((cx, y), subtitulo, font=font_subtitulo, fill=(200, 200, 200), anchor="mm")
-        y += 65
+        d.text((cx, y + h_sub // 2), subtitulo, font=f["sub"],
+               fill=(205, 205, 205), anchor="mm")
+        y += h_sub
 
-    if gancho:
-        y += 20
-        lineas = gancho.split("\n")
-        alto_caja = len(lineas) * 65 + 45
-        draw.rectangle([50, y, W - 50, y + alto_caja], fill=paleta["caja"], outline=paleta["borde"], width=3)
-        for i, linea in enumerate(lineas):
-            draw.text((cx, y + 30 + i * 65), linea, font=font_gancho, fill=(255, 230, 200), anchor="mm")
-
-    path = os.path.join(carpeta, "thumbnail.png")
-    img.save(path)
-    return path
+    if lineas_g:
+        y += h_gap
+        d.rectangle([int(50 * escala), y, W - int(50 * escala), y + h_caja],
+                    fill=paleta["caja"], outline=paleta["borde"],
+                    width=max(2, int(3 * escala)))
+        for i, linea in enumerate(lineas_g):
+            d.text((cx, y + int(22 * escala) + i * h_linea + h_linea // 2),
+                   linea, font=f["gancho"], fill=(255, 230, 200), anchor="mm")
+    return img
 
 
-def generar_audio(guion, carpeta, fecha_iso, api_key):
-    """Igual que santo.py, pero rotando la voz por día (ver voces.py)
-    en vez de una voz fija."""
-    voice_id = voz_del_dia(fecha_iso)
-    client = ElevenLabs(api_key=api_key)
-    audio = client.text_to_speech.convert(
-        voice_id=voice_id,
-        text=guion,
-        model_id="eleven_multilingual_v2",
-        voice_settings={
-            "stability": 0.62,
-            "similarity_boost": 0.80,
-            "style": 0.27,
-            "use_speaker_boost": True,
-        },
-    )
+def crear_thumbnail(santo, carpeta, subtitulo="", gancho="", foto_path=None):
+    """
+    HORIZONTAL 16:9 con diseno DIVIDIDO (foto derecha / texto izquierda).
+    Genera dos archivos:
+      thumbnail.png   -> 1280x720, la miniatura que se sube a YouTube
+      fondo_video.png -> 1920x1080, el fotograma base del video
+    Devuelve la ruta de thumbnail.png (compatible con el codigo anterior).
+    """
+    paleta = PALETAS[obtener_color(santo)]
+    ruta_foto = foto_path or buscar_foto(santo)
+    os.makedirs(carpeta, exist_ok=True)
+
+    grande = _componer_dividido(santo, 1920, 1080, subtitulo, gancho,
+                                ruta_foto, paleta)
+    p_video = os.path.join(carpeta, "fondo_video.png")
+    grande.save(p_video)
+
+    thumb = grande.resize((1280, 720), Image.LANCZOS)
+    p_thumb = os.path.join(carpeta, "thumbnail.png")
+    thumb.save(p_thumb)
+    return p_thumb
+
+
+def crear_thumbnail_vertical(santo, carpeta, subtitulo="", gancho="", foto_path=None):
+    """VERTICAL 1080x1920 — solo para Shorts (embudo hacia el video largo)."""
+    paleta = PALETAS[obtener_color(santo)]
+    ruta_foto = foto_path or buscar_foto(santo)
+    os.makedirs(carpeta, exist_ok=True)
+    img = _componer(santo, 1080, 1920, subtitulo, gancho, ruta_foto, paleta, 1.0)
+    p = os.path.join(carpeta, "thumbnail_vertical.png")
+    img.save(p)
+    return p
+
+
+# ---------------------------------------------------------------------------
+# AUDIO (edge-tts, gratis)
+# ---------------------------------------------------------------------------
+def generar_audio(guion, carpeta, fecha_iso, api_key=None, perfil="narrador"):
+    """
+    Compatible con la firma anterior (api_key se ignora, ya no hace falta).
+    - Si 'guion' es texto  -> una sola voz.
+    - Si 'guion' es lista de (perfil, texto) -> voces alternadas.
+    Devuelve (ruta_audio, nombre_de_voz).
+    """
+    os.makedirs(carpeta, exist_ok=True)
     path = os.path.join(carpeta, "audio.mp3")
-    with open(path, "wb") as f:
-        for chunk in audio:
-            f.write(chunk)
-    return path, voice_id
+
+    if isinstance(guion, (list, tuple)):
+        generar_dialogo(list(guion), path, pausa=0.7)
+        usadas = sorted({p for p, _ in guion})
+        return path, "+".join(usadas)
+
+    generar_voz(guion, path, perfil)
+    return path, VOCES.get(perfil, perfil)
 
 
-def crear_video(thumbnail, audio, carpeta, nombre_archivo_base):
-    nombre_archivo = re.sub(r'[<>:"/\\|?*]', "", nombre_archivo_base) + ".mp4"
-    output = os.path.join(carpeta, nombre_archivo)
+# ---------------------------------------------------------------------------
+# VIDEO
+# ---------------------------------------------------------------------------
+def _duracion(audio):
+    try:
+        out = subprocess.run(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+             "-of", "default=nw=1:nk=1", audio],
+            capture_output=True, text=True, check=True).stdout.strip()
+        return float(out)
+    except Exception:                                            # noqa: BLE001
+        return None
+
+
+def crear_video(imagen, audio, carpeta, nombre_archivo_base,
+                movimiento=True, fps=24):
+    """
+    Arma el MP4 HORIZONTAL 1920x1080.
+    movimiento=True aplica un zoom lentisimo (Ken Burns) para que una
+    imagen fija no mate la retencion en un video de 11 minutos.
+    Si 'imagen' apunta al thumbnail 1280x720, usa fondo_video.png si existe.
+    """
+    base = os.path.join(os.path.dirname(imagen), "fondo_video.png")
+    if os.path.exists(base):
+        imagen = base
+
+    nombre = re.sub(r'[<>:"/\\|?*]', "", nombre_archivo_base) + ".mp4"
+    output = os.path.join(carpeta, nombre)
     if os.path.exists(output):
         os.remove(output)
-    subprocess.run([
-        "ffmpeg", "-y", "-loop", "1", "-i", thumbnail,
-        "-i", audio, "-c:v", "libx264", "-tune", "stillimage",
-        "-c:a", "aac", "-b:a", "192k", "-pix_fmt", "yuv420p",
-        "-shortest", output
-    ], check=True)
+
+    dur = _duracion(audio)
+
+    if movimiento and dur:
+        frames = max(1, int(dur * fps))
+        vf = (f"scale=3840:-2,zoompan=z='min(zoom+0.00018,1.14)'"
+              f":d={frames}:s=1920x1080:fps={fps},"
+              f"format=yuv420p")
+        cmd = ["ffmpeg", "-y", "-v", "error", "-loop", "1", "-i", imagen,
+               "-i", audio, "-vf", vf, "-c:v", "libx264", "-preset", "veryfast",
+               "-crf", "21", "-c:a", "aac", "-b:a", "192k", "-shortest", output]
+    else:
+        cmd = ["ffmpeg", "-y", "-v", "error", "-loop", "1", "-i", imagen,
+               "-i", audio, "-vf", "scale=1920:1080,format=yuv420p",
+               "-c:v", "libx264", "-tune", "stillimage", "-preset", "veryfast",
+               "-crf", "21", "-c:a", "aac", "-b:a", "192k", "-shortest", output]
+
+    try:
+        subprocess.run(cmd, check=True)
+    except subprocess.CalledProcessError:
+        if movimiento:
+            print("[AVISO] Fallo el efecto de movimiento; se usa imagen fija.")
+            return crear_video(imagen, audio, carpeta, nombre_archivo_base,
+                               movimiento=False, fps=fps)
+        raise
     return output

@@ -1,32 +1,35 @@
 # -*- coding: utf-8 -*-
 """
-Santo del Día - Viva la Fe Católica TV
+Santo del Dia - Viva la Fe Catolica TV
 =======================================
+CAMBIO CLAVE: antes el prompt pedia "biografia de 150-220 palabras", lo que
+daba videos de ~1:30 min. A 167 palabras/min eso son 54-79 segundos. Esos
+videos cortos rinden RPM $0.08.
 
-Determina el santo/fiesta que corresponde a la fecha (hoy por defecto,
-según hora de Nueva York), y usa la API de Claude para generar:
-  - El nombre en español (San/Santa + nombre)
-  - Un subtítulo corto (epíteto)
-  - Un "gancho" de 2 líneas para el thumbnail
-  - Una biografía breve, ORIGINAL (basada en el conocimiento general de
-    Claude, no copiada de ningún sitio) lista para narrar
+Ahora pide un GUION LARGO POR SEGMENTOS (~1.850 palabras = ~11 min) con
+estructura de retencion y voces alternadas (narrador + el santo hablando
+en primera persona). Videos de mas de 8 min admiten anuncios a mitad
+(mid-roll) y rinden RPM ~$2.03 en este canal.
+
+Se conservan las claves del JSON de salida (subtitulo, gancho, biografia)
+para que generar_metadata_santo.py y subir_youtube_santo.py sigan
+funcionando sin cambios. Se AGREGA la clave "segmentos".
 
 Uso:
     python santo_del_dia.py                # santo de hoy
-    python santo_del_dia.py 2026-08-11      # santo de una fecha específica
-
-Salida: output_santo/santo_<fecha>.json
+    python santo_del_dia.py 2026-08-11     # una fecha especifica
 """
 
 import json
 import os
+import re
 import sys
 from datetime import date, datetime
 
 try:
     from zoneinfo import ZoneInfo
     _ZONA_NY = ZoneInfo("America/New_York")
-except Exception:
+except Exception:                                                # noqa: BLE001
     _ZONA_NY = None
 
 import anthropic
@@ -35,40 +38,83 @@ from santo_rotativo import santo_rotativo
 
 MODELO = "claude-sonnet-5"
 
+# --- Duracion objetivo -----------------------------------------------------
+PALABRAS_POR_MINUTO = 167          # MEDIDO con edge-tts real
+MINUTOS_OBJETIVO = 11              # margen sobre el minimo de 8 del mid-roll
+MINUTOS_MINIMOS = 8.5
+PALABRAS_OBJETIVO = int(MINUTOS_OBJETIVO * PALABRAS_POR_MINUTO)   # ~1837
+
+# El JSON largo no cabe en 2000 tokens: se empieza alto y se sube si trunca
+MAX_TOKENS_INTENTOS = [8000, 12000, 16000]
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(BASE_DIR, "output_santo")
 
-SYSTEM_PROMPT = """Sos un guionista católico para el canal de YouTube \
-"Viva la Fe Católica TV", dirigido a una audiencia católica \
-latinoamericana, mayormente de 55 años en adelante, en México y Estados \
-Unidos.
+VOCES_NARRACION = ("narrador", "narradora", "narrador_us", "narradora_us")
+VOCES_PERSONAJE = ("santo", "santa", "jesus", "virgen")
 
-Te doy el nombre de un santo/fiesta católica (ya en español), y vos \
-generás un paquete completo, usando tu conocimiento general sobre esa \
-persona o fiesta -- NUNCA copies ni parafrasees de cerca ningún sitio o \
-libro en particular, escribís con tus propias palabras.
 
-Devolvé SOLO un objeto JSON (nada de texto antes o después), con estas \
-claves exactas:
+SYSTEM_PROMPT = """Sos guionista catolico del canal de YouTube "Viva la Fe \
+Catolica TV", dirigido a una audiencia catolica latinoamericana, mayormente \
+mujeres de 55 anos en adelante, en Mexico y Estados Unidos.
+
+Escribis usando tu conocimiento general sobre el santo o la fiesta. NUNCA \
+copies ni parafrasees de cerca ningun sitio ni libro: escribis con tus \
+propias palabras.
+
+REGLAS DE CONTENIDO (obligatorias):
+1. RIGOR: solo datos historicos y hagiograficos ampliamente documentados y \
+reconocidos por la Iglesia. NO inventes fechas, lugares, milagros ni frases.
+2. Si algo pertenece a la tradicion piadosa pero no esta documentado, \
+introducilo con 'segun la tradicion' o 'cuenta la piedad popular'.
+3. Si NO estas seguro de un dato puntual, quedate en generalidades conocidas.
+4. Doctrina catolica correcta, nada contrario al Magisterio.
+5. Tono pastoral, calido y reverente. Nunca sensacionalista ni morboso: \
+podes narrar el martirio con emocion, pero sin regodearte en lo truculento.
+6. Espanol neutro latinoamericano, frases claras y de longitud media (lo lee \
+una voz sintetica y lo escuchan personas mayores).
+7. Escribi los numeros en letras ('mil quinientos', no '1500') para que la \
+voz los lea bien.
+8. ORTOGRAFIA COMPLETA: escribi SIEMPRE con tildes y con la letra ñ donde \
+corresponda ('años', no 'anos'; 'martirio', 'oracion' lleva tilde: \
+'oración'). El texto se muestra en pantalla y lo lee una voz sintetica: sin \
+tildes ni ñ, se ve mal escrito y se pronuncia mal. Esto aplica sobre todo al \
+'gancho' y al 'subtitulo', que aparecen en la miniatura.
+9. Las intervenciones en primera persona del santo deben ser verosimiles y \
+coherentes con lo que se sabe de el, presentadas como reconstruccion \
+narrativa, no como cita textual documentada.
+
+ESTRUCTURA DEL GUION (en este orden):
+- gancho: el momento mas impactante, SIN revelar el desenlace (2-3 frases)
+- contexto: epoca, lugar, situacion de la Iglesia y de su familia
+- vida: infancia, formacion, como llego a la fe o a su vocacion
+- conflicto: la prueba, persecucion, tentacion o conversion
+- dialogo: intervenciones donde el santo HABLA en primera persona, \
+alternadas con el narrador. Es lo que mas retiene: al menos 5 replicas \
+repartidas a lo largo del guion.
+- climax: el martirio, el milagro o el momento culminante
+- legado: que dejo a la Iglesia, devocion posterior, patronazgo
+- aplicacion: que ensena hoy a la vida concreta del espectador
+- cierre: invitacion breve a suscribirse y a dejar su intencion de oracion \
+en los comentarios
+
+FORMATO DE SALIDA:
+Devolve UNICAMENTE un objeto JSON valido, sin texto antes ni despues y sin \
+bloques de markdown:
 
 {
-  "subtitulo": "un epíteto corto, 3-6 palabras (ej. 'Apóstol de las Indias')",
-  "gancho": "una frase de gancho para el thumbnail, en 2 líneas separadas \
-por \\n, máximo ~10 palabras por línea, llamativa pero reverente",
-  "biografia": "150-220 palabras, en español neutro y cálido, con la \
-vida/importancia de este santo o el significado de esta fiesta. Si es \
-una fiesta del Señor o de la Virgen (no una persona con biografía), \
-explicá el significado teológico/histórico de la fiesta en su lugar. \
-Terminá con una invitación breve a vivir esa virtud o a la oración."
+  "subtitulo": "epiteto corto, 3-6 palabras",
+  "gancho": "frase para el thumbnail en 2 lineas separadas por \\n, maximo \
+unas 8 palabras por linea, llamativa pero reverente",
+  "segmentos": [
+    {"seccion": "gancho", "voz": "NARRACION", "texto": "..."},
+    {"seccion": "dialogo", "voz": "PERSONAJE", "texto": "..."}
+  ]
 }
 
-Reglas importantes:
-- Si NO estás seguro de un dato específico (fecha exacta, lugar preciso, \
-detalle biográfico puntual), no lo inventes -- quedate en generalidades \
-conocidas y ampliamente documentadas sobre esa persona/fiesta.
-- Tono pastoral, cercano, nunca académico ni frío.
-- Nunca uses comillas dobles dentro de los valores del JSON (usá comillas \
-simples si hace falta citar algo)."""
+En cada segmento, "voz" debe ser exactamente el perfil de narracion que se \
+te indique, o el perfil de personaje que se te indique cuando el santo \
+habla en primera persona. No inventes otros nombres de voz."""
 
 
 def fecha_hoy_ny():
@@ -78,47 +124,145 @@ def fecha_hoy_ny():
 
 
 def extraer_texto(mensaje):
-    """Devuelve el texto de la respuesta de Claude, buscando el bloque de
-    tipo 'text' en vez de asumir que es el primer bloque (content[0]).
-    Necesario porque el modelo puede devolver primero un bloque de
-    'thinking' (razonamiento interno) antes del bloque de texto real."""
+    """Devuelve el bloque de texto (puede venir precedido de 'thinking')."""
     for bloque in mensaje.content:
         if getattr(bloque, "type", None) == "text":
             return bloque.text.strip()
     raise RuntimeError(
-        "La respuesta de Claude no incluyó ningún bloque de texto "
-        f"(tipos recibidos: {[getattr(b, 'type', '?') for b in mensaje.content]})."
-    )
+        "La respuesta de Claude no incluyo ningun bloque de texto "
+        f"(tipos: {[getattr(b, 'type', '?') for b in mensaje.content]}).")
 
 
-def generar_contenido_santo(nombre_es):
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
+def _parsear_json(texto):
+    t = texto.replace("```json", "").replace("```", "").strip()
+    try:
+        return json.loads(t, strict=False)
+    except json.JSONDecodeError:
+        ini, fin = t.find("{"), t.rfind("}")
+        if ini != -1 and fin > ini:
+            return json.loads(t[ini:fin + 1], strict=False)
+        raise
+
+
+def contar_palabras(segmentos):
+    return sum(len(s.get("texto", "").split()) for s in segmentos)
+
+
+def _validar(datos, voz_narracion, voz_personaje):
+    """Normaliza voces y descarta segmentos vacios."""
+    segs = datos.get("segmentos") or []
+    if not segs:
+        raise ValueError("El guion no trae segmentos.")
+
+    limpios = []
+    for s in segs:
+        texto = (s.get("texto") or "").strip()
+        if not texto:
+            continue
+        voz = s.get("voz", voz_narracion)
+        if voz in VOCES_PERSONAJE or voz == voz_personaje:
+            voz = voz_personaje
+        else:
+            voz = voz_narracion
+        limpios.append({"seccion": s.get("seccion", ""), "voz": voz, "texto": texto})
+
+    if not limpios:
+        raise ValueError("Todos los segmentos venian vacios.")
+
+    datos["segmentos"] = limpios
+    datos.setdefault("subtitulo", "")
+    datos.setdefault("gancho", "")
+    return datos
+
+
+def generar_contenido_santo(nombre_es, voz_narracion, voz_personaje,
+                            palabras=PALABRAS_OBJETIVO):
+    if not os.environ.get("ANTHROPIC_API_KEY"):
         raise RuntimeError("Falta la variable de entorno ANTHROPIC_API_KEY.")
 
-    client = anthropic.Anthropic(api_key=api_key)
-    mensaje = client.messages.create(
-        model=MODELO,
-        # Subido de 800 a 2000: el modelo puede generar un bloque de
-        # "pensamiento" (thinking) antes de la respuesta real, que
-        # consume parte de este límite -- si quedaba muy justo, el JSON
-        # se cortaba a la mitad (error "Unterminated string").
-        max_tokens=2000,
-        system=SYSTEM_PROMPT,
-        messages=[
-            {"role": "user", "content": f"Santo/fiesta: {nombre_es}"}
-        ],
+    client = anthropic.Anthropic()
+    peticion = (
+        f"Santo/fiesta: {nombre_es}\n\n"
+        f"Perfil de voz para la narracion: \"{voz_narracion}\"\n"
+        f"Perfil de voz para el personaje en primera persona: \"{voz_personaje}\"\n\n"
+        f"DURACION OBJETIVO: {MINUTOS_OBJETIVO} minutos de audio narrado, es "
+        f"decir unas {palabras} palabras sumando TODOS los segmentos.\n"
+        f"Es imprescindible alcanzar esa extension: un guion corto no sirve "
+        f"para este proyecto. Desarrolla con detalle el contexto historico, "
+        f"la vida, las pruebas y el legado.\n\n"
+        f"Incluye al menos cinco intervenciones del personaje en primera "
+        f"persona, repartidas a lo largo del guion y alternadas con el "
+        f"narrador.\n\nDevolve solo el JSON."
     )
-    texto = extraer_texto(mensaje)
-    texto = texto.replace("```json", "").replace("```", "").strip()
-    try:
-        # strict=False: tolera saltos de línea reales (no escapados como
-        # \n) dentro de los valores del JSON.
-        return json.loads(texto, strict=False)
-    except json.JSONDecodeError as e:
-        print(f"[DEBUG] No se pudo parsear el JSON de Claude ({e}). "
-              f"Texto recibido (primeros 800 caracteres):\n{texto[:800]}")
-        raise
+
+    ultimo = None
+    for i, max_tokens in enumerate(MAX_TOKENS_INTENTOS, 1):
+        print(f"  [intento {i}/{len(MAX_TOKENS_INTENTOS)}] max_tokens={max_tokens}")
+        try:
+            msg = client.messages.create(
+                model=MODELO, max_tokens=max_tokens,
+                system=SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": peticion}])
+
+            if getattr(msg, "stop_reason", None) == "max_tokens":
+                print("     respuesta truncada, subiendo tokens...")
+                ultimo = "truncado"
+                continue
+
+            datos = _validar(_parsear_json(extraer_texto(msg)),
+                             voz_narracion, voz_personaje)
+            n = contar_palabras(datos["segmentos"])
+            print(f"     OK: {len(datos['segmentos'])} segmentos, {n} palabras, "
+                  f"~{n / PALABRAS_POR_MINUTO:.1f} min estimados")
+            return datos
+
+        except json.JSONDecodeError as e:
+            ultimo = f"JSON invalido: {e}"
+            print(f"     {ultimo}")
+        except Exception as e:                                   # noqa: BLE001
+            ultimo = e
+            print(f"     error: {e}")
+
+    raise RuntimeError(f"No se pudo generar el guion. Ultimo error: {ultimo}")
+
+
+def ampliar(datos, nombre_es, voz_narracion, voz_personaje, palabras_faltan):
+    """Pide segmentos adicionales si el guion quedo corto."""
+    client = anthropic.Anthropic()
+    resumen = "\n".join(f"[{s['seccion']}] {s['texto'][:100]}..."
+                        for s in datos["segmentos"])
+    peticion = (
+        f"Guion actual sobre {nombre_es}:\n\n{resumen}\n\n"
+        f"Quedo CORTO. Necesito {palabras_faltan} palabras ADICIONALES.\n"
+        f"Genera segmentos NUEVOS que se insertaran antes del cierre. "
+        f"Profundiza en el contexto historico, su formacion, otras pruebas y "
+        f"mas intervenciones en primera persona. NO repitas lo ya escrito y "
+        f"NO incluyas gancho ni cierre.\n\n"
+        f"Devolve solo:\n"
+        f'{{"segmentos": [{{"seccion": "ampliacion", "voz": "{voz_narracion}", '
+        f'"texto": "..."}}]}}'
+    )
+    for max_tokens in MAX_TOKENS_INTENTOS:
+        try:
+            msg = client.messages.create(
+                model=MODELO, max_tokens=max_tokens, system=SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": peticion}])
+            if getattr(msg, "stop_reason", None) == "max_tokens":
+                continue
+            extra = _validar(_parsear_json(extraer_texto(msg)),
+                             voz_narracion, voz_personaje)
+            segs = datos["segmentos"]
+            pos = next((i for i, s in enumerate(segs)
+                        if s.get("seccion", "").lower().startswith("cierre")),
+                       len(segs))
+            datos["segmentos"] = segs[:pos] + extra["segmentos"] + segs[pos:]
+            print(f"     +{len(extra['segmentos'])} segmentos "
+                  f"({contar_palabras(extra['segmentos'])} palabras)")
+            return datos
+        except Exception as e:                                   # noqa: BLE001
+            print(f"     error ampliando: {e}")
+    print("     no se pudo ampliar; se continua igual")
+    return datos
 
 
 def main():
@@ -126,28 +270,54 @@ def main():
 
     info = santo_rotativo(fecha_str)
     if not info:
-        print("El banco de santos (data/pool_santos.json) está vacío. "
-              "Corré descargar_fotos_wikitolica.py primero.")
+        print("El banco de santos (data/pool_santos.json) esta vacio.")
         sys.exit(1)
+
+    nombre_es = info["nombre_es"]
+    voz_narracion = info.get("voz", "narrador")
+    voz_personaje = "santa" if nombre_es.strip().lower().startswith("santa") else "santo"
 
     print(f"Fecha: {fecha_str}")
-    print(f"Santo del día (rotativo): {info['nombre_es']}")
+    print(f"Santo del dia: {nombre_es}")
+    print(f"Voz narracion: {voz_narracion} | Voz personaje: {voz_personaje}")
+    print(f"Objetivo: {MINUTOS_OBJETIVO} min (~{PALABRAS_OBJETIVO} palabras)\n")
 
     try:
-        contenido = generar_contenido_santo(info["nombre_es"])
-    except Exception as e:
-        print(f"[ERROR] Falló la generación de contenido con Claude: {e}")
+        contenido = generar_contenido_santo(nombre_es, voz_narracion, voz_personaje)
+    except Exception as e:                                       # noqa: BLE001
+        print(f"[ERROR] Fallo la generacion con Claude: {e}")
         sys.exit(1)
+
+    # Ampliar si quedo corto
+    n = contar_palabras(contenido["segmentos"])
+    minimo = int(MINUTOS_MINIMOS * PALABRAS_POR_MINUTO)
+    if n < minimo:
+        faltan = minimo - n + 200
+        print(f"\n  Corto ({n} palabras). Ampliando +{faltan}...")
+        contenido = ampliar(contenido, nombre_es, voz_narracion,
+                            voz_personaje, faltan)
+        n = contar_palabras(contenido["segmentos"])
+        print(f"  Ahora: {n} palabras (~{n / PALABRAS_POR_MINUTO:.1f} min)")
+
+    # "biografia" se conserva (texto plano completo) para no romper los
+    # scripts de metadata y subida que ya existen.
+    biografia = " ".join(s["texto"] for s in contenido["segmentos"])
 
     resultado = {
         "fecha": fecha_str,
         "nombre_en": info["nombre_en"],
         "nombre_limpio_en": info["nombre_limpio_en"],
-        "nombre_es": info["nombre_es"],
+        "nombre_es": nombre_es,
         "foto": info.get("foto"),
         "subtitulo": contenido["subtitulo"],
         "gancho": contenido["gancho"],
-        "biografia": contenido["biografia"],
+        "biografia": biografia,
+        # --- nuevo ---
+        "segmentos": contenido["segmentos"],
+        "voz_narracion": voz_narracion,
+        "voz_personaje": voz_personaje,
+        "palabras": n,
+        "minutos_estimados": round(n / PALABRAS_POR_MINUTO, 1),
     }
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -155,9 +325,10 @@ def main():
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(resultado, f, ensure_ascii=False, indent=2)
 
-    print(f"\n{info['nombre_es']} — {contenido['subtitulo']}")
+    print(f"\n{nombre_es} - {contenido['subtitulo']}")
     print(f"Gancho: {contenido['gancho']}")
-    print(f"\nBiografía:\n{contenido['biografia']}")
+    print(f"Segmentos: {len(contenido['segmentos'])} | "
+          f"Palabras: {n} | Estimado: {resultado['minutos_estimados']} min")
     print(f"\nGuardado en: {out_path}")
 
 
