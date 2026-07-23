@@ -31,6 +31,7 @@ VER VOCES REALES:   edge-tts --list-voices | findstr es-
 
 import asyncio
 import os
+import re
 import shutil
 import subprocess
 import tempfile
@@ -55,6 +56,9 @@ VOCES = {
     "guia_alt":      "es-US-PalomaNeural",
     "respuesta_alt": "es-US-AlonsoNeural",
 
+    # --- Proclamacion de la Escritura (Salmos, Evangelio) ---
+    "escritura": "es-MX-JorgeNeural",       # solemne, pausada
+
     # --- Personajes (modo dialogo) ---
     "santo":   "es-US-AlonsoNeural",
     "santa":   "es-US-PalomaNeural",
@@ -77,6 +81,8 @@ PERFILES = {
     "respuesta":     {"rate": "-10%", "pitch": "-2Hz"},
     "guia_alt":      {"rate": "-12%", "pitch": "+0Hz"},
     "respuesta_alt": {"rate": "-10%", "pitch": "-2Hz"},
+
+    "escritura": {"rate": "-16%", "pitch": "-3Hz"},   # muy pausada, orante
 
     "santo":   {"rate": "-6%",  "pitch": "-3Hz"},
     "santa":   {"rate": "-6%",  "pitch": "+2Hz"},
@@ -126,7 +132,19 @@ async def _generar_async(texto, salida, perfil="narrador",
     if not texto or not texto.strip():
         raise ValueError("El texto esta vacio.")
 
-    voz = VOCES.get(perfil, perfil)
+    voz = VOCES.get(perfil)
+    if voz is None:
+        # El perfil no esta en el catalogo. Puede ser el nombre real de una
+        # voz ("es-MX-DaliaNeural") o un perfil que no existe en esta version
+        # del archivo. Si no tiene forma de voz real, se usa una por defecto
+        # en vez de tumbar todo el pipeline con "Invalid voice".
+        if re.match(r"^[a-z]{2}-[A-Z]{2}-\w+$", str(perfil)):
+            voz = perfil
+        else:
+            voz = VOCES["narrador"]
+            print("   [aviso] Perfil de voz '%s' desconocido; se usa "
+                  "'narrador'. Actualiza voces_edge.py." % perfil)
+            perfil = "narrador"
     base = PERFILES.get(perfil, {})
     ajustes = {
         "rate":  rate  if rate  is not None else base.get("rate", "+0%"),
