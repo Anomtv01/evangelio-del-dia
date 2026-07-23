@@ -1,0 +1,83 @@
+name: Santo del Dia
+
+on:
+  schedule:
+    # ANTES: "0 7 * * *" = 7:00 UTC = 3:00 AM en Nueva York.
+    # Publicaba de madrugada, cuando la audiencia duerme, y se perdian las
+    # primeras horas de interaccion (que es lo que mas pesa para el alcance).
+    #
+    # AHORA: 16:00 UTC = 12:00 PM (mediodia) en Nueva York en horario de
+    # verano (EDT), dentro de la ventana 12PM-7PM ET del publico latino de
+    # EE.UU. GitHub Actions suele arrancar con algunos minutos de retraso.
+    - cron: "0 16 * * *"
+  workflow_dispatch:
+    # Permite correrlo a mano desde la pestana "Actions", para probar.
+
+jobs:
+  generar-y-subir:
+    runs-on: ubuntu-latest
+    # Un video de 11 minutos tarda unos 10 min en renderizarse.
+    timeout-minutes: 60
+
+    steps:
+      - name: Descargar el codigo del repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Instalar dependencias de Python
+        run: |
+          pip install -r requisitos.txt
+          # edge-tts: voz gratuita que reemplaza a ElevenLabs.
+          # Se instala aparte por si todavia no esta en requisitos.txt.
+          pip install --upgrade edge-tts
+
+      - name: Verificar que hay fuentes para la miniatura
+        # Sin fuentes TrueType, la miniatura sale con texto diminuto y
+        # el fallo pasa desapercibido. Mejor detectarlo aqui.
+        run: |
+          if [ ! -f fonts/Lora-Bold.ttf ]; then
+            echo "AVISO: falta fonts/Lora-Bold.ttf; se usaran las fuentes DejaVu del sistema."
+            sudo apt-get install -y fonts-dejavu-core
+          fi
+
+      - name: Comprobar que edge-tts alcanza el servicio de voz
+        # Los runners de GitHub usan IP de centro de datos y Microsoft puede
+        # limitarlas. Si falla, el job se detiene AQUI con un mensaje claro,
+        # en vez de romperse a mitad del pipeline tras gastar tokens de Claude.
+        run: |
+          python -c "
+          import asyncio, edge_tts
+          async def main():
+              v = await edge_tts.list_voices()
+              es = [x for x in v if x['Locale'].startswith('es-')]
+              print('edge-tts OK: %d voces en espanol' % len(es))
+              assert es, 'No se recibieron voces en espanol'
+          asyncio.run(main())
+          "
+
+      - name: Reconstruir las credenciales de Google (desde los Secrets)
+        env:
+          CLIENT_SECRET_CONTENT: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          TOKEN_CONTENT: ${{ secrets.GOOGLE_TOKEN }}
+        run: python3 -c "import os; open('client_secret.json','w').write(os.environ['CLIENT_SECRET_CONTENT']); open('token.json','w').write(os.environ['TOKEN_CONTENT']); print('Archivos escritos.')"
+
+      - name: Generar y subir el Santo del dia
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # ELEVENLABS_API_KEY ya no hace falta: la voz es edge-tts (gratis).
+        run: python generar_todo_santo.py
+
+      - name: Guardar los archivos generados (por si hay que revisar algo)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-santo-del-dia
+          path: output_santo/
+          retention-days: 7
