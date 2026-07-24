@@ -58,6 +58,8 @@ VOCES = {
 
     # --- Proclamacion de la Escritura (Salmos, Evangelio) ---
     "escritura": "es-MX-JorgeNeural",       # solemne, pausada
+    "sacerdote": "es-US-AlonsoNeural",      # sacerdote/testigo del milagro
+    "testigo":   "es-US-PalomaNeural",      # testigo (voz femenina)
 
     # --- Personajes (modo dialogo) ---
     "santo":   "es-US-AlonsoNeural",
@@ -83,6 +85,8 @@ PERFILES = {
     "respuesta_alt": {"rate": "-10%", "pitch": "-2Hz"},
 
     "escritura": {"rate": "-16%", "pitch": "-3Hz"},   # muy pausada, orante
+    "sacerdote": {"rate": "-7%",  "pitch": "-3Hz"},
+    "testigo":   {"rate": "-6%",  "pitch": "+1Hz"},
 
     "santo":   {"rate": "-6%",  "pitch": "-3Hz"},
     "santa":   {"rate": "-6%",  "pitch": "+2Hz"},

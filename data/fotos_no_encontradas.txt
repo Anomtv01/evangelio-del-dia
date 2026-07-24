@@ -1,239 +1,594 @@
-5th Day of the Octave of Christmas
-6th Day of the Octave of Christmas
-7th Day of the Octave of Christmas
-Saint Adalbert, Bishop and Martyr
-Saint Agatha, Virgin and Martyr
-Saint Agnes, Virgin and Martyr
-All Saints
-All Saints Vigil Mass
-Saint Alphonsus Mary Liguori, Bishop and Doctor of the Church
-Saint Andrew Dũng-Lạc, Priest, and Companions, Martyrs
-Saint Angela Merici, Virgin
-Annunciation of the Lord
-Annunciation of the Lord Vigil Mass
-Saint Anselm, Bishop and Doctor of the Church
-Saint Ansgar, Bishop
-Saint Anthony, Abbot
-Saint Anthony Mary Claret, Bishop
-Saint Anthony of Padua, Priest and Doctor of the Church
-Saint Apollinaris, Bishop and Martyr
-Ascension
-Ascension Vigil Mass
-Saint Athanasius, Bishop and Doctor of the Church
-Saint Augustine, Bishop and Doctor of the Church
-Saint Augustine Zhao Rong, Priest, and Companions, Martyrs
-Saint Augustine of Canterbury, Bishop
-Baptism of the Lord
-Baptism of the Lord Vigil Mass
-Saint Barnabas the Apostle
-Saint Bartholomew, Apostle
-Saint Benedict, Abbot
-Saint Bernard, Abbot and Doctor of the Church
-Saint Bernardine of Siena, Priest
-Saint Blase, Bishop and Martyr
-Saint Bonaventure, Bishop and Doctor of the Church
-Saint Boniface, Bishop and Martyr
-Saint Bridget, Religious
-Saint Bruno, Priest
-Saint Cajetan, Priest
-Saint Callistus I, Pope and Martyr
-Saint Camillus de Lellis, Priest
-Saint Casimir
-Saint Catherine of Alexandria, Virgin and Martyr
-Saint Catherine of Siena, Virgin and Doctor of the Church
-Saint Charles Borromeo, Bishop
-Saint Charles Lwanga and Companions, Martyrs
-Christ the King
-Christ the King Vigil Mass
-Christmas
-Saint Christopher Magallanes, Priest, and Companions, Martyrs
-Saint Clare, Virgin
-Saint Clement I, Pope and Martyr
-Saint Columban, Religious
-Corpus Christi
-Corpus Christi Vigil Mass
-Saint Cyril of Alexandria, Bishop and Doctor of the Church
-Saint Cyril of Jerusalem, Bishop and Doctor of the Church
-Saint Damasus I, Pope
-Saint Denis, Bishop, and Companions, Martyrs
-Saint Dominic, Priest
-Saint Elizabeth of Hungary, Religious
-Saint Elizabeth of Portugal
-Saint Ephrem, Deacon and Doctor of the Church
-Epiphany
-Epiphany Vigil Mass
-Exaltation of the Holy Cross
-Saint Fabian, Pope and Martyr
-Saint Faustina Kowalska
-Saint Fidelis of Sigmaringen, Priest and Martyr
-Fifth Sunday of Easter
-Fifth Sunday of Easter Vigil Mass
-Fifth Sunday of Lent
-Fifth Sunday of Lent Vigil Mass
-First Sunday of Advent
-First Sunday of Advent Vigil Mass
-First Sunday of Lent
-First Sunday of Lent Vigil Mass
-Fourth Sunday of Advent
-Fourth Sunday of Advent Vigil Mass
-Fourth Sunday of Easter
-Fourth Sunday of Easter Vigil Mass
-Fourth Sunday of Lent
-Fourth Sunday of Lent Vigil Mass
-Saint Frances of Rome, Religious
-Saint Francis Xavier, Priest
-Saint Francis de Sales, Bishop and Doctor of the Church
-Saint George, Martyr
-Saint Gertrude the Great, Virgin
-Good Friday
-Saint Gregory of Narek, Abbot and Doctor of the Church
-Saint Gregory the Great, Pope and Doctor of the Church
-Saint Hedwig, Religious
-Saint Henry
-Saint Hilary, Bishop and Doctor of the Church
-Saint Hildegard of Bingen, Virgin and Doctor of the Church
-Saint Ignatius of Antioch, Bishop and Martyr
-Saint Ignatius of Loyola, Priest
-Saint James, Apostle
-Saint Jane Frances de Chantal, Religious
-Saint Januarius, Bishop and Martyr
-Saint Jerome, Priest and Doctor of the Church
-Saint John, Apostle and Evangelist
-Saint John Bosco, Priest
-Saint John Damascene, Priest and Doctor of the Church
-Saint John Eudes, Priest
-Saint John I, Pope and Martyr
-Saint John Leonardi, Priest
-Saint John Mary Vianney, Priest
-Saint John Paul II, Pope
-Saint John of Capestrano, Priest
-Saint John of Kanty, Priest
-Saint Josaphat, Bishop and Martyr
-Saint Joseph Calasanz, Priest
-Saint Joseph Husband of the Blessed Virgin Mary
-Saint Joseph Husband of the Blessed Virgin Mary Vigil Mass
-Saint Joseph the Worker
-Saint Juan Diego Cuauhtlatoatzin
-Saint Justin Martyr
-Saint Lawrence, Deacon and Martyr
-Saint Lawrence Ruiz and Companions, Martyrs
-Saint Lawrence of Brindisi, Priest and Doctor of the Church
-Saint Leo the Great, Pope and Doctor of the Church
-Saint Louis
-Saint Louis Grignion de Montfort, Priest
-Saint Lucy of Syracuse, Virgin and Martyr
-Saint Margaret Mary Alacoque, Virgin
-Saint Margaret of Scotland
-Saint Maria Goretti, Virgin and Martyr
-Saint Mark the Evangelist
-Saint Martha
-Saint Martin I, Pope and Martyr
-Saint Martin de Porres, Religious
-Saint Martin of Tours, Bishop
-Mary, Mother of God
-Saint Mary Magdalene
-Saint Matthew, Apostle and Evangelist
-Saint Maximilian Mary Kolbe, Priest and Martyr
-Saint Monica
-Most Sacred Heart of Jesus
-Most Sacred Heart of Jesus Vigil Mass
-Saint Nicholas, Bishop
-Saint Norbert, Bishop
-Our Lady of Fatima
-Our Lady of Guadalupe
-Our Lady of Lourdes
-Our Lady of Mount Carmel
-Our Lady of Sorrows
-Our Lady of the Rosary
-Palm Sunday
-Palm Sunday Vigil Mass
-Saint Pancras, Martyr
-Saint Patrick, Bishop
-Saint Paul Miki and Companions, Martyrs
-Saint Paul VI, Pope
-Saint Paul of the Cross, Priest
-Saint Paulinus of Nola, Bishop
-Pentecost
-Pentecost Vigil Mass
-Saint Peter Chanel, Priest and Martyr
-Saint Peter Chrysologus, Bishop and Doctor of the Church
-Saint Peter Claver, Priest
-Saint Peter Damian, Bishop and Doctor of the Church
-Saint Philip Neri, Priest
-Saint Pius V, Pope
-Saint Pius X, Pope
-Saint Pius of Pietrelcina, Priest
-Saint Polycarp, Bishop and Martyr
-Presentation of the Lord
-Saint Raymond of Penyafort, Priest
-Saint Rita of Cascia, Religious
-Saint Robert Bellarmine, Bishop and Doctor of the Church
-Saint Romuald, Abbot
-Saints Basil the Great and Gregory Nazianzen, Bishops and Doctors of the Church
-Saints Cornelius, Pope, and Cyprian, Bishop, Martyrs
-Saints Cosmas and Damian, Martyrs
-Saints Cyril, Monk, and Methodius, Bishop
-Saints John Fisher, Bishop, and Thomas More, Martyrs
-Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs
-Saints Marcellinus and Peter, Martyrs
-Saints Michael, Gabriel and Raphael, Archangels
-Saints Nereus and Achilleus, Martyrs
-Saints Perpetua and Felicity, Martyrs
-Saints Peter and Paul, Apostles
-Saints Pontian, Pope, and Hippolytus, Priest, Martyrs
-Saints Simon and Jude, Apostles
-Saints Timothy and Titus, Bishops
-Saint Scholastica, Virgin
-Saint Sebastian, Martyr
-Second Sunday of Advent
-Second Sunday of Advent Vigil Mass
-Second Sunday of Easter or Divine Mercy Sunday
-Second Sunday of Easter or Divine Mercy Sunday Vigil Mass
-Second Sunday of Lent
-Second Sunday of Lent Vigil Mass
-Seventh Sunday of Easter
-Seventh Sunday of Easter Vigil Mass
-Saint Sharbel Makhluf, Hermit
-Sixth Sunday of Easter
-Sixth Sunday of Easter Vigil Mass
-Saint Sixtus II, Pope, and Companions, Martyrs
-Saint Stephen, The First Martyr
-Saint Sylvester I, Pope
-Saint Teresa of Calcutta, Virgin
-Saint Teresa of Jesus, Virgin and Doctor of the Church
-The Assumption of the Blessed Virgin Mary
-The Assumption of the Blessed Virgin Mary Vigil Mass
-The Beheading of Saint John the Baptist, Martyr
-The Commemoration of all the Faithful Departed (All Souls' Day)
-The Dedication of the Basilica of Saint Mary Major
-The Dedication of the Basilicas of Saints Peter and Paul, Apostles
-The Dedication of the Lateran Basilica
-The First Martyrs of the Holy Roman Church
-The Holy Guardian Angels
-The Holy Name of the Blessed Virgin Mary
-The Immaculate Conception of the Blessed Virgin Mary
-The Immaculate Conception of the Blessed Virgin Mary Vigil Mass
-The Immaculate Heart of the Blessed Virgin Mary
-The Most Holy Name of Jesus
-The Nativity of Saint John the Baptist
-The Nativity of Saint John the Baptist Vigil Mass
-The Nativity of the Blessed Virgin Mary
-The Presentation of the Blessed Virgin Mary
-The Queenship of the Blessed Virgin Mary
-The Seven Holy Founders of the Servite Order
-The Transfiguration of the Lord
-Third Sunday of Advent (Gaudete)
-Third Sunday of Advent (Gaudete) Vigil Mass
-Third Sunday of Easter
-Third Sunday of Easter Vigil Mass
-Third Sunday of Lent
-Third Sunday of Lent Vigil Mass
-Saint Thomas Aquinas, Priest and Doctor of the Church
-Saint Thomas Becket, Bishop and Martyr
-Saint Thomas the Apostle
-Saint Thérèse of the Child Jesus, Virgin and Doctor of the Church
-Saint Turibius of Mogrovejo, Bishop
-Saint Vincent, Deacon and Martyr
-Blessed Virgin Mary, Mother of the Church
-Blessed Virgin Mary of Loreto
-Saint Wenceslaus, Martyr
+San Adalberto
+San Adalberto de Magdeburgo
+San Agustín
+San Agustín Zhao Rong
+San Agustín Zhao Rong y compañeros
+San Agustín de Canterbury
+San Agustín de Cantorbery
+San Agustín de Hipona
+San Alberto Magno
+San Alberto de Trapani
+San Albino de Angers
+San Alfege
+San Alfonso Rodríguez
+San Ambrosio
+San Ambrosio de Milán
+San Anastasio
+San Andrés
+San Andrés Apóstol
+San Andrés Bobola
+San Andrés Corsini
+San Andrés Dũng Lạc y compañeros
+San Andrés Kim Taegon y compañeros
+San Anselmo
+San Anselmo de Canterbury
+San Anselmo de Lucca
+San Antonio
+San Antonio Abad
+San Antonio María Claret
+San Antonio María Zaccaría
+San Antonio de Padua
+San Antonio de Sant Ana Galvao
+San Antón
+San Apolinar
+San Apolinar de Pavía
+San Apolinaris
+San Apolonio
+San Aquileo
+San Aquiles
+San Aquilino de Milán
+San Arcadio
+San Arsenio
+San Arístides (mártir)
+San Atanasio
+San Atanasio de Alejandría
+San Augusto (mártir)
+San Augusto Chapdelaine
+San Aurelio
+San Avertano
+San Bartolomé
+San Basilio Magno
+San Basilio de Cesarea
+San Beda el Venerable
+San Benito
+San Benito Biscop
+San Benito de Nursia
+San Bernabé
+San Bernardino Realino
+San Bernardino de Siena
+San Bernardo
+San Bernardo de Clairvaux
+San Bernardo de Claraval
+San Blaise (Blas)
+San Blas
+San Bonifacio
+San Bruno
+San Bruno de Colonia
+San Buenaventura
+San Calixto I
+San Camilo de Lelis
+San Carlos Borromeo
+San Carlos Luanga
+San Carlos Lwanga
+San Carlos Lwanga y compañeros
+San Carlos de Foucauld
+San Casimiro
+San Cayetano
+San Celestino V
+San Charbel Makhlouf
+San Cipriano
+San Cirilo
+San Cirilo de Heliópolis
+San Cirilo de Jerusalén
+San Claudio de La Colombière
+San Clemente I
+San Clemente María Hofbauer
+San Cleofás
+San Columbano
+San Cornelio
+San Cosme
+San Cosme y San Damián
+San Crispín y San Crispiniano
+San Cristóbal
+San Cristóbal Magallanes
+San Cristóbal Magallanes y compañeros
+San Damián
+San Damián de Molokai
+San Deodato
+San Desiderio
+San Diego de Alcalá
+San Dionisio
+San Dionisio Areopagita
+San Dionisio y compañeros
+San Domingo de Guzmán
+San Doroteo de Gaza
+San Dámaso I
+San Edmundo Campion
+San Edmundo rey mártir
+San Eduardo
+San Efrén
+San Efrén de Nísibe
+San Efrén de Siria
+San Egidio (San Giles)
+San Eligio
+San Eliseo
+San Eloy
+San Elías
+San Enrique
+San Enrique Walpole
+San Erasmo
+San Estanislao
+San Esteban
+San Esteban de Hungría
+San Eugenio de Mazenod
+San Eulogio
+San Euplusio
+San Eusebio de Cesarea
+San Eusebio de Vercelli
+San Evagrio de Kellia
+San Fabio
+San Fabián
+San Facundo
+San Fausto
+San Felipe
+San Felipe Neri
+San Fermín de Amiens
+San Fernando
+San Fernando III el Santo
+San Fidel de Sigmaringa
+San Fidelis de Sigmaringen
+San Filastro
+San Filoteo Sinaíta
+San Flaviano
+San Francisco
+San Francisco Antonio Fasani
+San Francisco Caracciolo
+San Francisco Coll
+San Francisco Javier
+San Francisco Solano
+San Francisco de Asís
+San Francisco de Borja
+San Francisco de Jerónimo
+San Francisco de Paula
+San Fructuoso
+San Félix
+San Félix de Cantalicio
+San Félix de Nola
+San Gabriel (arcángel)
+San Galo
+San Gerardo Majella
+San Gerardo Mayela
+San Gerardo de Caposele
+San Gervasio
+San Getulio y compañeros
+San Gontrán
+San Gregorio
+San Gregorio Barbarigo
+San Gregorio I Magno
+San Gregorio Magno
+San Gregorio Nacianceno
+San Gregorio VII
+San Gregorio de Nacianzo
+San Guillermo
+San Guillermo Abad de Hirschau
+San Guillermo de Bourges
+San Guillermo de Roskilde
+San Guillermo de York
+San Guy de Pomposa
+San Hermenegildo
+San Hesiquio de Batos
+San Hilario
+San Hilario de Arles
+San Hilario de Poitiers
+San Hilarión
+San Hilarión de Maiuma
+San Hipólito
+San Honorio
+San Hugh el Grande
+San Ignacio Patriarca de Constantinopla
+San Ignacio de Antioquía
+San Ignacio de Loyola
+San Ildefonso de Toledo
+San Ireneo
+San Ireneo de Lyon
+San Isaac Jogues
+San Isaac Jogues y compañeros
+San Isidoro
+San Isidoro de Sevilla
+San Itamar
+San Jacinto
+San Jacobo el Mayor
+San Jacobo el Menor
+San Jean-Claude Colin
+San Jenaro
+San Jerónimo
+San Jerónimo de Estridón
+San Joaquín
+San John Henry Newman
+San John Southworth
+San Josafat
+San Josemaría Escrivá de Balaguer
+San José
+San José Cafasso
+San José Obrero
+San José Sánchez del Río
+San José de Calasanz
+San José de Cupertino
+San José de Leonisa
+San José, custodio del Redentor
+San Juan
+San Juan Bautista
+San Juan Bautista de la Concepción
+San Juan Bautista de la Salle
+San Juan Berchmans
+San Juan Bosco
+San Juan Boste
+San Juan Casiano
+San Juan Clímaco
+San Juan Crisóstomo
+San Juan Damasceno
+San Juan Diego Cuauhtlatoatzin
+San Juan Eudes
+San Juan Evangelista
+San Juan Fisher
+San Juan Gualberto
+San Juan I
+San Juan José de la Cruz
+San Juan Leonardi
+San Juan Olgivie
+San Juan XXIII
+San Juan de Alvernia
+San Juan de Apamea
+San Juan de Beverly
+San Juan de Brébeuf
+San Juan de Capistrano
+San Juan de Dios
+San Juan de Kety
+San Juan de Ribera
+San Juan de Sahagún
+San Juan de la Cruz
+San Juan de Ávila
+San Juan en la Puerta Latina
+San Julián de Anazarbus
+San Julián de Toledo
+San Justino
+San Justino Mártir
+San Justino de Jacobis
+San Juvenal
+San Ladislao de Hungría
+San Leandro
+San Leonardo de Porto Maurizio
+San León I Magno
+San León Magno
+San León XIII
+San Liborio
+San Lobo
+San Lorenzo
+San Lorenzo Justiniano
+San Lorenzo Ruiz
+San Lorenzo Ruiz y compañeros
+San Lorenzo de Brindis
+San Lorenzo de Brindisi
+San Lucas
+San Lucas Evangelista
+San Luis
+San Luis (obispo)
+San Luis Beltrán
+San Luis Gonzaga
+San Luis Grignion de Montfort
+San Luis IX de Francia
+San Luis María Grignion de Montfort
+San Luis María Griñón de Montfort
+San Luis de Francia
+San Lázaro
+San Macario
+San Macario el Joven
+San Macario el Milagroso
+San Macario el Viejo
+San Magno
+San Marcelino
+San Marcelino Champagnat
+San Marcelino de Cartago
+San Marcelo
+San Marcos
+San Marcos de Trache
+San Mariano
+San Martín
+San Martín de Porres
+San Martín de Tours
+San Mateo
+San Mateo Evangelista
+San Matías
+San Matías Maulumba Kalemba
+San Matías apóstol
+San Mauricio
+San Mauro
+San Maximiliano Kolbe
+San Maximiliano María Kolbe
+San Maximino de Tréveris
+San Melchor
+San Metodio
+San Metodio de Constantinopla
+San Miguel (arcángel)
+San Máximo de Turín
+San Narciso
+San Nereo
+San Nereo y San Aquileo
+San Nicolás
+San Nicolás Pick y compañeros
+San Nicolás de Bari
+San Nicolás de Tolentino
+San Nicéforo
+San Nilo Sinaíta
+San Norberto
+San Nuno Álvares Pereira
+San Néstor
+San Odilo de Cluny
+San Odo
+San Olegario
+San Onésimo
+San Orsiesio de Tabenna
+San Oswaldo de Nortumbria
+San Pablo
+San Pablo Apóstol
+San Pablo Chong Hasang
+San Pablo Miki y compañeros
+San Pablo VI
+San Pablo de Tarso (Apóstol)
+San Pablo de la Cruz
+San Pablo el Simple
+San Pacomio de Tabenna
+San Panteno
+San Pascual Bailón
+San Pascual Baylón
+San Patricio de Irlanda
+San Paulino de Nola
+San Paulino de Tréveris
+San Pedro
+San Pedro Apóstol
+San Pedro Canisio
+San Pedro Chanel
+San Pedro Claver
+San Pedro Damián
+San Pedro Julián Eymard
+San Pedro Nolasco
+San Pedro Pascual
+San Pedro Tomás
+San Pedro de Alcántara
+San Pedro de Arbués
+San Pedro de Tarantesia
+San Pedro mártir
+San Pelayo
+San Peregrino de Abruzzo
+San Pier Giorgio Frassati
+San Policarpo
+San Policuto
+San Ponciano
+San Privato
+San Protasio
+San Prudencio
+San Pío V
+San Pío X
+San Pío de Pietrelcina
+San Quirico
+San Quirino de Sescia
+San Rafael (arcángel)
+San Raimundo Nonato
+San Raimundo de Peñafort
+San Ramón Nonato
+San Remigio
+San Ricardo de Chichester
+San Roberto Belarmino
+San Roberto Lawrence
+San Roberto de Molesmes
+San Romualdo
+San Román
+San Roque
+San Rufino
+San Rupert
+San Rómulo de Fiesole
+San Sabas
+San Sabino y compañeros
+San Santiago Apostol
+San Sarbelio Makhluf
+San Sebastián
+San Serapio
+San Serapión de Thmuis
+San Sergio
+San Severo
+San Sharbel Makhluf
+San Sigisberto
+San Silas
+San Silvestre
+San Silvestre Gozzolini
+San Silvestre I
+San Simeón
+San Simeón Estilita
+San Simón
+San Simón Pedro
+San Simón Zelote
+San Sixto II
+San Sixto II y compañeros
+San Sotero
+San Sulpicio
+San Tadeo
+San Teófilo
+San Timoteo
+San Tito
+San Tomás apóstol
+San Tomás de Aquino
+San Torcuato
+San Toribio de Mogrovejo
+San Turibio de Mogrovejo
+San Ubaldo
+San Ulrico
+San Urbano
+San Valentín
+San Valerio
+San Valero
+San Vicente
+San Vicente Ferrer
+San Vicente Mártir
+San Vicente de Paúl
+San Vicente de Saragossa
+San Vladimir
+San Víctor I
+San Víctor de Braga
+San Wenceslao
+San Willibrord
+San Wulfrano
+San Zacarías
+San Zósimo
+San Íñigo
+San Óscar
+San Óscar Romero
+Santa Adelaida Emperatriz
+Santa Agripina
+Santa Ana
+Santa Anastasia
+Santa Beatriz de Silva
+Santa Bernardita de Soubirous
+Santa Bibiana
+Santa Brígida
+Santa Brígida de Irlanda
+Santa Casilda de Toledo
+Santa Catalina
+Santa Catalina Labouré
+Santa Catalina de Alejandría
+Santa Catalina de Génova
+Santa Catalina de Suecia
+Santa Cecilia
+Santa Clara
+Santa Clara de Asís
+Santa Clara de Montefalco
+Santa Cristina
+Santa Dorotea
+Santa Edith Stein
+Santa Eduviges
+Santa Eduvigis
+Santa Elena
+Santa Ema
+Santa Endelienta
+Santa Eufrasia
+Santa Eulalia
+Santa Felicidad
+Santa Flora
+Santa Francisca Javier Cabrini
+Santa Francisca Romana
+Santa Gema Galgani
+Santa Genoveva de París
+Santa Gertrudis de Nivelles
+Santa Gertrudis la Grande
+Santa Gianna Beretta Molla
+Santa Hermelinda
+Santa Hilaria y compañeras
+Santa Hildegarda
+Santa Hildegarda de Bingen
+Santa Humbelina
+Santa Inés
+Santa Inés de Bohemia
+Santa Isabel I de Portugal
+Santa Isabel de Portugal
+Santa Jacinta Mariscotti
+Santa Josefina Bakhita
+Santa Juana Francisca de Chantal
+Santa Juana de Valois
+Santa Juliana
+Santa Julie Billiart
+Santa Julita
+Santa Katherine Drexel
+Santa Laura Montoya
+Santa Lea
+Santa Leocadia
+Santa Lidia
+Santa Lucía
+Santa Ludgarda
+Santa Luisa de Marillac
+Santa Luisa de Saboya
+Santa Lydwina de Schiedam
+Santa Macrina la Mayor
+Santa Margarita María Alacoque
+Santa Margarita María de Alacoque
+Santa Mariana de Jesús Paredes
+Santa Marta
+Santa María Crucificada Di Rosa
+Santa María Faustina Kowalska
+Santa María Goretti
+Santa María Madre de Dios
+Santa María Magdalena
+Santa María Magdalena de Pazzi
+Santa María Micaela del Santísimo Sacramento
+Santa María Reina
+Santa María de Leyre
+Santa María de Rapa Nui
+Santa María de la Victoria
+Santa María de África
+Santa María del Espíritu Santo
+Santa María del Monte Carmelo
+Santa María la Blanca
+Santa María la Real de las Huertas
+Santa Mechtilde
+Santa Mónica
+Santa Narcisa de Jesús
+Santa Natalia y compañeros
+Santa Olga
+Santa Paula
+Santa Paula Frassinetti
+Santa Paulina Jaricot
+Santa Paulina del Corazón de Jesús
+Santa Perpetua
+Santa Priscila
+Santa Rafaela María
+Santa Regina
+Santa Rita de Cascia
+Santa Rita de Casia
+Santa Rosa de Lima
+Santa Rosa de Viterbo
+Santa Rosalía de Palermo
+Santa Sara (esposa de Abraham)
+Santa Sinclética de Alejandría
+Santa Sofía
+Santa Taís
+Santa Tecla
+Santa Teresa Benedicta de la Cruz
+Santa Teresa Benedicta de la Cruz Edith Stein
+Santa Teresa de Jesús
+Santa Teresa de Jesús Jornet
+Santa Teresa de Lisieux
+Santa Teresa de Ávila
+Santa Teresita del Niño Jesús
+Santa Valdetrudes
+Santa Veridiana
+Santa Yolanda
+Santa Yolanda de Vianden
+Santa Águeda
+Santa Ángela Merici
+Santa Ángela de Mérici
+Santa Úrsula
+Santas Balissa y Anastasia
+Santiago Apóstol
+Santo Cura de Ars
+Santo Domingo
+Santo Domingo de Guzmán
+Santo Grial
+Santo Sudario
+Santo Tomás
+Santo Tomás Apóstol
+Santo Tomás Becket
+Santo Tomás Ereford
+Santo Tomás Moro
+Santo Tomás de Aquino
+Santo Tomás de Villanueva
+Santo Toribio de Mogrovejo
+Santos Arcángeles Miguel, Gabriel y Rafael
+Santos Fausto, Januario y Marcial
+Santos Florencio y Lauro
+Santos Justo de Lyon y Viator
+Santos Mario y Compañeros
+Santos Narbor y Félix
+Santos Nazario, Celso y Víctor I
+Santos Padres
+Santos Protomártires de Roma
+Santos Vicente y Anastasio
+Santos mártires
+Santos Ángeles Custodios
