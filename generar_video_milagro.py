@@ -20,9 +20,16 @@ import sys
 
 from santo_utils import crear_thumbnail, generar_audio, crear_video
 
+try:
+    from portada_milagro import crear_portada_milagro
+    _HAY_PLANTILLA = True
+except Exception:                                                # noqa: BLE001
+    _HAY_PLANTILLA = False
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(BASE_DIR, "output_milagro")
 IMG_DIR = os.path.join(BASE_DIR, "data", "imagenes_milagros")
+FONDO_MARCA = os.path.join(BASE_DIR, "fondo_milagros.png")
 
 MINUTOS_MINIMOS = 8.0
 
@@ -84,15 +91,30 @@ def main():
           "Descarga el panel a data/imagenes_milagros/%s.jpg"
           % (data["titulo_milagro"], data["clave"]))
 
-    # Titulo de la miniatura: el nombre del lugar destaca mas que "Milagro de..."
-    titulo_thumb = data["titulo_milagro"].replace("Milagro Eucarístico de ", "")
+    lugar = data["titulo_milagro"].replace("Milagro Eucarístico de ", "")
+    pais = data.get("pais") or ""
+    lugar_pais = ", ".join(x for x in (lugar, pais) if x)
+    anio = data.get("anio") or ""
 
-    print("Creando miniatura (1280x720) y fondo de video (1920x1080)...")
-    thumbnail = crear_thumbnail(
-        titulo_thumb, carpeta,
-        subtitulo=data.get("subtitulo", ""),
-        gancho=data.get("gancho", ""),
-        foto_path=foto)
+    # Miniatura de MARCA (fondo custodia + texto crema/oro) si esta la
+    # plantilla; si no, la miniatura automatica normal.
+    if _HAY_PLANTILLA and os.path.exists(FONDO_MARCA):
+        print("Creando miniatura de marca (Milagros Eucaristicos)...")
+        thumb_path = os.path.join(carpeta, "thumbnail.png")
+        fondo_video = os.path.join(carpeta, "fondo_video.png")
+        crear_portada_milagro(lugar_pais, anio, fondo_video)
+        # thumbnail 1280x720 a partir del fondo 1920x1080
+        from PIL import Image
+        Image.open(fondo_video).convert("RGB").resize(
+            (1280, 720), Image.LANCZOS).save(thumb_path)
+        thumbnail = thumb_path
+    else:
+        print("Creando miniatura (1280x720) y fondo de video (1920x1080)...")
+        thumbnail = crear_thumbnail(
+            lugar, carpeta,
+            subtitulo=data.get("subtitulo", ""),
+            gancho=data.get("gancho", ""),
+            foto_path=foto)
 
     guion = construir_guion(data)
     if isinstance(guion, list):
