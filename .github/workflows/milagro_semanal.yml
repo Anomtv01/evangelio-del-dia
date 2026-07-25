@@ -1,0 +1,72 @@
+name: Jueves Eucaristico
+
+# ---------------------------------------------------------------------------
+# Serie semanal de Milagros Eucaristicos. Se publica los JUEVES, dia de la
+# Adoracion al Santisimo. Voz gratis (edge-tts), video horizontal 1080p.
+# Horario: jueves 17:00 UTC = 1:00 PM en Nueva York (dentro de la ventana
+# 12PM-7PM ET), entre el Santo (16 UTC) y el Salmo (18 UTC).
+# ---------------------------------------------------------------------------
+
+on:
+  schedule:
+    - cron: "0 17 * * 4"          # 4 = jueves
+  workflow_dispatch:
+
+jobs:
+  generar-y-subir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Descargar el codigo del repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Instalar dependencias
+        run: |
+          pip install -r requisitos.txt
+          pip install --upgrade edge-tts
+
+      - name: Verificar fuentes para la miniatura
+        run: |
+          if [ ! -f fonts/Lora-Bold.ttf ]; then
+            sudo apt-get install -y fonts-dejavu-core
+          fi
+
+      - name: Comprobar que edge-tts alcanza el servicio de voz
+        run: |
+          python -c "
+          import asyncio, edge_tts
+          async def main():
+              v = await edge_tts.list_voices()
+              es = [x for x in v if x['Locale'].startswith('es-')]
+              print('edge-tts OK: %d voces en espanol' % len(es))
+              assert es
+          asyncio.run(main())
+          "
+
+      - name: Reconstruir credenciales de Google
+        env:
+          CLIENT_SECRET_CONTENT: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          TOKEN_CONTENT: ${{ secrets.GOOGLE_TOKEN }}
+        run: python3 -c "import os; open('client_secret.json','w').write(os.environ['CLIENT_SECRET_CONTENT']); open('token.json','w').write(os.environ['TOKEN_CONTENT']); print('Archivos escritos.')"
+
+      - name: Generar y subir el Milagro Eucaristico
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python generar_todo_milagro.py
+
+      - name: Guardar los archivos generados
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-jueves-eucaristico
+          path: output_milagro/
+          retention-days: 7
