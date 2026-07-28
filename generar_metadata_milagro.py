@@ -42,6 +42,39 @@ RECORDATORIO = (
 INTENCION = ("Deja en los comentarios tu intención de oración: nos unimos "
              "como comunidad para encomendarla ante el Santísimo.")
 
+# ---------------------------------------------------------------------------
+# ENLACES DE AFILIADO DE AMAZON
+# Para agregar un producto nuevo: añade una linea (emoji + nombre, enlace).
+# Para quitar uno: borra su linea. Nada mas que editar.
+# ---------------------------------------------------------------------------
+DIVULGACION_AFILIADOS = (
+    "📿 Algunos enlaces son de afiliado. Como afiliado de Amazon, gano por "
+    "compras que califiquen, sin costo extra para ti. Tu apoyo ayuda a "
+    "sostener este ministerio. 🙏"
+)
+ENLACES_AFILIADOS = [
+    ("📖 Biblia Católica (Virgen de Guadalupe)",
+     "https://www.amazon.com/dp/1644732475?tag=vivalafecatol-20"),
+    ("📿 Santo Rosario",
+     "https://amzn.to/4we4xBf"),
+    ("📕 Diario de Santa Faustina (Divina Misericordia)",
+     "https://www.amazon.com/dp/0944203264?tag=vivalafecatol-20"),
+    ("🙏 Libro de 50 Novenas Poderosas",
+     "https://www.amazon.com/dp/B0F7HQ1LTD?tag=vivalafecatol-20"),
+    ("🕯️ Veladora Virgen de Guadalupe",
+     "https://www.amazon.com/dp/B0GTZTQS57?tag=vivalafecatol-20"),
+    ("✝️ Llavero de San Benito (protección)",
+     "https://www.amazon.com/dp/B0GJCS7CSJ?tag=vivalafecatol-20"),
+]
+
+
+def bloque_afiliados():
+    """Arma el bloque de enlaces de afiliado con su divulgacion."""
+    lineas = [DIVULGACION_AFILIADOS, "", "🛍️ ARTÍCULOS DE FE RECOMENDADOS:"]
+    for nombre, enlace in ENLACES_AFILIADOS:
+        lineas.append("%s: %s" % (nombre, enlace))
+    return "\n".join(lineas)
+
 
 def limpiar(t):
     return t.replace("<", "").replace(">", "")
@@ -104,6 +137,8 @@ def generar_descripcion(data):
     p.append("• Qué determinaron los estudios y qué reconoció la Iglesia")
     p.append("• Dónde se venera hoy la reliquia")
     p.append("• Qué nos dice sobre la Presencia Real de Cristo en la Eucaristía\n")
+
+    p.append(bloque_afiliados() + "\n")
 
     p.append(RECORDATORIO + "\n")
     p.append(INTENCION + "\n")
