@@ -51,6 +51,8 @@ ENLACES_AFILIADOS = [
      "https://www.amazon.com/dp/B0GTZTQS57?tag=vivalafecatol-20"),
     ("✝️ Llavero de San Benito (protección)",
      "https://www.amazon.com/dp/B0GJCS7CSJ?tag=vivalafecatol-20"),
+ ("📿 Rosario de madera San Benito (pack de 2)",
+     "https://amzn.to/4fs9Qb3"),
 ]
  
  
