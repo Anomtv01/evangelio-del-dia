@@ -82,8 +82,13 @@ Incluye esta idea hacia el final, con respeto.
 sangre o la carne del milagro con emocion contenida, sin truculencia.
 6. Espanol neutro latinoamericano, frases claras y de longitud media (lo lee \
 una voz sintetica y lo escuchan personas mayores).
-7. ORTOGRAFIA COMPLETA: escribi siempre con tildes y con la letra enye donde \
-corresponda. El gancho y el subtitulo se muestran en pantalla.
+7. ORTOGRAFIA PERFECTA (MUY IMPORTANTE): aunque estas instrucciones esten \
+escritas sin tildes, TU RESPUESTA debe llevar TODAS las tildes y la letra ñ \
+donde correspondan. Escribe correctamente: "año" (no "ano"), "México", \
+"corazón", "apareció", "niño", "compañía", "señor", "días", "milagro \
+eucarístico", "básica", "científicos". Esto es obligatorio en TODO el texto, \
+y con especial cuidado en el gancho y el subtitulo, que se muestran en \
+pantalla. Un texto sin tildes se ve mal escrito y la voz lo pronuncia mal.
 8. Escribi los numeros en letras ('mil doscientos sesenta y cuatro', no '1264').
 
 ESTRUCTURA DEL GUION (en este orden):
@@ -155,6 +160,33 @@ def contar_palabras(segmentos):
     return sum(len(s.get("texto", "").split()) for s in segmentos)
 
 
+def _corregir_ortografia(texto):
+    """
+    Red de seguridad: corrige palabras comunes que el modelo a veces devuelve
+    sin tilde o sin ñ. Solo toca palabras completas (con limites \\b), para no
+    dañar otras. No pretende ser exhaustivo, cubre lo mas frecuente.
+    """
+    import re
+    reemplazos = {
+        r"\bano\b": "año", r"\banos\b": "años",
+        r"\bnino\b": "niño", r"\bninos\b": "niños",
+        r"\bnina\b": "niña", r"\bninas\b": "niñas",
+        r"\bMexico\b": "México", r"\bPeru\b": "Perú",
+        r"\bcorazon\b": "corazón", r"\boracion\b": "oración",
+        r"\bcompania\b": "compañía", r"\bsenor\b": "señor",
+        r"\bsenora\b": "señora", r"\bmanana\b": "mañana",
+        r"\bpequeno\b": "pequeño", r"\bpequena\b": "pequeña",
+        r"\bespanol\b": "español", r"\bensena\b": "enseña",
+    }
+    for patron, correcto in reemplazos.items():
+        # minuscula
+        texto = re.sub(patron, correcto, texto)
+        # con mayuscula inicial (Ano -> Año al empezar frase)
+        pat_may = patron[:2] + patron[2].upper() + patron[3:]
+        texto = re.sub(pat_may, correcto.capitalize(), texto)
+    return texto
+
+
 def _validar(datos, voz_nar, voz_personaje="testigo"):
     segs = datos.get("segmentos") or []
     if not segs:
@@ -164,6 +196,7 @@ def _validar(datos, voz_nar, voz_personaje="testigo"):
         texto = (s.get("texto") or "").strip()
         if not texto:
             continue
+        texto = _corregir_ortografia(texto)
         voz = s.get("voz", voz_nar)
         if voz in VOCES_PERSONAJE or voz in ("testigo", "sacerdote"):
             voz = voz_personaje
@@ -173,8 +206,8 @@ def _validar(datos, voz_nar, voz_personaje="testigo"):
     if not limpios:
         raise ValueError("Todos los segmentos venian vacios.")
     datos["segmentos"] = limpios
-    datos.setdefault("subtitulo", "")
-    datos.setdefault("gancho", "")
+    datos["subtitulo"] = _corregir_ortografia(datos.get("subtitulo", ""))
+    datos["gancho"] = _corregir_ortografia(datos.get("gancho", ""))
     return datos
 
 
