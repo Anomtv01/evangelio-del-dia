@@ -27,6 +27,7 @@ Uso:
 import json
 import os
 import sys
+import time
 from datetime import date, datetime
 
 try:
@@ -246,6 +247,14 @@ def generar_contenido_salmo(num_cat, info, voz_med, voz_esc):
         except Exception as e:                                   # noqa: BLE001
             ultimo = e
             print("     error: %s" % e)
+            msg_err = str(e).lower()
+            if ("overloaded" in msg_err or "529" in msg_err
+                    or "rate" in msg_err or "429" in msg_err
+                    or "timeout" in msg_err):
+                if i < len(MAX_TOKENS_INTENTOS):
+                    espera = 20 * i
+                    print("     servidor ocupado; esperando %ds..." % espera)
+                    time.sleep(espera)
 
     raise RuntimeError("No se pudo generar la meditacion. Ultimo error: %s" % ultimo)
 
