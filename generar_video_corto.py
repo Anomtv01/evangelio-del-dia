@@ -13,10 +13,12 @@ import os
 import subprocess
 import sys
 
-from santo_utils import crear_thumbnail_vertical, generar_audio, crear_video_vertical
+from santo_utils import crear_thumbnail_vertical, crear_video_vertical
+import voces_elevenlabs
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(BASE_DIR, "output_corto")
+FOTOS_DIR = os.path.join(BASE_DIR, "fotos_cortos")
 
 RECORDATORIO = ("Si esta historia te tocó el corazón, suscribite a Viva la "
                 "Fe Católica TV y activa la campanita para no perderte el "
@@ -33,6 +35,29 @@ def construir_guion(data):
         pares.append((perfil, s["texto"]))
     pares.append((voz_nar, RECORDATORIO))
     return pares
+
+
+def foto_de_la_historia(clave):
+    """Portada especifica de la historia, generada una sola vez con Canva IA
+    (fotos_cortos/<clave>.jpg). Si no existe, crear_thumbnail_vertical cae
+    al fondo generico con paleta de color."""
+    if not clave:
+        return None
+    ruta = os.path.join(FOTOS_DIR, "%s.jpg" % clave)
+    return ruta if os.path.exists(ruta) else None
+
+
+def generar_audio(guion, carpeta, fecha_iso, perfil="narrador"):
+    """
+    Narracion con ElevenLabs (voz paga) para el Short diario del Evangelio.
+    Misma firma que santo_utils.generar_audio para no tocar el resto del
+    pipeline. 'guion' es una lista de (perfil, texto).
+    """
+    os.makedirs(carpeta, exist_ok=True)
+    path = os.path.join(carpeta, "audio.mp3")
+    voces_elevenlabs.generar_dialogo(list(guion), path, pausa=0.7)
+    usadas = sorted({p for p, _ in guion})
+    return path, "+".join(usadas)
 
 
 def duracion_min(ruta):
@@ -57,14 +82,17 @@ def main():
     carpeta = os.path.join(OUTPUT_DIR, data["fecha"])
     os.makedirs(carpeta, exist_ok=True)
 
-    print("Creando miniatura vertical (1080x1920)...")
+    foto_path = foto_de_la_historia(data.get("clave"))
+    print("Creando miniatura vertical (1080x1920)... foto: %s"
+          % (foto_path or "(fondo generico, no se encontro portada)"))
     thumbnail = crear_thumbnail_vertical(
         data["titulo_historia"], carpeta,
         subtitulo=data.get("subtitulo", ""),
-        gancho=data.get("gancho_pantalla", ""))
+        gancho=data.get("gancho_pantalla", ""),
+        foto_path=foto_path)
 
     guion = construir_guion(data)
-    print("Generando audio con voces alternadas (%d intervenciones)..." % len(guion))
+    print("Generando audio con ElevenLabs (%d intervenciones)..." % len(guion))
     audio, voces = generar_audio(guion, carpeta, data["fecha"],
                                  perfil=data.get("voz_narracion", "narrador"))
     print("Narración generada. Voces: %s" % voces)

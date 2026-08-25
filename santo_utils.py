@@ -373,6 +373,7 @@ def _componer(santo, W, H, subtitulo, gancho, foto_path, paleta, escala):
 
     f = _fuentes(escala)
     cx = W // 2
+    ancho_max_txt = int(W * 0.90)
 
     # --- Layout calculado DESDE ABAJO para que nunca se desborde ---
     partes = santo.split()
@@ -381,9 +382,26 @@ def _componer(santo, W, H, subtitulo, gancho, foto_path, paleta, escala):
         prefijo, resto = partes[0].upper(), " ".join(partes[1:])
     pr = resto.upper().split()
 
+    # Titulos cortos (nombres de santos, "San Juan Bosco") -> primera
+    # palabra grande + resto en una linea, como antes. Titulos largos
+    # (historias del Evangelio, "La Samaritana en el Pozo de Jacob") ->
+    # se parten en tantas lineas como haga falta para no desbordar.
+    if len(pr) >= 2:
+        lineas_resto = _ajustar(" ".join(pr[1:]), f["n2"], ancho_max_txt, d)
+        if len(lineas_resto) > 2:
+            # Con 3+ lineas la fuente grande no entra: se pasa todo el
+            # titulo (incluida la primera palabra) a fuente mediana.
+            lineas_resto = _ajustar(resto.upper(), f["n2"], ancho_max_txt, d)
+            primera_grande = None
+        else:
+            primera_grande = pr[0]
+    else:
+        primera_grande = resto.upper()
+        lineas_resto = []
+
     h_pref = int(95 * escala) if prefijo else 0
-    h_n1 = int(155 * escala)
-    h_n2 = int(130 * escala) if len(pr) >= 2 else 0
+    h_n1 = int(155 * escala) if primera_grande else 0
+    h_n2 = int(105 * escala)
     h_sub = int(70 * escala) if subtitulo else 0
 
     lineas_g = [l.strip() for l in gancho.split("\n") if l.strip()] if gancho else []
@@ -392,7 +410,7 @@ def _componer(santo, W, H, subtitulo, gancho, foto_path, paleta, escala):
     h_gap = int(22 * escala) if lineas_g else 0
 
     margen = int(38 * escala)
-    total = h_pref + h_n1 + h_n2 + h_sub + h_gap + h_caja
+    total = h_pref + h_n1 + len(lineas_resto) * h_n2 + h_sub + h_gap + h_caja
     y = H - margen - total
     y = max(y, int(H * 0.30))            # nunca invadir el tercio superior
 
@@ -401,17 +419,15 @@ def _componer(santo, W, H, subtitulo, gancho, foto_path, paleta, escala):
                fill=(255, 255, 255), anchor="mm")
         y += h_pref
 
-    if len(pr) >= 2:
-        d.text((cx, y + h_n1 // 2), pr[0], font=f["n1"],
+    if primera_grande:
+        d.text((cx, y + h_n1 // 2), primera_grande, font=f["n1"],
                fill=paleta["acento"], anchor="mm")
         y += h_n1
-        d.text((cx, y + h_n2 // 2), " ".join(pr[1:]), font=f["n2"],
-               fill=(255, 255, 255), anchor="mm")
+
+    for i, linea in enumerate(lineas_resto):
+        col = paleta["acento"] if (i == 0 and not primera_grande) else (255, 255, 255)
+        d.text((cx, y + h_n2 // 2), linea, font=f["n2"], fill=col, anchor="mm")
         y += h_n2
-    else:
-        d.text((cx, y + h_n1 // 2), resto.upper(), font=f["n1"],
-               fill=paleta["acento"], anchor="mm")
-        y += h_n1
 
     if subtitulo:
         d.text((cx, y + h_sub // 2), subtitulo, font=f["sub"],
