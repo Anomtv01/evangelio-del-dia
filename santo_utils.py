@@ -541,3 +541,42 @@ def crear_video(imagen, audio, carpeta, nombre_archivo_base,
                                movimiento=False, fps=fps)
         raise
     return output
+
+
+def crear_video_vertical(imagen, audio, carpeta, nombre_archivo_base,
+                         movimiento=True, fps=24):
+    """
+    Arma el MP4 VERTICAL 1080x1920 (para Shorts). Gemelo de crear_video(),
+    pensado para 'imagen' = thumbnail_vertical.png de crear_thumbnail_vertical()
+    (que ya es el fotograma completo, no hace falta un fondo_video separado).
+    """
+    nombre = re.sub(r'[<>:"/\\|?*]', "", nombre_archivo_base) + ".mp4"
+    output = os.path.join(carpeta, nombre)
+    if os.path.exists(output):
+        os.remove(output)
+
+    dur = _duracion(audio)
+
+    if movimiento and dur:
+        frames = max(1, int(dur * fps))
+        vf = (f"scale=2160:-2,zoompan=z='min(zoom+0.00018,1.14)'"
+              f":d={frames}:s=1080x1920:fps={fps},"
+              f"format=yuv420p")
+        cmd = ["ffmpeg", "-y", "-v", "error", "-loop", "1", "-i", imagen,
+               "-i", audio, "-vf", vf, "-c:v", "libx264", "-preset", "veryfast",
+               "-crf", "21", "-c:a", "aac", "-b:a", "192k", "-shortest", output]
+    else:
+        cmd = ["ffmpeg", "-y", "-v", "error", "-loop", "1", "-i", imagen,
+               "-i", audio, "-vf", "scale=1080:1920,format=yuv420p",
+               "-c:v", "libx264", "-tune", "stillimage", "-preset", "veryfast",
+               "-crf", "21", "-c:a", "aac", "-b:a", "192k", "-shortest", output]
+
+    try:
+        subprocess.run(cmd, check=True)
+    except subprocess.CalledProcessError:
+        if movimiento:
+            print("[AVISO] Fallo el efecto de movimiento; se usa imagen fija.")
+            return crear_video_vertical(imagen, audio, carpeta, nombre_archivo_base,
+                                        movimiento=False, fps=fps)
+        raise
+    return output
