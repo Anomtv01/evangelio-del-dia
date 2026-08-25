@@ -55,10 +55,31 @@ ENLACES_AFILIADOS = [
      "https://amzn.to/4fs9Qb3"),
 ]
 
+# ---------------------------------------------------------------------------
+# ENLACE DE AFILIADO DE WALMART (Walmart Creator). Enlace de seguimiento a
+# la colección "Catholic Faith & Religious Gifts" del storefront del canal
+# (biblias, rosarios, imágenes y decoración religiosa). Para agregar mas
+# colecciones o enlaces de producto individuales, añade una tupla mas a
+# ENLACES_AFILIADOS_WALMART.
+# ---------------------------------------------------------------------------
+DIVULGACION_AFILIADOS_WALMART = (
+    "🛒 También soy creador de Walmart Creator: algunos enlaces de Walmart "
+    "son de afiliado y puedo ganar una comisión por compras que califiquen, "
+    "sin costo extra para ti."
+)
+ENLACES_AFILIADOS_WALMART = [
+    ("✝️ Artículos de Fe Católica en Walmart (biblias, rosarios y más)",
+     "https://walmrt.us/4hzq4k6"),
+]
+
 
 def bloque_afiliados():
     lineas = [DIVULGACION_AFILIADOS, "", "🛍️ ARTÍCULOS DE FE RECOMENDADOS:"]
     for nombre, enlace in ENLACES_AFILIADOS:
+        lineas.append("%s: %s" % (nombre, enlace))
+    lineas.append("")
+    lineas.append(DIVULGACION_AFILIADOS_WALMART)
+    for nombre, enlace in ENLACES_AFILIADOS_WALMART:
         lineas.append("%s: %s" % (nombre, enlace))
     return "\n".join(lineas)
 
