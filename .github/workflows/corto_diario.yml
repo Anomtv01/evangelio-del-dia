@@ -1,16 +1,7 @@
 name: Short Diario del Evangelio
 
-# ---------------------------------------------------------------------------
-# Serie diaria de Shorts (2 minutos) dramatizando una historia del Evangelio,
-# rotando entre las 50 historias mas conocidas de los 4 Evangelios. Voz
-# ElevenLabs (voces_elevenlabs.py, PAGA, requiere el secreto
-# ELEVENLABS_API_KEY), portada especifica de cada historia
-# (fotos_cortos/<clave>.jpg, generada una sola vez con Canva IA), video
-# VERTICAL 1080x1920.
-# Horario: 11:00 UTC = 7:00 AM en Nueva York (EDT) — dentro de la ventana de
-# 6-8 AM que mejor rinde para Shorts. No choca con el Evangelio (4 UTC), el
-# Santo (16 UTC) ni el Salmo (18 UTC).
-# ---------------------------------------------------------------------------
+# Serie diaria de Shorts del Evangelio.
+# Horario: 11:00 UTC.
 
 on:
   schedule:
@@ -23,7 +14,7 @@ jobs:
     timeout-minutes: 30
 
     steps:
-      - name: Descargar el codigo del repositorio
+      - name: Descargar el código del repositorio
         uses: actions/checkout@v4
 
       - name: Instalar Python
@@ -47,7 +38,8 @@ jobs:
         env:
           CLIENT_SECRET_CONTENT: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           TOKEN_CONTENT: ${{ secrets.GOOGLE_TOKEN }}
-        run: python3 -c "import os; open('client_secret.json','w').write(os.environ['CLIENT_SECRET_CONTENT']); open('token.json','w').write(os.environ['TOKEN_CONTENT']); print('Archivos escritos.')"
+        run: |
+          python3 -c "import os; open('client_secret.json','w').write(os.environ['CLIENT_SECRET_CONTENT']); open('token.json','w').write(os.environ['TOKEN_CONTENT']); print('Archivos escritos.')"
 
       - name: Generar y subir el Short del Evangelio
         env:
@@ -55,10 +47,13 @@ jobs:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
         run: python generar_todo_corto.py
 
-      - name: Guardar los archivos generados
-        if: always()
+      # Solo conserva archivos cuando ocurre un error.
+      # Se eliminan automáticamente después de un día.
+      - name: Guardar archivos para revisar un error
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: output-corto-diario
+          name: error-corto-diario-${{ github.run_number }}
           path: output_corto/
-          retention-days: 7
+          retention-days: 1
+          if-no-files-found: ignore
