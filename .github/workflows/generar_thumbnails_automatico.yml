@@ -1,0 +1,81 @@
+name: 🎨 Generar Thumbnails Automático
+
+on:
+  workflow_run:
+    workflows: ["Evangelio Corto Diario", "Santo del Día", "Salmo del Día", "Milagro Eucarístico"]
+    types: [completed]
+
+jobs:
+  generar_thumbnails:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: 🐍 Setup Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: 📦 Instalar Pillow
+        run: pip install Pillow
+      
+      - name: 📂 Crear carpeta output/thumbnails
+        run: mkdir -p output/thumbnails
+      
+      - name: 🔍 Encontrar y procesar JSONs recientes
+        run: |
+          # Buscar archivos JSON generados en las últimas 2 horas
+          echo "🔎 Buscando archivos JSON recientes..."
+          for json_file in output/*_$(date +%Y-%m-%d).json; do
+            if [ -f "$json_file" ]; then
+              echo "✅ Procesando: $json_file"
+              python generar_thumbnail_desde_json.py "$json_file"
+            fi
+          done
+          
+          # Si no hay archivos hoy, procesar los más recientes
+          if [ -z "$(ls output/*.json 2>/dev/null)" ]; then
+            echo "⚠️ No hay JSON generados hoy, usando los más recientes..."
+            latest=$(ls -t output/*.json 2>/dev/null | head -1)
+            if [ -f "$latest" ]; then
+              python generar_thumbnail_desde_json.py "$latest"
+            fi
+          fi
+      
+      - name: 📊 Verificar thumbnails generados
+        run: |
+          echo "📸 Thumbnails generados:"
+          ls -lh output/thumbnails/*.png 2>/dev/null || echo "❌ No hay thumbnails"
+          echo ""
+          echo "Total: $(ls output/thumbnails/*.png 2>/dev/null | wc -l) thumbnails"
+      
+      - name: 🚀 Commit y push de thumbnails
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "Viva la Fe Bot"
+          
+          # Solo commitear si hay cambios
+          if [ -n "$(git status --porcelain)" ]; then
+            git add output/thumbnails/*.png
+            git commit -m "✨ Thumbnails automáticos generados - $(date +%Y-%m-%d' '%H:%M:%S)"
+            git push
+            echo "✅ Thumbnails pusheados a main"
+          else
+            echo "ℹ️ No hay cambios en thumbnails"
+          fi
+
+      - name: 📝 Resumen de ejecución
+        if: always()
+        run: |
+          echo "═════════════════════════════════════════════"
+          echo "🎨 RESUMEN - Generación de Thumbnails"
+          echo "═════════════════════════════════════════════"
+          echo "Fecha: $(date +%Y-%m-%d' '%H:%M:%S)"
+          echo "Estatus: ${{ job.status }}"
+          echo "Thumbnails: $(ls output/thumbnails/*.png 2>/dev/null | wc -l)"
+          echo "═════════════════════════════════════════════"
