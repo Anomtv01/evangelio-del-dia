@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Toma el JSON de guion_corto.py y arma miniatura VERTICAL, narración
-(edge-tts, con la voz de Jesús o del personaje cuando corresponde) y video
-VERTICAL 1080x1920 (formato Short), reutilizando santo_utils.py.
+Toma el JSON de guion_corto.py y arma la portada VERTICAL (rayos dorados y
+cruz radiante, ver portada_corto.py), la narración (ElevenLabs, con la voz
+de Jesús o del personaje cuando corresponde) y el video VERTICAL 1080x1920
+(formato Short), reutilizando crear_video_vertical de santo_utils.py.
 
 Uso:
     python generar_video_corto.py output_corto/corto_2026-08-25.json
@@ -13,12 +14,12 @@ import os
 import subprocess
 import sys
 
-from santo_utils import crear_thumbnail_vertical, crear_video_vertical
+from portada_corto import crear_portada_corto
+from santo_utils import crear_video_vertical
 import voces_elevenlabs
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(BASE_DIR, "output_corto")
-FOTOS_DIR = os.path.join(BASE_DIR, "fotos_cortos")
 
 RECORDATORIO = ("Si esta historia te tocó el corazón, suscribite a Viva la "
                 "Fe Católica TV y activa la campanita para no perderte el "
@@ -35,16 +36,6 @@ def construir_guion(data):
         pares.append((perfil, s["texto"]))
     pares.append((voz_nar, RECORDATORIO))
     return pares
-
-
-def foto_de_la_historia(clave):
-    """Portada especifica de la historia, generada una sola vez con Canva IA
-    (fotos_cortos/<clave>.jpg). Si no existe, crear_thumbnail_vertical cae
-    al fondo generico con paleta de color."""
-    if not clave:
-        return None
-    ruta = os.path.join(FOTOS_DIR, "%s.jpg" % clave)
-    return ruta if os.path.exists(ruta) else None
 
 
 def generar_audio(guion, carpeta, fecha_iso, perfil="narrador"):
@@ -82,14 +73,14 @@ def main():
     carpeta = os.path.join(OUTPUT_DIR, data["fecha"])
     os.makedirs(carpeta, exist_ok=True)
 
-    foto_path = foto_de_la_historia(data.get("clave"))
-    print("Creando miniatura vertical (1080x1920)... foto: %s"
-          % (foto_path or "(fondo generico, no se encontro portada)"))
-    thumbnail = crear_thumbnail_vertical(
-        data["titulo_historia"], carpeta,
+    print("Creando portada vertical (1080x1920, rayos dorados + cruz)...")
+    thumbnail = crear_portada_corto(
+        cita_es=data.get("cita_es", ""),
+        fiesta_liturgica=data.get("fiesta_liturgica", ""),
+        gancho_pantalla=data.get("gancho_pantalla", ""),
         subtitulo=data.get("subtitulo", ""),
-        gancho=data.get("gancho_pantalla", ""),
-        foto_path=foto_path)
+        carpeta=carpeta,
+        fecha_iso=data["fecha"])
 
     guion = construir_guion(data)
     print("Generando audio con ElevenLabs (%d intervenciones)..." % len(guion))

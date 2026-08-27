@@ -2,36 +2,44 @@
 """
 corto_rotativo.py — Viva la Fe Católica TV
 ============================================
-Elige la historia del Evangelio del Short diario. La serie se publica TODOS
-LOS DÍAS (a diferencia del Jueves Eucarístico, que es semanal).
+Elige el pasaje del Short diario del Evangelio: el EVANGELIO LITÚRGICO REAL
+de hoy, exactamente como marca el calendario de la Iglesia — misma fuente y
+misma lógica que usa evangelio_del_dia.py (el video largo del Evangelio):
 
-Rotación por DÍAS desde una fecha ancla, mismo criterio determinista que
-milagro_rotativo.py y santo_rotativo.py: mismo día -> misma historia. El pool
-tiene 50 pasajes (los encuentros, milagros y parábolas más conocidos y con
-más fuerza narrativa de los cuatro Evangelios), ordenados por prioridad para
-arrancar con los más queridos (la samaritana, el hijo pródigo, el buen
-samaritano...).
+  1) Primero busca en data/citas_diarias.json (leccionario, scrapeado de
+     USCCB).
+  2) Si esa fuente no tiene la lectura completa de hoy (pasa en ~11% de los
+     días, sobre todo en solemnidades grandes), cae a
+     data/fiestas_especiales.json (respaldo manual verificado contra las
+     tablas de Felix Just, S.J.).
 
-También rota la VOZ del narrador día a día, reutilizando voces_edge.voz_del_dia()
-(la misma rotación que usan las otras series).
+En ambos casos arma el texto exacto con la Biblia Platense
+(data/biblia_platense.json), igual que el resto del canal.
 
-Extrae el texto EXACTO de la Biblia Platense (data/biblia_platense.json),
-igual que evangelio_del_dia.py, para que el guion se apoye siempre en el
-texto real y no en la memoria del modelo.
+CAMBIO (26/08/2026): antes este script rotaba por un POOL FIJO de 50
+historias "más queridas" del Evangelio (la samaritana, el hijo pródigo...),
+sin relación con la lectura litúrgica del día -- data/pool_historias_evangelio.json
+quedó sin uso. Se cambió a pedido: el Short tiene que ser el Evangelio de
+HOY, el mismo que se lee en misa, no una selección aparte.
+
+También rota la VOZ del narrador día a día, reutilizando
+voces_edge.voz_del_dia() (la misma rotación que usan las otras series).
 """
 
 import json
 import os
 from datetime import date
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "data")
-POOL_PATH = os.path.join(DATA_DIR, "pool_historias_evangelio.json")
-BIBLIA_PATH = os.path.join(DATA_DIR, "biblia_platense.json")
-
-# Primer día de emisión del Short diario. La rotación arranca AQUÍ.
-# No lo cambies después de publicar el primero, o se correrá todo el orden.
-FECHA_ANCLA = date(2026, 8, 25)
+from citas import CitaNoReconocida
+from evangelio_del_dia import (
+    CITAS_PATH,
+    FIESTAS_PATH,
+    cargar_biblia,
+    extraer_texto_evangelio,
+    obtener_registro_de_fiesta,
+    obtener_registro_del_dia,
+)
+from libros import nombre_espanol
 
 try:
     from voces_edge import voz_del_dia, VOCES as _VOCES_EDGE
@@ -41,87 +49,81 @@ except Exception:                                                # noqa: BLE001
     _VOCES_EDGE = {}
 
 
-def cargar_pool():
-    with open(POOL_PATH, encoding="utf-8") as f:
+def _cargar_json(path):
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 
-def cargar_biblia():
-    with open(BIBLIA_PATH, encoding="utf-8") as f:
-        data = json.load(f)
-    return {libro["name"]: libro for libro in data["books"]}
-
-
-def _orden(entrada):
-    """Clave de orden: prioridad, luego alfabético por título."""
-    return (entrada[1].get("prioridad", 2), entrada[1].get("titulo", ""))
-
-
-def _lista_ordenada(pool):
-    return [k for k, _ in sorted(pool.items(), key=_orden)]
-
-
-def _dias_desde_ancla(fecha=None):
-    return ((fecha or date.today()) - FECHA_ANCLA).days
-
-
-def extraer_texto(entrada, biblia_idx):
-    libro_data = biblia_idx.get(entrada["libro"])
-    if not libro_data:
-        raise ValueError("Libro no encontrado en la Biblia: %s" % entrada["libro"])
-    cap = next((c for c in libro_data["chapters"]
-                if c["chapter"] == entrada["capitulo"]), None)
-    if not cap:
-        raise ValueError("Capítulo no encontrado: %s %d"
-                         % (entrada["libro"], entrada["capitulo"]))
-    versos = {v["verse"]: v["text"].strip() for v in cap["verses"]}
-    fragmentos = [versos[n] for n in
-                 range(entrada["verso_inicio"], entrada["verso_fin"] + 1)
-                 if n in versos]
-    if not fragmentos:
-        raise ValueError("No se encontraron versos para %s" % entrada.get("clave"))
-    return " ".join(fragmentos)
+def _clave_desde_cita(libro_en, capitulo, v_ini, v_fin):
+    """Identificador estable para el pasaje del día (nombre de archivo,
+    búsqueda de portada propia si algún día se agrega una)."""
+    base = libro_en.lower().replace(" ", "_")
+    return "%s_%d_%d-%d" % (base, capitulo, v_ini, v_fin)
 
 
 def historia_del_dia(fecha=None):
-    pool = cargar_pool()
-    if not pool:
+    """
+    Devuelve el Evangelio litúrgico real de la fecha dada (hoy si None),
+    con el mismo formato que ya consumía guion_corto.py:
+        clave, titulo, cita_es, categoria, texto_biblico, voz, voz_nombre
+    Devuelve None si no se encuentra lectura para esa fecha (ni en la fuente
+    automática ni en el respaldo de fiestas) o si la cita no se pudo parsear.
+    """
+    fecha_obj = fecha if isinstance(fecha, date) else date.today()
+    fecha_str = fecha_obj.isoformat()
+
+    citas = _cargar_json(CITAS_PATH)
+    fiestas = _cargar_json(FIESTAS_PATH)
+
+    resultado = obtener_registro_del_dia(citas, fecha_str)
+    if not resultado:
+        resultado = obtener_registro_de_fiesta(fiestas, fecha_str)
+    if not resultado:
         return None
-    orden = _lista_ordenada(pool)
-    idx = _dias_desde_ancla(fecha) % len(orden)
-    clave = orden[idx]
-    entrada = dict(pool[clave])
-    entrada["clave"] = clave
 
+    cita_texto, feast, _lectionary_number = resultado
     biblia_idx = cargar_biblia()
-    entrada["texto_biblico"] = extraer_texto(entrada, biblia_idx)
 
-    if entrada["verso_inicio"] == entrada["verso_fin"]:
-        entrada["cita_es"] = "%s %d,%d" % (
-            entrada["libro"], entrada["capitulo"], entrada["verso_inicio"])
-    else:
-        entrada["cita_es"] = "%s %d,%d-%d" % (
-            entrada["libro"], entrada["capitulo"],
-            entrada["verso_inicio"], entrada["verso_fin"])
+    try:
+        libro_en, capitulo, v_ini, v_fin, texto = extraer_texto_evangelio(
+            biblia_idx, cita_texto)
+    except CitaNoReconocida:
+        return None
 
-    perfil = voz_del_dia(fecha)
-    entrada["voz"] = perfil
-    entrada["voz_nombre"] = _VOCES_EDGE.get(perfil, perfil)
-    return entrada
+    libro_es = nombre_espanol(libro_en)
+    cita_es = ("%s %d,%d" % (libro_es, capitulo, v_ini) if v_ini == v_fin else
+               "%s %d,%d-%d" % (libro_es, capitulo, v_ini, v_fin))
+
+    feast = (feast or "").strip()
+    perfil = voz_del_dia(fecha_obj)
+
+    return {
+        "clave": _clave_desde_cita(libro_en, capitulo, v_ini, v_fin),
+        "titulo": feast if feast else cita_es,
+        "fiesta_liturgica": feast,
+        "cita_es": cita_es,
+        "categoria": None,
+        "libro": libro_es,
+        "capitulo": capitulo,
+        "verso_inicio": v_ini,
+        "verso_fin": v_fin,
+        "texto_biblico": texto,
+        "voz": perfil,
+        "voz_nombre": _VOCES_EDGE.get(perfil, perfil),
+    }
 
 
 if __name__ == "__main__":
     from datetime import timedelta
-    from libros import nombre_espanol
 
-    print("Fecha ancla: %s\n" % FECHA_ANCLA)
-    print("%-12s %-45s %-25s %s" % ("FECHA", "HISTORIA", "CITA", "VOZ"))
+    print("%-12s %-45s %-25s %s" % ("FECHA", "FIESTA / HISTORIA", "CITA", "VOZ"))
     print("-" * 100)
     hoy = date.today()
     for i in range(14):
         f = hoy + timedelta(days=i)
         h = historia_del_dia(f)
-        cita_es = "%s %d,%d-%d" % (nombre_espanol(h["libro"]), h["capitulo"],
-                                   h["verso_inicio"], h["verso_fin"])
+        if not h:
+            print("%-12s (sin lectura para esta fecha)" % f.isoformat())
+            continue
         print("%-12s %-45s %-25s %s" % (f.isoformat(), h["titulo"][:44],
-                                        cita_es, h["voz"]))
+                                        h["cita_es"], h["voz"]))

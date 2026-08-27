@@ -297,6 +297,7 @@ def main():
         "clave": entrada["clave"],
         "titulo_historia": entrada["titulo"],
         "cita_es": entrada["cita_es"],
+        "fiesta_liturgica": entrada.get("fiesta_liturgica", ""),
         "categoria": entrada.get("categoria"),
         "voz_narracion": entrada["voz"],
         "voz_narracion_nombre": entrada.get("voz_nombre"),
