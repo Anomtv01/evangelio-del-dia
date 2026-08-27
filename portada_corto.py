@@ -1,309 +1,265 @@
 # -*- coding: utf-8 -*-
-"""
-portada_corto.py — Portada extravagante del Short diario del Evangelio
-=========================================================================
-Miniatura VERTICAL (1080x1920) para el Short diario, con un diseño mucho
-más elaborado que el genérico de santo_utils.fondo_generico(): rayos
-dorados radiantes tipo custodia, halo múltiple, cruz con resplandor, marco
-ornamentado doble y tipografía grande de alto contraste — pensado para
-destacar en el feed de Shorts, no solo para funcionar.
-
-No depende de fotos curadas por historia (fotos_cortos/): desde que el
-pasaje del Short es el Evangelio litúrgico real del día (ver
-corto_rotativo.py), cambia todos los días sin repetirse, así que no tiene
-sentido mantener un banco de portadas hechas a mano por historia. Todo el
-fondo es generado, sin depender de conseguir una imagen para cada pasaje.
-
-Uso:
-    from portada_corto import crear_portada_corto
-    ruta = crear_portada_corto(
-        cita_es="Mateo 5,1-12",
-        fiesta_liturgica="",
-        gancho_pantalla="¿Qué dijo Jesús\nque nadie esperaba?",
-        subtitulo="Las Bienaventuranzas",
-        carpeta="output_corto/2026-08-27",
-        fecha_iso="2026-08-27",
-    )
-"""
+"""Portada católica dinámica para el Short diario del Evangelio."""
 
 import hashlib
 import math
 import os
+import re
 from datetime import date
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 W, H = 1080, 1920
-
-# Paletas dramáticas: (nombre, dorado, dorado_claro, tinte_fondo)
-PALETAS = [
-    ("Oro y grana",     (212, 175, 55), (250, 224, 150), (24, 7, 9)),
-    ("Oro y noche",     (212, 175, 55), (250, 224, 150), (7, 9, 22)),
-    ("Oro y púrpura",   (212, 175, 55), (250, 224, 150), (18, 7, 22)),
-    ("Oro y esmeralda", (212, 175, 55), (250, 224, 150), (5, 17, 13)),
-    ("Oro puro",        (230, 190, 60), (255, 235, 170), (16, 12, 4)),
-    ("Grana imperial",  (224, 130, 60), (250, 200, 140), (22, 6, 7)),
-]
+AZUL = (5, 18, 42)
+AZUL_MEDIO = (12, 42, 78)
+ORO = (214, 174, 78)
+ORO_CLARO = (250, 224, 158)
+MARFIL = (239, 229, 204)
+ROJO_MANTO = (126, 27, 34)
 
 
-def _paleta_del_dia(fecha_iso):
-    idx = int(hashlib.md5(fecha_iso.encode()).hexdigest(), 16) % len(PALETAS)
-    return PALETAS[idx]
+def _semilla(fecha_iso, texto):
+    return int(hashlib.sha256((fecha_iso + "|" + texto).encode("utf-8")).hexdigest()[:12], 16)
 
 
-def _fuentes(escala=1.0):
-    """Cadena de respaldo Windows -> fonts/Lora del repo -> DejaVu/Liberation
-    del sistema (Linux, GitHub Actions). Sin el último paso, en CI la
-    portada sale sin texto legible, en silencio."""
-    fdir = os.path.join(BASE_DIR, "fonts")
-    bold = [
-        "C:\\Windows\\Fonts\\arialbd.ttf",
-        os.path.join(fdir, "Lora-Bold.ttf"),
-        "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-        "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf",
-        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
-    ]
-    reg = [
-        "C:\\Windows\\Fonts\\arial.ttf",
-        os.path.join(fdir, "Lora-Regular.ttf"),
-        "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-        "/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf",
-        "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
-    ]
-
-    def _t(rutas, tam):
-        for r in rutas:
-            try:
-                return ImageFont.truetype(r, int(tam * escala))
-            except Exception:                                    # noqa: BLE001
-                continue
-        print("[AVISO] No se encontró ninguna fuente TrueType para la "
-              "portada del Short; el texto saldrá muy pequeño.")
-        return ImageFont.load_default()
-
-    return {
-        "kicker": _t(bold, 32),
-        "cita":   _t(reg, 38),
-        "gancho": _t(bold, 78),
-        "sub":    _t(reg, 44),
-        "marca":  _t(bold, 30),
-    }
+def _fuente(negrita, tam):
+    repo_fonts = os.path.join(os.path.dirname(BASE_DIR), "fonts")
+    nombres = (["Lora-Bold.ttf", "DejaVuSerif-Bold.ttf"] if negrita else
+               ["Lora-Regular.ttf", "DejaVuSerif.ttf"])
+    candidatos = []
+    for nombre in nombres:
+        candidatos.extend([
+            os.path.join(BASE_DIR, "fonts", nombre),
+            os.path.join(repo_fonts, nombre),
+            "/usr/share/fonts/truetype/dejavu/" + nombre,
+            "C:\\Windows\\Fonts\\arialbd.ttf" if negrita else "C:\\Windows\\Fonts\\arial.ttf",
+        ])
+    for ruta in candidatos:
+        try:
+            return ImageFont.truetype(ruta, tam)
+        except Exception:
+            pass
+    return ImageFont.load_default()
 
 
-def _fondo_base(tinte):
-    """Degradado vertical: casi negro arriba, tinte de la paleta abajo."""
-    top = (6, 5, 8)
-    img = Image.new("RGB", (W, H), top)
+def _degradado():
+    img = Image.new("RGB", (W, H), AZUL)
     d = ImageDraw.Draw(img)
     for y in range(H):
-        t = (y / H) ** 1.4
-        d.line([(0, y), (W, y)], fill=(
-            int(top[0] + (tinte[0] - top[0]) * t),
-            int(top[1] + (tinte[1] - top[1]) * t),
-            int(top[2] + (tinte[2] - top[2]) * t)))
+        t = y / max(H - 1, 1)
+        luz = math.exp(-((t - .43) / .27) ** 2)
+        color = tuple(int(AZUL[i] * (1 - .42 * luz) + AZUL_MEDIO[i] * .42 * luz)
+                      for i in range(3))
+        d.line((0, y, W, y), fill=color)
     return img
 
 
-def _rayos_divinos(img, centro, dorado, n_grandes=12, n_finos=28, radio=1600):
-    """Rayos radiantes tipo custodia/gloria, con desvanecido hacia afuera."""
-    cx, cy = centro
+def _eje_de_luz(img, centro_x):
     capa = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    d = ImageDraw.Draw(capa, "RGBA")
-
-    for i in range(n_grandes):
-        ang = (2 * math.pi / n_grandes) * i
-        x2 = cx + radio * math.cos(ang)
-        y2 = cy + radio * math.sin(ang)
-        for grosor in range(24, 0, -3):
-            alpha = int(65 * (grosor / 24))
-            d.line([(cx, cy), (x2, y2)], fill=dorado + (alpha,), width=grosor)
-
-    for i in range(n_finos):
-        ang = (2 * math.pi / n_finos) * i + (math.pi / n_finos)
-        x2 = cx + (radio * 0.7) * math.cos(ang)
-        y2 = cy + (radio * 0.7) * math.sin(ang)
-        d.line([(cx, cy), (x2, y2)], fill=dorado + (50,), width=3)
-
-    capa = capa.filter(ImageFilter.GaussianBlur(6))
+    px = capa.load()
+    for y in range(H):
+        apertura = 105 + int(y * .22)
+        for x in range(max(0, centro_x - apertura), min(W, centro_x + apertura)):
+            distancia = abs(x - centro_x) / apertura
+            alpha = int(80 * (1 - distancia) ** 2 * (1 - .32 * y / H))
+            px[x, y] = ORO_CLARO + (alpha,)
+    capa = capa.filter(ImageFilter.GaussianBlur(32))
     return Image.alpha_composite(img.convert("RGBA"), capa).convert("RGB")
 
 
-def _halo(img, centro, color, radio_ext):
-    cx, cy = centro
-    capa = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    d = ImageDraw.Draw(capa, "RGBA")
-    for r in range(radio_ext, 40, -8):
-        alpha = int(120 * ((radio_ext - r) / (radio_ext - 40)) ** 2)
-        d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=color + (alpha,), width=4)
-    capa = capa.filter(ImageFilter.GaussianBlur(3))
-    return Image.alpha_composite(img.convert("RGBA"), capa).convert("RGB")
+def _escena(texto):
+    t = texto.lower()
+    reglas = [
+        ("agua", ("agua", "mar", "barca", "tormenta", "pozo", "pesca")),
+        ("pan", ("pan", "multiplic", "eucar", "comer", "cena")),
+        ("montana", ("monte", "montaña", "transfigur", "bienavent")),
+        ("sanacion", ("sanó", "sano", "ciego", "lepro", "enfer", "curó", "milagro")),
+        ("templo", ("templo", "sinagoga", "farise", "escriba")),
+        ("ovejas", ("oveja", "pastor", "rebaño")),
+        ("semilla", ("semilla", "sembr", "viña", "cosecha", "higuera")),
+        ("camino", ("camino", "discípulo", "discipulo", "seguir", "envió", "envio")),
+    ]
+    for escena, palabras in reglas:
+        if any(p in t for p in palabras):
+            return escena
+    return "amanecer"
 
 
-def _cruz_resplandor(img, centro, dorado):
-    cx, cy = centro
-    tam, grosor = 250, 28
-    capa = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    d = ImageDraw.Draw(capa, "RGBA")
-    yh = cy - tam // 6
-    d.rectangle([cx - grosor // 2, cy - tam // 2, cx + grosor // 2, cy + tam // 2],
-                fill=dorado + (235,))
-    d.rectangle([cx - tam // 3, yh - grosor // 2, cx + tam // 3, yh + grosor // 2],
-                fill=dorado + (235,))
-    glow = capa.filter(ImageFilter.GaussianBlur(16))
-    img = Image.alpha_composite(img.convert("RGBA"), glow).convert("RGB")
-
-    d2 = ImageDraw.Draw(img)
-    d2.rectangle([cx - grosor // 2, cy - tam // 2, cx + grosor // 2, cy + tam // 2],
-                 fill=(255, 250, 236))
-    d2.rectangle([cx - tam // 3, yh - grosor // 2, cx + tam // 3, yh + grosor // 2],
-                 fill=(255, 250, 236))
-    return img
-
-
-def _vineta(img, profundidad=220, alpha_max=175):
-    """Oscurece los BORDES (no un anillo interior): alpha máximo justo en el
-    borde de la imagen, decreciendo suavemente hasta 0 hacia el interior."""
-    capa = Image.new("L", (W, H), 0)
-    d = ImageDraw.Draw(capa)
-    for i in range(profundidad):
-        alpha = int(alpha_max * ((profundidad - i) / profundidad) ** 1.6)
-        d.rectangle([i, i, W - i, H - i], outline=alpha, width=1)
-    capa = capa.filter(ImageFilter.GaussianBlur(3))
-    negro = Image.new("RGB", (W, H), (0, 0, 0))
-    return Image.composite(negro, img, capa)
-
-
-def _marco_ornamentado(draw, dorado, dorado_claro, margen_ext=32, margen_int=54):
-    draw.rectangle([margen_ext, margen_ext, W - margen_ext, H - margen_ext],
-                    outline=dorado, width=3)
-    draw.rectangle([margen_int, margen_int, W - margen_int, H - margen_int],
-                    outline=dorado, width=1)
-    largo = 44
-    for x, y, sx, sy in ((margen_int, margen_int, 1, 1),
-                          (W - margen_int, margen_int, -1, 1),
-                          (margen_int, H - margen_int, 1, -1),
-                          (W - margen_int, H - margen_int, -1, -1)):
-        draw.line([(x, y), (x + largo * sx, y)], fill=dorado_claro, width=4)
-        draw.line([(x, y), (x, y + largo * sy)], fill=dorado_claro, width=4)
+def _motivo(img, escena, semilla):
+    d = ImageDraw.Draw(img, "RGBA")
+    horizonte = 1110
+    if escena == "agua":
+        d.rectangle((0, horizonte, W, 1450), fill=(7, 45, 76, 180))
+        for i in range(12):
+            y = horizonte + 18 + i * 25
+            desplazamiento = (semilla >> i) % 90
+            d.arc((-80 + desplazamiento, y, 1160 - desplazamiento, y + 70), 190, 350,
+                  fill=ORO_CLARO + (34,), width=3)
+    elif escena == "pan":
+        for x, y, r in ((210, 1220, 115), (430, 1285, 100), (760, 1215, 125)):
+            d.ellipse((x-r, y-r*.55, x+r, y+r*.55), fill=(167, 112, 48, 160), outline=ORO+(100,), width=4)
+            d.arc((x-r*.5, y-r*.42, x+r*.5, y+r*.42), 205, 335, fill=ORO_CLARO+(110,), width=5)
+    elif escena == "montana":
+        d.polygon(((0, 1380), (330, 940), (540, 1180), (760, 860), (1080, 1360), (1080, 1500), (0, 1500)),
+                  fill=(4, 20, 34, 210))
+        d.line(((760, 860), (760, 1190)), fill=ORO_CLARO+(90,), width=5)
+    elif escena == "sanacion":
+        d.ellipse((120, 1170, 410, 1470), outline=ORO_CLARO+(65,), width=9)
+        d.line((265, 1280, 265, 1510), fill=ORO_CLARO+(70,), width=15)
+        d.line((265, 1340, 160, 1420), fill=ORO_CLARO+(70,), width=12)
+    elif escena == "templo":
+        d.polygon(((120, 1190), (540, 910), (960, 1190)), fill=(10, 31, 55, 210), outline=ORO+(75,))
+        for x in range(190, 940, 130):
+            d.rectangle((x, 1190, x+45, 1510), fill=(8, 24, 42, 220), outline=ORO+(60,))
+    elif escena == "ovejas":
+        for x, y in ((170, 1340), (330, 1280), (820, 1340)):
+            d.ellipse((x-70, y-45, x+70, y+45), fill=MARFIL+(135,), outline=ORO+(70,))
+            d.ellipse((x+45, y-35, x+95, y+15), fill=(30, 24, 24, 170))
+    elif escena == "semilla":
+        for x in (140, 300, 780, 930):
+            alto = 170 + ((semilla >> (x % 17)) % 140)
+            d.line((x, 1470, x, 1470-alto), fill=ORO_CLARO+(95,), width=5)
+            d.ellipse((x-45, 1470-alto+30, x+4, 1470-alto+70), fill=(84, 132, 77, 130))
+            d.ellipse((x-4, 1470-alto+65, x+45, 1470-alto+105), fill=(84, 132, 77, 130))
+    elif escena == "camino":
+        d.polygon(((420, 1540), (660, 1540), (585, 1090), (510, 1090)), fill=ORO_CLARO+(42,))
+    else:
+        d.ellipse((180, 970, 900, 1690), fill=ORO+(12,), outline=ORO+(30,), width=4)
 
 
-def _envolver(draw, texto, fuente, ancho_max):
-    palabras = texto.split()
-    if not palabras:
-        return []
-    lineas, actual = [], palabras[0]
-    for p in palabras[1:]:
-        prueba = actual + " " + p
-        if draw.textlength(prueba, font=fuente) <= ancho_max:
-            actual = prueba
+def _jesus(img, lado):
+    """Figura reverente y estilizada: túnica marfil, manto rojo y halo fino."""
+    d = ImageDraw.Draw(img, "RGBA")
+    cx = 670 if lado == "derecha" else 410
+    cabeza_y = 720
+    # halo fino y resplandor, sin iconografía recargada
+    for r, a, w in ((175, 22, 20), (135, 45, 8), (105, 185, 5)):
+        d.ellipse((cx-r, cabeza_y-r, cx+r, cabeza_y+r), outline=ORO_CLARO+(a,), width=w)
+    # cabello, rostro sereno de perfil y barba
+    d.ellipse((cx-76, cabeza_y-95, cx+74, cabeza_y+86), fill=(74, 47, 34, 255))
+    d.ellipse((cx-51, cabeza_y-72, cx+72, cabeza_y+66), fill=(206, 163, 125, 255))
+    perfil = 1 if lado == "derecha" else -1
+    d.polygon(((cx+35*perfil, cabeza_y-18), (cx+88*perfil, cabeza_y+5),
+               (cx+34*perfil, cabeza_y+24)), fill=(206, 163, 125, 255))
+    d.arc((cx-48, cabeza_y-42, cx+48, cabeza_y+40), 18 if perfil > 0 else 162,
+          122 if perfil > 0 else 262, fill=(54, 37, 31, 220), width=3)
+    d.polygon(((cx-50, cabeza_y+42), (cx+52, cabeza_y+42),
+               (cx+38, cabeza_y+110), (cx-34, cabeza_y+112)), fill=(78, 49, 36, 250))
+    # túnica y manto
+    d.polygon(((cx-82, 830), (cx+82, 830), (cx+220, 1510), (cx-235, 1510)), fill=MARFIL+(250,))
+    if lado == "derecha":
+        d.polygon(((cx+12, 835), (cx+115, 875), (cx+205, 1510), (cx-12, 1510), (cx-85, 1000)),
+                  fill=ROJO_MANTO+(242,))
+    else:
+        d.polygon(((cx-12, 835), (cx-115, 875), (cx-205, 1510), (cx+12, 1510), (cx+85, 1000)),
+                  fill=ROJO_MANTO+(242,))
+    d.line((cx, 850, cx-30*perfil, 1470), fill=ORO+(60,), width=4)
+
+
+def _envolver(draw, texto, fuente, max_ancho, max_lineas):
+    palabras = re.sub(r"\s+", " ", (texto or "").replace("\n", " ")).strip().split()
+    lineas, linea = [], ""
+    for palabra in palabras:
+        prueba = (linea + " " + palabra).strip()
+        if linea and draw.textlength(prueba, font=fuente) > max_ancho:
+            lineas.append(linea)
+            linea = palabra
         else:
-            lineas.append(actual)
-            actual = p
-    lineas.append(actual)
+            linea = prueba
+    if linea:
+        lineas.append(linea)
+    if len(lineas) > max_lineas:
+        lineas = lineas[:max_lineas]
+        lineas[-1] = lineas[-1].rstrip(".,;:!?") + "…"
     return lineas
 
 
-def _texto_centrado_sombra(draw, texto, y, fuente, color, sombra=(0, 0, 0)):
-    w = draw.textlength(texto, font=fuente)
-    x = (W - w) / 2
-    draw.text((x + 4, y + 4), texto, font=fuente, fill=sombra)
-    draw.text((x, y), texto, font=fuente, fill=color)
+def _texto_centrado(draw, lineas, y, fuente, color, interlineado, sombra=5):
+    for linea in lineas:
+        caja = draw.textbbox((0, 0), linea, font=fuente, stroke_width=1)
+        x = (W - (caja[2] - caja[0])) / 2
+        draw.text((x+sombra, y+sombra), linea, font=fuente, fill=(0, 0, 0, 205), stroke_width=2)
+        draw.text((x, y), linea, font=fuente, fill=color, stroke_width=1, stroke_fill=(25, 19, 14))
+        y += interlineado
+    return y
+
+
+def _vineta(img):
+    mascara = Image.new("L", (W, H), 0)
+    p = mascara.load()
+    for y in range(H):
+        for x in range(W):
+            borde = min(x, W-1-x, y, H-1-y)
+            p[x, y] = int(170 * max(0, 1 - borde / 190) ** 1.7)
+    return Image.composite(Image.new("RGB", (W, H), (0, 0, 0)), img,
+                           mascara.filter(ImageFilter.GaussianBlur(18)))
 
 
 def crear_portada_corto(cita_es, fiesta_liturgica, gancho_pantalla, subtitulo,
                          carpeta, fecha_iso=None, nombre_archivo="thumbnail_vertical.png"):
-    """
-    Genera la portada VERTICAL 1080x1920 del Short: fondo con rayos dorados
-    y cruz radiante (sin depender de fotos), gancho en tipografía grande,
-    marco ornamentado doble. Devuelve la ruta del PNG generado.
-    """
     fecha_iso = fecha_iso or date.today().isoformat()
-    _nombre_paleta, dorado, dorado_claro, tinte = _paleta_del_dia(fecha_iso)
+    contexto = " ".join((cita_es or "", fiesta_liturgica or "", gancho_pantalla or "", subtitulo or ""))
+    semilla = _semilla(fecha_iso, contexto)
+    escena = _escena(contexto)
+    lado = "derecha" if semilla % 2 else "izquierda"
 
-    centro = (W // 2, int(H * 0.40))
-
-    img = _fondo_base(tinte)
-    img = _rayos_divinos(img, centro, dorado)
-    img = _halo(img, centro, dorado_claro, radio_ext=560)
-    img = _halo(img, centro, dorado, radio_ext=340)
-    img = _cruz_resplandor(img, centro, dorado_claro)
+    img = _degradado()
+    img = _eje_de_luz(img, 660 if lado == "derecha" else 420)
+    _motivo(img, escena, semilla)
+    _jesus(img, lado)
     img = _vineta(img)
+    draw = ImageDraw.Draw(img, "RGBA")
 
-    draw = ImageDraw.Draw(img)
-    _marco_ornamentado(draw, dorado, dorado_claro)
+    # Marco sobrio y católico; deja respirar la composición en móvil.
+    draw.rounded_rectangle((34, 34, W-34, H-34), radius=18, outline=ORO+(170,), width=3)
+    draw.line((82, 88, W-82, 88), fill=ORO_CLARO+(90,), width=2)
 
-    f = _fuentes()
-    margen_x = 96
-    ancho_txt = W - margen_x * 2
+    f_kicker = _fuente(True, 34)
+    f_cita = _fuente(True, 52)
+    f_gancho = _fuente(True, 78)
+    f_sub = _fuente(False, 40)
+    f_marca = _fuente(True, 28)
 
-    # --- kicker + cita litúrgica, arriba ---
-    y = 128
-    kicker = "EVANGELIO DE HOY"
-    kw = sum(draw.textlength(c, font=f["kicker"]) + 4 for c in kicker) - 4
-    xk = (W - kw) / 2
-    for c in kicker:
-        draw.text((xk, y), c, font=f["kicker"], fill=dorado_claro)
-        xk += draw.textlength(c, font=f["kicker"]) + 4
-    y += 58
+    kicker = "EVANGELIO DEL DÍA"
+    kw = draw.textlength(kicker, font=f_kicker)
+    draw.text(((W-kw)/2, 126), kicker, font=f_kicker, fill=ORO_CLARO+(255,))
+    draw.line((315, 184, 765, 184), fill=ORO+(125,), width=2)
+    _texto_centrado(draw, _envolver(draw, cita_es, f_cita, 880, 2), 215,
+                    f_cita, (255, 250, 236, 255), 62, sombra=4)
 
-    for linea in _envolver(draw, cita_es, f["cita"], ancho_txt)[:2]:
-        w = draw.textlength(linea, font=f["cita"])
-        draw.text(((W - w) / 2, y), linea, font=f["cita"], fill=(225, 220, 205))
-        y += 48
+    # Banda inferior translúcida: el gancho es lo primero que se lee en móvil.
+    banda = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    bd = ImageDraw.Draw(banda, "RGBA")
+    bd.rounded_rectangle((64, 1290, W-64, 1780), radius=34, fill=(2, 10, 25, 216), outline=ORO+(105,), width=3)
+    img = Image.alpha_composite(img.convert("RGBA"), banda).convert("RGB")
+    draw = ImageDraw.Draw(img, "RGBA")
 
-    if fiesta_liturgica:
-        for linea in _envolver(draw, fiesta_liturgica, f["cita"], ancho_txt)[:1]:
-            w = draw.textlength(linea, font=f["cita"])
-            draw.text(((W - w) / 2, y), linea, font=f["cita"], fill=dorado)
-            y += 44
-
-    # --- gancho: hasta 2 líneas "de autor" (separadas por \n), cada una
-    # reenvuelta si no entra en el ancho disponible ---
-    lineas_originales = [l.strip() for l in (gancho_pantalla or "").split("\n") if l.strip()]
-    if not lineas_originales:
-        lineas_originales = [gancho_pantalla or ""]
-
-    lineas_g = []
-    for linea in lineas_originales:
-        lineas_g.extend(_envolver(draw, linea, f["gancho"], ancho_txt))
-
-    alto_linea_g = 96
-    y_g = int(H * 0.62)
-
-    for ln in lineas_g:
-        _texto_centrado_sombra(draw, ln, y_g, f["gancho"], (255, 250, 238))
-        y_g += alto_linea_g
-
-    # --- subtítulo + marca, abajo ---
-    y_sub = H - 216
+    lineas = _envolver(draw, gancho_pantalla, f_gancho, 850, 3)
+    alto = len(lineas) * 94
+    y = 1385 + max(0, (245 - alto) // 2)
+    y = _texto_centrado(draw, lineas, y, f_gancho, (255, 250, 238, 255), 94)
     if subtitulo:
-        for linea in _envolver(draw, subtitulo, f["sub"], ancho_txt)[:1]:
-            w = draw.textlength(linea, font=f["sub"])
-            draw.text(((W - w) / 2, y_sub), linea, font=f["sub"], fill=dorado_claro)
-            y_sub += 58
+        _texto_centrado(draw, _envolver(draw, subtitulo, f_sub, 820, 1), min(y+18, 1692),
+                        f_sub, ORO_CLARO+(255,), 50, sombra=3)
 
     marca = "VIVA LA FE CATÓLICA TV"
-    w = draw.textlength(marca, font=f["marca"])
-    draw.text(((W - w) / 2, H - 108), marca, font=f["marca"], fill=(200, 195, 180))
+    mw = draw.textlength(marca, font=f_marca)
+    draw.text(((W-mw)/2, 1830), marca, font=f_marca, fill=(220, 215, 202, 235))
 
     os.makedirs(carpeta, exist_ok=True)
     ruta = os.path.join(carpeta, nombre_archivo)
-    img.save(ruta)
+    img.save(ruta, quality=95)
+    print("Portada dinámica: escena=%s, composición=%s" % (escena, lado))
     return ruta
 
 
 if __name__ == "__main__":
-    # Prueba rápida: python portada_corto.py
-    ruta = crear_portada_corto(
-        cita_es="Mateo 5,1-12",
-        fiesta_liturgica="",
-        gancho_pantalla="¿Qué dijo Jesús\nque nadie esperaba?",
-        subtitulo="Las Bienaventuranzas",
-        carpeta=".",
-        fecha_iso="2026-08-27",
-        nombre_archivo="_prueba_portada_corto.png",
-    )
-    print("Portada de prueba:", ruta)
+    print(crear_portada_corto(
+        cita_es="Juan 6,44-51",
+        fiesta_liturgica="Jueves de la decimonovena semana",
+        gancho_pantalla="YO SOY EL PAN VIVO",
+        subtitulo="Una promesa para siempre",
+        carpeta=".", fecha_iso="2026-08-27",
+        nombre_archivo="_prueba_portada_corto.png"))
+
